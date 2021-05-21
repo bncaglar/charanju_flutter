@@ -1,3 +1,4 @@
+import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'charanju_flutter',
+      title: Strings.APP_TITLE,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
