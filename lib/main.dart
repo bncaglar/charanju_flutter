@@ -1,70 +1,80 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/routes.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
+import 'package:logger/logger.dart';
+import 'package:sizer/sizer.dart';
 import 'generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await appConfigurationSetup();
+
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => CharanjuApp(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: Strings.APP_TITLE,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Charanju Flutter App'),
-      supportedLocales: S.delegate.supportedLocales,
-      localizationsDelegates: [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      // ignore: missing_return
-      localeResolutionCallback: (deviceLocale, supportedLocales) {
-        for (var locale in supportedLocales) {
-          if (locale.languageCode == deviceLocale!.languageCode &&
-              locale.countryCode == deviceLocale.countryCode) {
-            return locale;
-          }
-        }
-      },
-    );
+Future<void> appConfigurationSetup() async {
+  if (kReleaseMode) {
+    Logger.level = Level.info;
+  } else {
+    Logger.level = Level.debug;
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, this.title}) : super(key: key);
-
-  final String? title;
-
+class CharanjuApp extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _CharanjuAppState createState() => _CharanjuAppState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _CharanjuAppState extends State<CharanjuApp> {
+  Locale? _locale;
+
+  setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title!),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Center(
-              child: Container(
-                child: Text(S.of(context).hello),
-              ),
-            ),
+    return Sizer(
+      builder: (context, orientation, screenType) {
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown,
+        ]);
+        return MaterialApp(
+          builder: DevicePreview.appBuilder,
+          debugShowCheckedModeBanner: false,
+          title: Strings.APP_TITLE,
+          locale: kReleaseMode ? _locale : DevicePreview.locale(context),
+          onGenerateRoute: Routes.generateRoute,
+          supportedLocales: S.delegate.supportedLocales,
+          localizationsDelegates: [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
           ],
-        ),
-      ),
+          // ignore: missing_return
+          localeResolutionCallback: (deviceLocale, supportedLocales) {
+            for (var locale in supportedLocales) {
+              if (locale.languageCode == deviceLocale!.languageCode &&
+                  locale.countryCode == deviceLocale.countryCode) {
+                return locale;
+              }
+            }
+          },
+        );
+      },
     );
   }
 }
