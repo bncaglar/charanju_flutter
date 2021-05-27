@@ -1,4 +1,19 @@
 {
   "@@locale": "sv",
-  "hello": "hello"
+  "hello": "hello",
+  "readySetChallenge": "ready, set, challenge",
+  "email": "Email",
+  "invalidEmailAddress": "Invalid Email Address",
+  "required": "Required",
+  "passwordMinimumLength": "Password must have a minimum length of 6",
+  "passwordOneUppercase": "Password must have one uppercase letter",
+  "passwordOneNumber": "Password must have one number",
+  "passwordOneSpecialCharacter": "Password must have one special character",
+  "confirmationDoesNotMatch": "Confirmation does not match",
+  "password": "Password",
+  "rememberMe": "Remember Me",
+  "forgotPassword": "Forgot password?",
+  "or": "OR",
+  "doYouHaveAccount": "Do not have an account? ",
+  "signUp": "Sign up"
 }

@@ -18,7 +18,7 @@ class SimpleLogPrinter extends LogPrinter {
 
       String method =
           StackTraceFormatter.formatStackTrace(StackTrace.current, 2, 1)!;
-      print(color!("$emoji $method ${event.message}"));
+      print(color!("$emoji | $method | ${event.message}"));
       return [];
     } catch (e) {
       return [];

@@ -21,6 +21,30 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "hello": MessageLookupByLibrary.simpleMessage("hello")
+        "confirmationDoesNotMatch":
+            MessageLookupByLibrary.simpleMessage("Confirmation does not match"),
+        "doYouHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Do not have an account? "),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot password?"),
+        "hello": MessageLookupByLibrary.simpleMessage("hello"),
+        "invalidEmailAddress":
+            MessageLookupByLibrary.simpleMessage("Invalid Email Address"),
+        "or": MessageLookupByLibrary.simpleMessage("OR"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordMinimumLength": MessageLookupByLibrary.simpleMessage(
+            "Password must have a minimum length of 6"),
+        "passwordOneNumber": MessageLookupByLibrary.simpleMessage(
+            "Password must have one number"),
+        "passwordOneSpecialCharacter": MessageLookupByLibrary.simpleMessage(
+            "Password must have one special character"),
+        "passwordOneUppercase": MessageLookupByLibrary.simpleMessage(
+            "Password must have one uppercase letter"),
+        "readySetChallenge":
+            MessageLookupByLibrary.simpleMessage("ready, set, challenge"),
+        "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
+        "required": MessageLookupByLibrary.simpleMessage("Required"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign up")
       };
 }

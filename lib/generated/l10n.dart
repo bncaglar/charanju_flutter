@@ -59,6 +59,156 @@ class S {
       args: [],
     );
   }
+
+  /// `ready, set, challenge`
+  String get readySetChallenge {
+    return Intl.message(
+      'ready, set, challenge',
+      name: 'readySetChallenge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid Email Address`
+  String get invalidEmailAddress {
+    return Intl.message(
+      'Invalid Email Address',
+      name: 'invalidEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Required`
+  String get required {
+    return Intl.message(
+      'Required',
+      name: 'required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must have a minimum length of 6`
+  String get passwordMinimumLength {
+    return Intl.message(
+      'Password must have a minimum length of 6',
+      name: 'passwordMinimumLength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must have one uppercase letter`
+  String get passwordOneUppercase {
+    return Intl.message(
+      'Password must have one uppercase letter',
+      name: 'passwordOneUppercase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must have one number`
+  String get passwordOneNumber {
+    return Intl.message(
+      'Password must have one number',
+      name: 'passwordOneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must have one special character`
+  String get passwordOneSpecialCharacter {
+    return Intl.message(
+      'Password must have one special character',
+      name: 'passwordOneSpecialCharacter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmation does not match`
+  String get confirmationDoesNotMatch {
+    return Intl.message(
+      'Confirmation does not match',
+      name: 'confirmationDoesNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remember Me`
+  String get rememberMe {
+    return Intl.message(
+      'Remember Me',
+      name: 'rememberMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password?`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot password?',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OR`
+  String get or {
+    return Intl.message(
+      'OR',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do not have an account? `
+  String get doYouHaveAccount {
+    return Intl.message(
+      'Do not have an account? ',
+      name: 'doYouHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up`
+  String get signUp {
+    return Intl.message(
+      'Sign up',
+      name: 'signUp',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
