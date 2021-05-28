@@ -30,7 +30,21 @@ class NavigationButton extends StatelessWidget {
       height: 6.84.h,
       margin: margin,
       decoration: buildBtnDecoration(),
-      child: buildBtn(),
+      child: Stack(
+        children: [
+          buildColorFilter(),
+          buildBtn(),
+        ],
+      ),
+    );
+  }
+
+  ClipPath buildColorFilter() {
+    return ClipPath(
+      clipper: TriangleClipper(),
+      child: Container(
+        color: AppColors.primaryGreyColor.withOpacity(0.3),
+      ),
     );
   }
 
@@ -69,5 +83,23 @@ class NavigationButton extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class TriangleClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+
+    path.moveTo(size.width, size.height);
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width * 0.7, size.height);
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return true;
   }
 }

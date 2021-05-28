@@ -9,4 +9,5 @@ class AppColors {
   static final errorColor = HexColor("#FD2B1D");
   static final rememberMeBoxColor = HexColor("#C4C4C4");
   static final primaryWightColor = HexColor("#FFFFFF");
+  static final primaryGreyColor = HexColor("#E8E8F2");
 }
