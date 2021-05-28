@@ -1,4 +1,5 @@
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
+import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_email_screen/enter_email_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
 import 'package:charanju_flutter/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,6 +22,11 @@ class Routes {
       case SignInScreen.routeName:
         {
           child = SignInScreen();
+          break;
+        }
+      case EnterEmailScreen.routeName:
+        {
+          child = EnterEmailScreen();
           break;
         }
 

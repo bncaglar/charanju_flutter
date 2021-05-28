@@ -30,20 +30,23 @@ class CustomTextFormField extends StatefulWidget {
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: widget.controller,
-      keyboardType: widget.keyboardType ?? TextInputType.text,
-      obscureText: widget.obscureText ?? false,
-      validator: widget.validator,
-      autovalidateMode: widget.autoValidateMode,
-      textAlignVertical: TextAlignVertical.center,
-      style: TextStyle(
-        fontSize: 15.sp,
-        fontStyle: FontStyle.normal,
-        fontFamily: Strings.ABSOLUTE,
-        color: AppColors.textPrimaryColor,
+    return Material(
+      color: Colors.transparent,
+      child: TextFormField(
+        controller: widget.controller,
+        keyboardType: widget.keyboardType ?? TextInputType.text,
+        obscureText: widget.obscureText ?? false,
+        validator: widget.validator,
+        autovalidateMode: widget.autoValidateMode,
+        textAlignVertical: TextAlignVertical.center,
+        style: TextStyle(
+          fontSize: 15.sp,
+          fontStyle: FontStyle.normal,
+          fontFamily: Strings.ABSOLUTE,
+          color: AppColors.textPrimaryColor,
+        ),
+        decoration: buildInputDecoration(),
       ),
-      decoration: buildInputDecoration(),
     );
   }
 

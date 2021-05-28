@@ -15,5 +15,9 @@
   "forgotPassword": "Forgot password?",
   "or": "OR",
   "doYouHaveAccount": "Do not have an account? ",
-  "signUp": "Sign up"
+  "signUp": "Sign up",
+  "createYourProfile": "Create your profile",
+  "weWillUseThisToSignYou": "We’ll use this to sign you in or create an account if you don’t have one yet",
+  "continueText": "continue",
+  "signIn": "sign in"
 }

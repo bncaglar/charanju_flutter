@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "confirmationDoesNotMatch":
             MessageLookupByLibrary.simpleMessage("Confirmation does not match"),
+        "continueText": MessageLookupByLibrary.simpleMessage("continue"),
+        "createYourProfile":
+            MessageLookupByLibrary.simpleMessage("Create your profile"),
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("Do not have an account? "),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -45,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ready, set, challenge"),
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
-        "signUp": MessageLookupByLibrary.simpleMessage("Sign up")
+        "signIn": MessageLookupByLibrary.simpleMessage("sign in"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "weWillUseThisToSignYou": MessageLookupByLibrary.simpleMessage(
+            "We’ll use this to sign you in or create an account if you don’t have one yet")
       };
 }
