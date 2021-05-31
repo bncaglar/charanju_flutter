@@ -1,6 +1,8 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 class TheCheckBox extends StatelessWidget {
@@ -13,26 +15,30 @@ class TheCheckBox extends StatelessWidget {
     return buildRememberMeCheckBox(context);
   }
 
-  GestureDetector buildRememberMeCheckBox(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        rememberMeOnClick();
+  BlocBuilder buildRememberMeCheckBox(BuildContext context) {
+    return BlocBuilder<RememberMeCubit, bool>(
+      builder: (context, state) {
+        return GestureDetector(
+          onTap: () {
+            rememberMeOnClick();
+          },
+          child: Container(
+            width: 3.5.h,
+            height: 3.5.h,
+            padding: EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(4),
+              ),
+              border: Border.all(
+                color: AppColors.rememberMeBoxColor,
+                width: 2,
+              ),
+            ),
+            child: state ? Image.asset(Strings.CHECK_ICON_PNG) : null,
+          ),
+        );
       },
-      child: Container(
-        width: 3.5.h,
-        height: 3.5.h,
-        padding: EdgeInsets.all(4),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(4),
-          ),
-          border: Border.all(
-            color: AppColors.rememberMeBoxColor,
-            width: 2,
-          ),
-        ),
-        child: Image.asset(Strings.CHECK_ICON_PNG),
-      ),
     );
   }
 }

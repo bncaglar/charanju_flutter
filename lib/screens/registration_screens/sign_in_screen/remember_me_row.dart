@@ -1,10 +1,12 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
+import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/remember_me_box.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RememberMeRow extends StatefulWidget {
   const RememberMeRow({Key? key}) : super(key: key);
@@ -18,6 +20,8 @@ class _RememberMeRowState extends State<RememberMeRow> {
 
   onClickRememberMe() {
     log.i("onClickRememberMe Started");
+    context.read<RememberMeCubit>().toggleRememberMe(
+        !context.read<RememberMeCubit>().isRememberMeChecked());
   }
 
   onClickForgetPassword() {

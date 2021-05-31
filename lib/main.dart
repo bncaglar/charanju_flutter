@@ -1,8 +1,10 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
 import 'package:charanju_flutter/routes.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 import 'generated/l10n.dart';
@@ -16,7 +18,7 @@ void main() async {
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => CharanjuApp(),
+      builder: (context) => MyApp(),
     ),
   );
 }
@@ -26,6 +28,18 @@ Future<void> appConfigurationSetup() async {
     Logger.level = Level.info;
   } else {
     Logger.level = Level.debug;
+  }
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(providers: [
+      BlocProvider<RememberMeCubit>(
+          create: (BuildContext context) => RememberMeCubit()),
+    ], child: CharanjuApp());
   }
 }
 
