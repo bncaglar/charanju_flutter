@@ -1,36 +1,33 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
+import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
+import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_birthday_screen.dart';
+import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_email_screen.dart';
+import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_password_screen.dart';
+import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_user_name_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
-import 'package:charanju_flutter/widgets/form/email_field.dart';
-import 'package:charanju_flutter/widgets/navigation_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
-class EnterEmailScreen extends StatefulWidget {
-  static const routeName = '/EnterEmailScreen';
+class RegistrationSteps extends StatefulWidget {
+  static const routeName = '/RegistrationSteps';
 
-  EnterEmailScreen({Key? key}) : super(key: key);
+  const RegistrationSteps({Key? key}) : super(key: key);
 
   @override
-  _EnterEmailScreenState createState() => _EnterEmailScreenState();
+  _RegistrationStepsState createState() => _RegistrationStepsState();
 }
 
-class _EnterEmailScreenState extends State<EnterEmailScreen> {
-  TextEditingController emailController = TextEditingController();
-  final _emailKey = GlobalKey<FormState>();
+class _RegistrationStepsState extends State<RegistrationSteps> {
   final log = Logger();
 
   onClickBackBtn() {
     log.i("onClickBackBtn Started");
     Navigator.pop(context);
-  }
-
-  onClickContinue() {
-    log.i("onClickContinue Started");
   }
 
   @override
@@ -39,44 +36,41 @@ class _EnterEmailScreenState extends State<EnterEmailScreen> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundPrimaryColor,
-        body: buildEnterEmailBody(context),
+        body: buildRegistrationStepsBody(context),
       ),
     );
   }
 
-  Container buildEnterEmailBody(BuildContext context) {
+  Container buildRegistrationStepsBody(BuildContext context) {
     return Container(
       child: Column(
         children: [
           buildCustomAppBar(context),
           buildTextLogo(),
           buildReadyText(context),
-          buildEmailField(),
-          buildWeWillUseText(context),
-          buildContinueNtb(),
+          buildFormSteps(),
         ],
       ),
     );
   }
 
-  Container buildWeWillUseText(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        left: 4.69.w,
-        right: 4.69.w,
-        top: 0.1555.h,
-      ),
-      child: AutoSizeText(
-        S.of(context).weWillUseThisToSignYou,
-        style: TextStyle(
-          color: AppColors.textPrimaryColor,
-          fontSize: 12.sp,
-        ),
-        maxLines: 2,
-        minFontSize: 12,
-        textAlign: TextAlign.center,
-      ),
-    );
+  BlocBuilder<CreateProfileCubit, CreateProfileState> buildFormSteps() {
+    return BlocBuilder<CreateProfileCubit, CreateProfileState>(
+        builder: (context, state) {
+      if (state is CreateProfileStepEnterEmail) {
+        return EnterEmailScreen();
+      }
+      if (state is CreateProfileStepEnterPassword) {
+        return EnterPasswordScreen();
+      }
+      if (state is CreateProfileStepEnterUserName) {
+        return EnterUserNameScreen();
+      }
+      if (state is CreateProfileStepEnterBirthday) {
+        return EnterBirthdayScreen();
+      }
+      return Container();
+    });
   }
 
   Container buildCustomAppBar(BuildContext context) {
@@ -150,35 +144,6 @@ class _EnterEmailScreenState extends State<EnterEmailScreen> {
         fontSize: 12.sp,
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.normal,
-      ),
-    );
-  }
-
-  Container buildEmailField() {
-    return Container(
-      padding: EdgeInsets.only(left: 4.69.w, right: 4.69.w, top: 17.197.h),
-      child: Form(
-        key: _emailKey,
-        child: Hero(
-          tag: Strings.EMAIL_FIELD_TAG,
-          child: EmailField(
-            controller: emailController,
-            serverEmailErrorText:
-                null, //todo send the server error here after implement the API
-          ),
-        ),
-      ),
-    );
-  }
-
-  NavigationButton buildContinueNtb() {
-    return NavigationButton(
-      navigationButtonText: S.of(context).continueText,
-      onClickNavigatorButton: onClickContinue,
-      margin: EdgeInsets.only(
-        left: 4.69.w,
-        right: 4.69.w,
-        top: 5.754.h,
       ),
     );
   }

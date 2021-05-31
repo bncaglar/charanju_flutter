@@ -1,5 +1,6 @@
 import 'package:charanju_flutter/generated/l10n.dart';
-import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_email_screen/enter_email_screen.dart';
+import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
+import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/or_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/return_to_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/social_media_row.dart';
@@ -12,6 +13,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignInScreen extends StatefulWidget {
   static const routeName = '/SignInScreen';
@@ -31,7 +33,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
   onClickHighlightedText() {
     log.i("onClickHighlightedText started");
-    Navigator.pushNamed(context, EnterEmailScreen.routeName);
+    context.read<CreateProfileCubit>().emit(CreateProfileStepEnterEmail());
+    Navigator.pushNamed(context, RegistrationSteps.routeName);
   }
 
   @override

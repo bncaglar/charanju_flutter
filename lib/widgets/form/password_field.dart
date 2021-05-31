@@ -34,7 +34,7 @@ class _PasswordFieldState extends State<PasswordField> {
 
       if (value.length == 0) {
         return appLocalizations.required;
-      } else if (value.length <= 6) {
+      } else if (value.length < 8) {
         return appLocalizations.passwordMinimumLength;
       } else if (!hasOneUpperCaseLetter) {
         return appLocalizations.passwordOneUppercase;

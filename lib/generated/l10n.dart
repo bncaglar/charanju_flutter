@@ -100,10 +100,10 @@ class S {
     );
   }
 
-  /// `Password must have a minimum length of 6`
+  /// `Password must have a minimum length of 8`
   String get passwordMinimumLength {
     return Intl.message(
-      'Password must have a minimum length of 6',
+      'Password must have a minimum length of 8',
       name: 'passwordMinimumLength',
       desc: '',
       args: [],
@@ -245,6 +245,76 @@ class S {
     return Intl.message(
       'sign in',
       name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username`
+  String get userName {
+    return Intl.message(
+      'Username',
+      name: 'userName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a password so we can create an account for you. It must consist of at least 8 characters`
+  String get choosePassword {
+    return Intl.message(
+      'Choose a password so we can create an account for you. It must consist of at least 8 characters',
+      name: 'choosePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User name should start with capital letter`
+  String get userNameStartWithCapitalLetter {
+    return Intl.message(
+      'User name should start with capital letter',
+      name: 'userNameStartWithCapitalLetter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Come up with your nickname so people can easily find you `
+  String get textUnderUserNameField {
+    return Intl.message(
+      'Come up with your nickname so people can easily find you ',
+      name: 'textUnderUserNameField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Birthday`
+  String get birthday {
+    return Intl.message(
+      'Birthday',
+      name: 'birthday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This information won’t be shown publicly.`
+  String get textUnderBirthdayField {
+    return Intl.message(
+      'This information won’t be shown publicly.',
+      name: 'textUnderBirthdayField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong date format use this format 'dd/mm/yyyy'`
+  String get wrongFormat {
+    return Intl.message(
+      'Wrong date format use this format \'dd/mm/yyyy\'',
+      name: 'wrongFormat',
       desc: '',
       args: [],
     );

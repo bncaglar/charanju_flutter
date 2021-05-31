@@ -5,7 +5,7 @@
   "email": "Email",
   "invalidEmailAddress": "Invalid Email Address",
   "required": "Required",
-  "passwordMinimumLength": "Password must have a minimum length of 6",
+  "passwordMinimumLength": "Password must have a minimum length of 8",
   "passwordOneUppercase": "Password must have one uppercase letter",
   "passwordOneNumber": "Password must have one number",
   "passwordOneSpecialCharacter": "Password must have one special character",
@@ -19,5 +19,12 @@
   "createYourProfile": "Create your profile",
   "weWillUseThisToSignYou": "We’ll use this to sign you in or create an account if you don’t have one yet",
   "continueText": "continue",
-  "signIn": "sign in"
+  "signIn": "sign in",
+  "userName": "Username",
+  "choosePassword": "Choose a password so we can create an account for you. It must consist of at least 8 characters",
+  "userNameStartWithCapitalLetter": "User name should start with capital letter",
+  "textUnderUserNameField": "Come up with your nickname so people can easily find you ",
+  "birthday": "Birthday",
+  "textUnderBirthdayField": "This information won’t be shown publicly.",
+  "wrongFormat": "Wrong date format use this format 'dd/mm/yyyy'"
 }

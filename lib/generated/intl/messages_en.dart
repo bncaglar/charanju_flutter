@@ -21,6 +21,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
+        "choosePassword": MessageLookupByLibrary.simpleMessage(
+            "Choose a password so we can create an account for you. It must consist of at least 8 characters"),
         "confirmationDoesNotMatch":
             MessageLookupByLibrary.simpleMessage("Confirmation does not match"),
         "continueText": MessageLookupByLibrary.simpleMessage("continue"),
@@ -37,7 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "or": MessageLookupByLibrary.simpleMessage("OR"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordMinimumLength": MessageLookupByLibrary.simpleMessage(
-            "Password must have a minimum length of 6"),
+            "Password must have a minimum length of 8"),
         "passwordOneNumber": MessageLookupByLibrary.simpleMessage(
             "Password must have one number"),
         "passwordOneSpecialCharacter": MessageLookupByLibrary.simpleMessage(
@@ -50,7 +53,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "signIn": MessageLookupByLibrary.simpleMessage("sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "textUnderBirthdayField": MessageLookupByLibrary.simpleMessage(
+            "This information won’t be shown publicly."),
+        "textUnderUserNameField": MessageLookupByLibrary.simpleMessage(
+            "Come up with your nickname so people can easily find you "),
+        "userName": MessageLookupByLibrary.simpleMessage("Username"),
+        "userNameStartWithCapitalLetter": MessageLookupByLibrary.simpleMessage(
+            "User name should start with capital letter"),
         "weWillUseThisToSignYou": MessageLookupByLibrary.simpleMessage(
-            "We’ll use this to sign you in or create an account if you don’t have one yet")
+            "We’ll use this to sign you in or create an account if you don’t have one yet"),
+        "wrongFormat": MessageLookupByLibrary.simpleMessage(
+            "Wrong date format use this format \'dd/mm/yyyy\'")
       };
 }

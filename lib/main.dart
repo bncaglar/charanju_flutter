@@ -1,4 +1,5 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
 import 'package:charanju_flutter/routes.dart';
 import 'package:device_preview/device_preview.dart';
@@ -36,10 +37,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(providers: [
-      BlocProvider<RememberMeCubit>(
-          create: (BuildContext context) => RememberMeCubit()),
-    ], child: CharanjuApp());
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<RememberMeCubit>(
+            create: (BuildContext context) => RememberMeCubit()),
+        BlocProvider<CreateProfileCubit>(
+            create: (BuildContext context) => CreateProfileCubit()),
+      ],
+      child: CharanjuApp(),
+    );
   }
 }
 
