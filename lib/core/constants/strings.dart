@@ -16,6 +16,9 @@ class Strings {
   static const TWITTER_ICON_PNG = "assets/icons/twitter_icon.png";
   static const GOOGLE_ICON_PNG = "assets/icons/google_icon.png";
   static const FACEBOOK_ICON_PNG = "assets/icons/facebook_icon.png";
+  static const ADD_PROFILE_PHOTO_PNG = "assets/icons/add_profile_photo.png";
+  static const BOTTOM_SHEET_INSTAGRAM_PNG = "assets/icons/bottom_sheet_instagram.png";
+  static const BOTTOM_SHEET_FACEBOOK_PNG ="assets/icons/bottom_sheet_facebook.png";
   static const ABSOLUTE = "absolute";
   static const ARIAL = "Arial";
 }

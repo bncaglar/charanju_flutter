@@ -319,6 +319,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Import from facebook`
+  String get importFromFacebook {
+    return Intl.message(
+      'Import from facebook',
+      name: 'importFromFacebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Import from Instagram`
+  String get importFromInstagram {
+    return Intl.message(
+      'Import from Instagram',
+      name: 'importFromInstagram',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take photo`
+  String get takePhoto {
+    return Intl.message(
+      'Take photo',
+      name: 'takePhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose from gallery`
+  String get chooseFromGallery {
+    return Intl.message(
+      'Choose from gallery',
+      name: 'chooseFromGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a photo`
+  String get addPhotoText {
+    return Intl.message(
+      'Add a photo',
+      name: 'addPhotoText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get skip {
+    return Intl.message(
+      'Skip',
+      name: 'skip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a profile picture for recognition`
+  String get addaProfilePhotoRecognition {
+    return Intl.message(
+      'Add a profile picture for recognition',
+      name: 'addaProfilePhotoRecognition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add profile photo`
+  String get addProfilePhoto {
+    return Intl.message(
+      'Add profile photo',
+      name: 'addProfilePhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account? `
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have an account? ',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

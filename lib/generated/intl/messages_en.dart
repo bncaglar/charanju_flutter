@@ -21,7 +21,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addPhotoText": MessageLookupByLibrary.simpleMessage("Add a photo"),
+        "addProfilePhoto":
+            MessageLookupByLibrary.simpleMessage("Add profile photo"),
+        "addaProfilePhotoRecognition": MessageLookupByLibrary.simpleMessage(
+            "Add a profile picture for recognition"),
+        "alreadyHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account? "),
         "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
+        "chooseFromGallery":
+            MessageLookupByLibrary.simpleMessage("Choose from gallery"),
         "choosePassword": MessageLookupByLibrary.simpleMessage(
             "Choose a password so we can create an account for you. It must consist of at least 8 characters"),
         "confirmationDoesNotMatch":
@@ -35,6 +44,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "hello": MessageLookupByLibrary.simpleMessage("hello"),
+        "importFromFacebook":
+            MessageLookupByLibrary.simpleMessage("Import from facebook"),
+        "importFromInstagram":
+            MessageLookupByLibrary.simpleMessage("Import from Instagram"),
         "invalidEmailAddress":
             MessageLookupByLibrary.simpleMessage("Invalid Email Address"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
@@ -53,6 +66,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "signIn": MessageLookupByLibrary.simpleMessage("sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "takePhoto": MessageLookupByLibrary.simpleMessage("Take photo"),
         "textUnderBirthdayField": MessageLookupByLibrary.simpleMessage(
             "This information won’t be shown publicly."),
         "textUnderUserNameField": MessageLookupByLibrary.simpleMessage(
