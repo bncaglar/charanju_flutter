@@ -35,5 +35,7 @@
   "skip" : "Skip",
   "addaProfilePhotoRecognition" : "Add a profile picture for recognition",
   "addProfilePhoto" : "Add profile photo",
-  "alreadyHaveAccount" : "Already have an account? "
+  "alreadyHaveAccount" : "Already have an account? ",
+  "completeSignUp": "Complete sign up",
+  "addCompleteSignUpTermsText" : "By registering, you agree to our terms of use, our data policy and our policy for cookies."
 }

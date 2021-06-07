@@ -409,6 +409,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Complete sign up`
+  String get completeSignUp {
+    return Intl.message(
+      'Complete sign up',
+      name: 'completeSignUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By registering, you agree to our terms of use, our data policy and our policy for cookies.`
+  String get addCompleteSignUpTermsText {
+    return Intl.message(
+      'By registering, you agree to our terms of use, our data policy and our policy for cookies.',
+      name: 'addCompleteSignUpTermsText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

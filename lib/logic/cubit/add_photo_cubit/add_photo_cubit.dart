@@ -8,7 +8,14 @@ class AddPhotoCubit extends Cubit<AddPhotoState> {
 
   int stepIndex = 0;
 
-  changeStep(AddPhotoState state) async {
+
+  changeStep(String photoURL) async {
+    if(photoURL.isEmpty){
+      emit(CreateProfileStepAddPhoto());
+    }
+    else if(photoURL.isNotEmpty){
+      emit(CreateProfileStepCompleteSignUp());
+    }
     emit(state);
   }
 

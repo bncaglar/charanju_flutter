@@ -1,10 +1,9 @@
-import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/logic/cubit/add_photo_cubit/add_photo_cubit.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/add_profile_photo/add_profile_photo_screen.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/already_have_account_text.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
 class AddProfilePhotoStep extends StatefulWidget {
@@ -17,11 +16,6 @@ class AddProfilePhotoStep extends StatefulWidget {
 }
 
 class _AddProfilePhotoStepState extends State<AddProfilePhotoStep> {
-
-  final log = Logger();
-  onClickSignIn(){
-    log.i("onClickSignIn started");
-  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,7 +32,7 @@ class _AddProfilePhotoStepState extends State<AddProfilePhotoStep> {
         children: [
           buildAddPhotoSteps(),
           SizedBox(height: 9.52.h,),
-          buildAlreadyHaveAccount(),
+          AlreadyHaveAccountText()
         ],
       ),
     );
@@ -53,43 +47,4 @@ class _AddProfilePhotoStepState extends State<AddProfilePhotoStep> {
         }
     );
   }
-  Container buildAlreadyHaveAccount() {
-    return Container(
-        width: 48.6.w,
-        height: 2.51.h,
-        child: alreadyHaveAccountText()
-    );
-  }
-
-  Row alreadyHaveAccountText(){
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          S.of(context).alreadyHaveAccount,
-          style: TextStyle(
-            color: AppColors.textPrimaryColor,
-            fontSize: ((10 * 30.0) / 35.0).sp,
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.normal,
-          ),
-        ),
-        InkWell(
-          onTap: (){
-            onClickSignIn();
-          },
-          child: Text(
-            S.of(context).signIn,
-            style: TextStyle(
-              color: AppColors.textSkipColor,
-              fontSize: 10.sp,
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-        )
-      ],
-    );
-  }
-
 }

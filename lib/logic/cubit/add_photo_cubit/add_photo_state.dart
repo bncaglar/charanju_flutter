@@ -9,5 +9,8 @@ abstract class AddPhotoState {
 class CreateProfileStepAddPhoto extends AddPhotoState{
   CreateProfileStepAddPhoto() : super(stepIndex: 0);
 }
+class CreateProfileStepCompleteSignUp extends AddPhotoState{
+  CreateProfileStepCompleteSignUp() : super(stepIndex: 1);
+}
 
 

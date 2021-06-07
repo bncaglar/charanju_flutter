@@ -19,6 +19,8 @@ class Strings {
   static const ADD_PROFILE_PHOTO_PNG = "assets/icons/add_profile_photo.png";
   static const BOTTOM_SHEET_INSTAGRAM_PNG = "assets/icons/bottom_sheet_instagram.png";
   static const BOTTOM_SHEET_FACEBOOK_PNG ="assets/icons/bottom_sheet_facebook.png";
+  static const BOTTOM_SHEET_TAKE_PHOTO_PNG ="assets/icons/Take_photo.png";
+  static const BOTTOM_SHEET_CHOOSE_FROM_GALLERY_PNG = "assets/icons/Choose_from_Gallery.png";
   static const ABSOLUTE = "absolute";
   static const ARIAL = "Arial";
 }

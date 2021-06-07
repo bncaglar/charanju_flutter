@@ -1,12 +1,17 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
+import 'package:charanju_flutter/logic/cubit/add_photo_cubit/add_photo_cubit.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/build_custom_app_bar.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/social_media_logo.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:charanju_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
+
+import 'add_profile_photo_steps.dart';
 
 class AddProfilePhotoScreen extends StatefulWidget {
   AddProfilePhotoScreen({Key? key}) : super(key: key);
@@ -15,41 +20,51 @@ class AddProfilePhotoScreen extends StatefulWidget {
 }
 
 class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
+  String photoURL = "";
   final log = Logger();
-  onClickFacebook(){
+
+  onClickFacebook() {
     log.i("onClickFacebook started");
+    context.read<AddPhotoCubit>().emit(CreateProfileStepCompleteSignUp());
+    Navigator.pushNamed(context, AddProfilePhotoStep.routeName);
+    initState();
     Navigator.pop(context);
   }
-  onClickInstagram(){
+
+  onClickInstagram() {
     log.i("onClickInstagram started");
     Navigator.pop(context);
   }
-  onClickTakePhoto(){
+
+  onClickTakePhoto() {
     log.i("onClickTakePhoto started");
     Navigator.pop(context);
   }
-  onClickFromGallery(){
+
+  onClickFromGallery() {
     log.i("onClickFromGallery started");
     Navigator.pop(context);
   }
+
   onClickAddPhoto() {
     log.i("onClickAddPhoto Started");
     onAddPhotoButtonPressed();
   }
-  onClickSkip(){
+
+  onClickCompleteSignUp(){
+    log.i("onClickCompleteSignUp Started");
+  }
+  onClickSkip() {
     log.i("onClickSkip Started");
   }
-  onClickBackBtn() {
-    log.i("onClickBackBtn Started");
-    Navigator.pop(context);
-  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
-          buildAddPhotoAppBar(context),
-          profilePictureAvatar(),
+          buildCustomAppBarSteps(),
+          buildProfilePictureAvatar(),
           buildRecognitionText(),
           buildContinueNtb(),
           buildSkipText(),
@@ -58,152 +73,181 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
     );
   }
 
-  Container buildAddPhotoAppBar(BuildContext context){
-    return Container(
-      padding: EdgeInsets.only(
-        left: 5.449.w,
-        right: 5.449.w,
-        top: 1.244.h,
-        bottom: 9.05.h,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          buildBackBtn(),
-          Spacer(),
-          buildTitle(context),
-          Spacer(),
-          Placeholder(
-            fallbackWidth: 24.0,
-            strokeWidth: 24.0,
-            fallbackHeight: 24.0,
-            color: Colors.transparent,
+  BlocBuilder<AddPhotoCubit, AddPhotoState> buildCustomAppBarSteps() {
+    return BlocBuilder<AddPhotoCubit, AddPhotoState>(builder: (context, state) {
+      if (state is CreateProfileStepAddPhoto) {
+        return CustomAppBarText(S.of(context).addProfilePhoto);
+      } else if (state is CreateProfileStepCompleteSignUp) {
+        return CustomAppBarText(S.of(context).completeSignUp);
+      }
+      return Container();
+    });
+  }
+
+  BlocBuilder<AddPhotoCubit, AddPhotoState> buildProfilePictureAvatar() {
+    return BlocBuilder<AddPhotoCubit, AddPhotoState>(builder: (context, state) {
+      if (state is CreateProfileStepAddPhoto) {
+        return Container(
+          padding: EdgeInsets.only( //seperate asset image
+            left: 34.4.w,
+            right: 34.4.w,
           ),
-        ],
-      ),
-    );
-  }
-
-  IconButton buildBackBtn() {
-    return IconButton(
-      onPressed: onClickBackBtn,
-      icon: Icon(
-        Icons.arrow_back_ios,
-        color: AppColors.primaryWightColor,
-        size: 17.sp,
-      ),
-    );
-  }
-
-  Container buildTitle(BuildContext context) {
-    return Container(
-        width: 44.25.w,
-        child: AutoSizeText(
-          S.of(context).addProfilePhoto,
-          style: TextStyle(
-            fontSize: 15.sp,
-            color: AppColors.primaryWightColor,
-            fontWeight: FontWeight.w400,
-            fontFamily: Strings.ARIAL,
+          width: 31.1.w,
+          height: 17.49.h,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(Strings.ADD_PROFILE_PHOTO_PNG),
+            ),
           ),
-          minFontSize: 12,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-        ));
+        );
+      } else if (state is CreateProfileStepAddPhoto) {
+        return Container( //Seperate network image
+          padding: EdgeInsets.only(
+            left: 34.4.w,
+            right: 34.4.w,
+          ),
+          width: 31.1.w,
+          height: 17.49.h,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(photoURL),
+            ),
+          ),
+        );
+      }
+      return Container();
+    });
   }
 
-  Container profilePictureAvatar() {
-    return Container(
-      padding: EdgeInsets.only(
-        left: 34.4.w,
-        right: 34.4.w,
-      ),
-      width: 31.1.w,
-      height: 17.49.h,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(Strings.ADD_PROFILE_PHOTO_PNG),
-        ),
-      ),
-    );
+  BlocBuilder<AddPhotoCubit, AddPhotoState> buildRecognitionText() {
+    return BlocBuilder<AddPhotoCubit, AddPhotoState>(builder: (context, state) {
+      if (state is CreateProfileStepAddPhoto) {
+        return Padding(
+          padding: EdgeInsets.only(top: 4.21.h, left: 5.54.w, right: 5.54.w),
+          child: Container(
+            width: 88.90.w,
+            height: 3.12.h,
+            child: Center(
+              child: Text(
+                S.of(context).addaProfilePhotoRecognition,
+                style: TextStyle(
+                  color: AppColors.textPrimaryColor,
+                  fontSize: LocalHelper().getFontSize(12).sp,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ),
+          ),
+        );
+      } else if (state is CreateProfileStepCompleteSignUp) {
+        return Padding(
+          padding: EdgeInsets.only(top: 4.21.h, left: 5.54.w, right: 5.54.w),
+          child: Container(
+            width: 88.90.w,
+            height: 3.12.h,
+            child: Center(
+              child: Text(
+                S.of(context).addCompleteSignUpTermsText,
+                style: TextStyle(
+                  color: AppColors.textPrimaryColor,
+                  fontSize: LocalHelper().getFontSize(12).sp,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ),
+          ),
+        );
+      }
+      return Container();
+    });
   }
 
-  Padding buildRecognitionText(){
-    return Padding(
-      padding: EdgeInsets.only(
-          top: 4.21.h,
-          left: 5.54.w,
-          right: 5.54.w
-      ),
-      child: Container(
-        width: 88.90.w,
-        height: 3.12.h,
-        child: Center(
+  BlocBuilder<AddPhotoCubit, AddPhotoState> buildContinueNtb() {
+    return BlocBuilder<AddPhotoCubit, AddPhotoState>(builder: (context, state) {
+      if (state is CreateProfileStepAddPhoto) {
+        return Padding(
+          padding: EdgeInsets.only(
+            top: 14.3.h,
+            left: 4.54.w,
+            right: 4.54.w,
+          ),
+          child: NavigationButton(
+            navigationButtonText: S.of(context).addPhotoText,
+            onClickNavigatorButton: onClickAddPhoto,
+            margin: EdgeInsets.only(
+              left: 4.69.w,
+              right: 4.69.w,
+              top: 5.754.h,
+              bottom: 4.04.h,
+            ),
+          ),
+        );
+      } else if (state is CreateProfileStepCompleteSignUp) {
+        return Padding(
+          padding: EdgeInsets.only(
+            top: 14.3.h,
+            left: 4.54.w,
+            right: 4.54.w,
+          ),
+          child: NavigationButton(
+            navigationButtonText: S.of(context).completeSignUp,
+            onClickNavigatorButton: onClickCompleteSignUp,
+            margin: EdgeInsets.only(
+              left: 4.69.w,
+              right: 4.69.w,
+              top: 5.754.h,
+              bottom: 15.78.h,
+            ),
+          ),
+        );
+      }
+      return Container();
+    });
+  }
+
+  BlocBuilder<AddPhotoCubit, AddPhotoState> buildSkipText() {
+    return BlocBuilder<AddPhotoCubit, AddPhotoState>(builder: (context, state) {
+      if (state is CreateProfileStepAddPhoto) {
+        return InkWell(
+          onTap: () {
+            onClickSkip();
+          },
           child: Text(
-            S.of(context).addaProfilePhotoRecognition,
+            S.of(context).skip,
             style: TextStyle(
-              color: AppColors.textPrimaryColor,
-              fontSize: 12.sp,
+              color: AppColors.textSkipColor,
+              fontSize: LocalHelper().getFontSize(15).sp,
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.normal,
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Padding buildContinueNtb() {
-    return Padding(
-      padding:  EdgeInsets.only(
-        top: 14.3.h,
-        left: 4.54.w,
-        right: 4.54.w,
-      ),
-      child: NavigationButton(
-        navigationButtonText: S.of(context).addPhotoText,
-        onClickNavigatorButton: onClickAddPhoto,
-        margin: EdgeInsets.only(
-          left: 4.69.w,
-          right: 4.69.w,
-          top: 5.754.h,
-          bottom: 4.04.h,
-        ),
-      ),
-    );
-  }
-
-  InkWell buildSkipText(){ ///inkwell
-    return InkWell(
-      onTap: (){
-        onClickSkip();
-      },
-      child: Text(
-        S.of(context).skip,
-        style: TextStyle(
-          color: AppColors.textSkipColor,
-          fontSize: ((15 * 30.0) / 35.0).sp,
-          fontStyle: FontStyle.normal,
-          fontWeight: FontWeight.normal,
-        ),
-      ),
-    );
-  }
-  void onAddPhotoButtonPressed () {
-    showModalBottomSheet(
-     context: context, builder: (context){
-      return Container(
-        width: double.infinity,
-        height: 47.16.h,
-        child: _buildBottomNavigationMenu(),
-        decoration: BoxDecoration(
-          color: AppColors.modalBottomSheetColor,
-        ),
-      );
+        );
+      } else if (state is CreateProfileStepCompleteSignUp) {
+        return Container();
+      }
+      return Container();
     });
   }
 
-  Column _buildBottomNavigationMenu(){
+  void onAddPhotoButtonPressed() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            width: double.infinity,
+            height: 47.16.h,
+            child: _buildBottomNavigationMenu(),
+            decoration: BoxDecoration(
+              color: AppColors.modalBottomSheetColor,
+            ),
+          );
+        });
+  }
+
+
+  Column _buildBottomNavigationMenu() {
     return Column(
       children: [
         straightLine(),
@@ -217,11 +261,7 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
 
   Padding straightLine() {
     return Padding(
-      padding: EdgeInsets.only(
-        top: 2.19.h,
-        left: 45.w,
-        right: 43.8.w
-      ),
+      padding: EdgeInsets.only(top: 2.19.h, left: 45.w, right: 43.8.w),
       child: Container(
         height: 1,
         width: 11.11.w,
@@ -230,9 +270,9 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
     );
   }
 
-  InkWell importFromFacebook(){
+  InkWell importFromFacebook() {
     return InkWell(
-      onTap: (){
+      onTap: () {
         onClickFacebook();
       },
       child: Container(
@@ -244,16 +284,19 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             buildFacebookLogo(),
-            SizedBox(width: 3.3.w,),
+            SizedBox(
+              width: 3.3.w,
+            ),
             buildTextFacebook(),
           ],
         ),
       ),
     );
   }
-  InkWell importFromInstagram(){
+
+  InkWell importFromInstagram() {
     return InkWell(
-      onTap: (){
+      onTap: () {
         onClickInstagram();
       },
       child: Padding(
@@ -265,16 +308,19 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             buildInstagramLogo(),
-            SizedBox(width: 3.60.w,),
+            SizedBox(
+              width: 3.60.w,
+            ),
             buildTextInstagram(),
           ],
         ),
       ),
     );
   }
-  InkWell importFromTakePhoto(){
+
+  InkWell importFromTakePhoto() {
     return InkWell(
-      onTap: (){
+      onTap: () {
         onClickTakePhoto();
       },
       child: Padding(
@@ -287,7 +333,9 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               buildTakePhotoLogo(),
-              SizedBox(width: 3.3.w,),
+              SizedBox(
+                width: 3.3.w,
+              ),
               buildTextTakePhoto(),
             ],
           ),
@@ -295,9 +343,10 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
       ),
     );
   }
-  InkWell importFromGallery(){
+
+  InkWell importFromGallery() {
     return InkWell(
-      onTap: (){
+      onTap: () {
         onClickFromGallery();
       },
       child: Padding(
@@ -309,7 +358,9 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             buildGalleryLogo(),
-            SizedBox(width: 3.05.w,),
+            SizedBox(
+              width: 3.05.w,
+            ),
             buildTextFromGallery(),
           ],
         ),
@@ -317,45 +368,48 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
     );
   }
 
-  Text buildTextFacebook(){
+  Text buildTextFacebook() {
     return Text(
       //((fontSize! * 30.0) / 35.0).sp
       S.of(context).importFromFacebook,
       style: TextStyle(
-        fontSize: ((15 * 30.0) / 35.0).sp,
+        fontSize: LocalHelper().getFontSize(15).sp,
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w400,
         fontFamily: Strings.ARIAL,
       ),
     );
   }
-  Text buildTextInstagram(){
+
+  Text buildTextInstagram() {
     return Text(
       S.of(context).importFromInstagram,
       style: TextStyle(
-        fontSize: ((15 * 30.0) / 35.0).sp,
+        fontSize: LocalHelper().getFontSize(15).sp,
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w400,
         fontFamily: Strings.ARIAL,
       ),
     );
   }
-  Text buildTextTakePhoto(){
+
+  Text buildTextTakePhoto() {
     return Text(
       S.of(context).takePhoto,
       style: TextStyle(
-        fontSize: ((15 * 30.0) / 35.0).sp,
+        fontSize: LocalHelper().getFontSize(15).sp,
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w400,
         fontFamily: Strings.ARIAL,
       ),
     );
   }
-  Text buildTextFromGallery(){
+
+  Text buildTextFromGallery() {
     return Text(
       S.of(context).chooseFromGallery,
       style: TextStyle(
-        fontSize: ((15 * 30.0) / 35.0).sp,
+        fontSize: LocalHelper().getFontSize(15).sp,
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w400,
         fontFamily: Strings.ARIAL,
@@ -369,21 +423,24 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
       socialMediaOnClick: onClickFacebook,
     );
   }
+
   SocialMediaLogo buildInstagramLogo() {
     return SocialMediaLogo(
       image: Strings.BOTTOM_SHEET_INSTAGRAM_PNG,
       socialMediaOnClick: onClickInstagram,
     );
   }
+
   SocialMediaLogo buildTakePhotoLogo() {
     return SocialMediaLogo(
-      image: Strings.BOTTOM_SHEET_INSTAGRAM_PNG,
+      image: Strings.BOTTOM_SHEET_TAKE_PHOTO_PNG,
       socialMediaOnClick: onClickTakePhoto,
     );
   }
+
   SocialMediaLogo buildGalleryLogo() {
     return SocialMediaLogo(
-      image: Strings.BOTTOM_SHEET_INSTAGRAM_PNG,
+      image: Strings.BOTTOM_SHEET_CHOOSE_FROM_GALLERY_PNG,
       socialMediaOnClick: onClickFromGallery,
     );
   }

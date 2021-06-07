@@ -21,6 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addCompleteSignUpTermsText": MessageLookupByLibrary.simpleMessage(
+            "By registering, you agree to our terms of use, our data policy and our policy for cookies."),
         "addPhotoText": MessageLookupByLibrary.simpleMessage("Add a photo"),
         "addProfilePhoto":
             MessageLookupByLibrary.simpleMessage("Add profile photo"),
@@ -33,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose from gallery"),
         "choosePassword": MessageLookupByLibrary.simpleMessage(
             "Choose a password so we can create an account for you. It must consist of at least 8 characters"),
+        "completeSignUp":
+            MessageLookupByLibrary.simpleMessage("Complete sign up"),
         "confirmationDoesNotMatch":
             MessageLookupByLibrary.simpleMessage("Confirmation does not match"),
         "continueText": MessageLookupByLibrary.simpleMessage("continue"),

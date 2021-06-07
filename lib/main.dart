@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<CreateProfileCubit>(
             create: (BuildContext context) => CreateProfileCubit()),
         BlocProvider<AddPhotoCubit>(
-          create: (BuildContext contet) => AddPhotoCubit()),
+          create: (BuildContext context) => AddPhotoCubit()),
       ],
       child: CharanjuApp(),
     );
