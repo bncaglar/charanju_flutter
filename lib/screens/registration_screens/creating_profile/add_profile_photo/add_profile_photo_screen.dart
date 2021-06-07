@@ -87,33 +87,9 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
   BlocBuilder<AddPhotoCubit, AddPhotoState> buildProfilePictureAvatar() {
     return BlocBuilder<AddPhotoCubit, AddPhotoState>(builder: (context, state) {
       if (state is CreateProfileStepAddPhoto) {
-        return Container(
-          padding: EdgeInsets.only( //seperate asset image
-            left: 34.4.w,
-            right: 34.4.w,
-          ),
-          width: 31.1.w,
-          height: 17.49.h,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(Strings.ADD_PROFILE_PHOTO_PNG),
-            ),
-          ),
-        );
+        return assetImage();
       } else if (state is CreateProfileStepAddPhoto) {
-        return Container( //Seperate network image
-          padding: EdgeInsets.only(
-            left: 34.4.w,
-            right: 34.4.w,
-          ),
-          width: 31.1.w,
-          height: 17.49.h,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(photoURL),
-            ),
-          ),
-        );
+        return networkImage();
       }
       return Container();
     });
@@ -229,6 +205,38 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
       }
       return Container();
     });
+  }
+
+  Container assetImage(){
+    return Container(
+      padding: EdgeInsets.only( //seperate asset image
+        left: 34.4.w,
+        right: 34.4.w,
+      ),
+      width: 31.1.w,
+      height: 17.49.h,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(Strings.ADD_PROFILE_PHOTO_PNG),
+        ),
+      ),
+    );
+  }
+
+  Container networkImage(){
+    return Container( //Seperate network image
+      padding: EdgeInsets.only(
+        left: 34.4.w,
+        right: 34.4.w,
+      ),
+      width: 31.1.w,
+      height: 17.49.h,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(photoURL),
+        ),
+      ),
+    );
   }
 
   void onAddPhotoButtonPressed() {
