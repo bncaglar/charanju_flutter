@@ -1,7 +1,9 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
+import 'package:charanju_flutter/logic/cubit/forget_password_cubit/forget_password_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
+import 'package:charanju_flutter/screens/registration_screens/forget_password/forget_password_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/remember_me_box.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +28,8 @@ class _RememberMeRowState extends State<RememberMeRow> {
 
   onClickForgetPassword() {
     log.i("onClickForgetPassword Started");
+    context.read<ForgetPasswordCubit>().emit(CreateForgetPasswordEnterEmail());
+    Navigator.pushNamed(context, ForgetPasswordSteps.routeName);
   }
 
   @override

@@ -15,6 +15,7 @@ import 'add_profile_photo_steps.dart';
 
 class AddProfilePhotoScreen extends StatefulWidget {
   AddProfilePhotoScreen({Key? key}) : super(key: key);
+
   @override
   _AddProfilePhotoScreenState createState() => _AddProfilePhotoScreenState();
 }
@@ -51,9 +52,10 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
     onAddPhotoButtonPressed();
   }
 
-  onClickCompleteSignUp(){
+  onClickCompleteSignUp() {
     log.i("onClickCompleteSignUp Started");
   }
+
   onClickSkip() {
     log.i("onClickSkip Started");
   }
@@ -64,6 +66,9 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
       child: Column(
         children: [
           buildCustomAppBarSteps(),
+          SizedBox(
+            height: 9.05.h,
+          ),
           buildProfilePictureAvatar(),
           buildRecognitionText(),
           buildContinueNtb(),
@@ -108,7 +113,7 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
                 S.of(context).addaProfilePhotoRecognition,
                 style: TextStyle(
                   color: AppColors.textPrimaryColor,
-                  fontSize: LocalHelper().getFontSize(12).sp,
+                  fontSize: LocalHelper.getFontSize(12).sp,
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.normal,
                 ),
@@ -127,7 +132,7 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
                 S.of(context).addCompleteSignUpTermsText,
                 style: TextStyle(
                   color: AppColors.textPrimaryColor,
-                  fontSize: LocalHelper().getFontSize(12).sp,
+                  fontSize: LocalHelper.getFontSize(12).sp,
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.normal,
                 ),
@@ -194,7 +199,7 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
             S.of(context).skip,
             style: TextStyle(
               color: AppColors.textSkipColor,
-              fontSize: LocalHelper().getFontSize(15).sp,
+              fontSize: LocalHelper.getFontSize(15).sp,
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.normal,
             ),
@@ -207,9 +212,9 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
     });
   }
 
-  Container assetImage(){
+  Container assetImage() {
     return Container(
-      padding: EdgeInsets.only( //seperate asset image
+      padding: EdgeInsets.only(
         left: 34.4.w,
         right: 34.4.w,
       ),
@@ -223,11 +228,12 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
     );
   }
 
-  Container networkImage(){
-    return Container( //Seperate network image
+  Container networkImage() {
+    return Container(
       padding: EdgeInsets.only(
         left: 34.4.w,
         right: 34.4.w,
+        top: 9.05.h,
       ),
       width: 31.1.w,
       height: 17.49.h,
@@ -253,7 +259,6 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
           );
         });
   }
-
 
   Column _buildBottomNavigationMenu() {
     return Column(
@@ -381,7 +386,7 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
       //((fontSize! * 30.0) / 35.0).sp
       S.of(context).importFromFacebook,
       style: TextStyle(
-        fontSize: LocalHelper().getFontSize(15).sp,
+        fontSize: LocalHelper.getFontSize(15).sp,
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w400,
         fontFamily: Strings.ARIAL,
@@ -393,7 +398,7 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
     return Text(
       S.of(context).importFromInstagram,
       style: TextStyle(
-        fontSize: LocalHelper().getFontSize(15).sp,
+        fontSize: LocalHelper.getFontSize(15).sp,
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w400,
         fontFamily: Strings.ARIAL,
@@ -405,7 +410,7 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
     return Text(
       S.of(context).takePhoto,
       style: TextStyle(
-        fontSize: LocalHelper().getFontSize(15).sp,
+        fontSize: LocalHelper.getFontSize(15).sp,
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w400,
         fontFamily: Strings.ARIAL,
@@ -417,7 +422,7 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
     return Text(
       S.of(context).chooseFromGallery,
       style: TextStyle(
-        fontSize: LocalHelper().getFontSize(15).sp,
+        fontSize: LocalHelper.getFontSize(15).sp,
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w400,
         fontFamily: Strings.ARIAL,

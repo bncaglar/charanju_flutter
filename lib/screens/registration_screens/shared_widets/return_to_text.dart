@@ -1,31 +1,29 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class TowPartText extends StatelessWidget {
-  final Function onClickHighlightedText;
   final String normalText;
-  final String highlightedText;
+  final String clickableText;
+  final Function onClickText;
   final EdgeInsetsGeometry? padding;
-
   TowPartText({
-    required this.onClickHighlightedText,
+    required this.clickableText,
     required this.normalText,
-    required this.highlightedText,
+    required this.onClickText,
     this.padding,
   });
+
   @override
   Widget build(BuildContext context) {
     return Hero(
       tag: Strings.DO_NOT_HAVE_ACCOUNT_TAG,
       child: Container(
         width: 100.w,
-        padding: padding ??
-            EdgeInsets.only(
-              top: 5.363.h,
-            ),
+        padding: padding,
         alignment: Alignment.center,
         child: buildTheText(context),
       ),
@@ -36,28 +34,28 @@ class TowPartText extends StatelessWidget {
     return RichText(
       text: TextSpan(
         style: TextStyle(
-          color: AppColors.primaryBlueColor,
-          fontSize: 15.4.sp,
+          color: AppColors.textSkipColor,
+          fontSize: LocalHelper.getFontSize(12),
           fontFamily: Strings.ARIAL,
           fontStyle: FontStyle.normal,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.normal,
         ),
         children: <TextSpan>[
           TextSpan(
             text: normalText,
             style: TextStyle(
               fontFamily: Strings.ARIAL,
-              fontSize: 15.4.sp,
+              fontSize: LocalHelper.getFontSize(12),
               fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w200,
+              fontWeight: FontWeight.normal,
               color: AppColors.textPrimaryColor,
             ),
           ),
           TextSpan(
-            text: highlightedText,
+            text: clickableText,
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                onClickHighlightedText();
+                onClickText();
               },
           ),
         ],

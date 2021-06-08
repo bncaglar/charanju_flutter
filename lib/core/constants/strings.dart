@@ -2,6 +2,7 @@ class Strings {
   static const APP_TITLE = "Charanju";
   static const APP_LOGO_TAG = "LogoTag";
   static const EMAIL_FIELD_TAG = "EmailTag";
+  static const CODE_FIELD_TAG = "CodeTag";
   static const PASSWORD_FIELD_TAG = "PasswordTag";
   static const SOCIAL_MEDIA_TAG = "SocialMediaTag";
   static const OR_TAG = "OrTaf";

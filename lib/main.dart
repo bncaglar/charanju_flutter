@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'logic/cubit/add_photo_cubit/add_photo_cubit.dart';
+import 'logic/cubit/forget_password_cubit/forget_password_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,6 +48,8 @@ class MyApp extends StatelessWidget {
             create: (BuildContext context) => CreateProfileCubit()),
         BlocProvider<AddPhotoCubit>(
           create: (BuildContext context) => AddPhotoCubit()),
+        BlocProvider<ForgetPasswordCubit>(
+            create: (BuildContext context) => ForgetPasswordCubit()),
       ],
       child: CharanjuApp(),
     );

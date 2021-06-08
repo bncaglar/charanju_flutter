@@ -8,19 +8,21 @@ import 'package:sizer/sizer.dart';
 
 class CustomAppBarText extends StatefulWidget {
   String customText;
-  CustomAppBarText(
-      this.customText
-      );
+
+  CustomAppBarText(this.customText);
+
   @override
   _CustomAppBarTextState createState() => _CustomAppBarTextState();
 }
 
 class _CustomAppBarTextState extends State<CustomAppBarText> {
   final log = Logger();
+
   onClickBackBtn() {
     log.i("onClickBackBtn Started");
     Navigator.pop(context);
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,13 +33,13 @@ class _CustomAppBarTextState extends State<CustomAppBarText> {
       ),
     );
   }
-  Container buildAddPhotoAppBar(BuildContext context){
+
+  Container buildAddPhotoAppBar(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
         left: 5.449.w,
         right: 5.449.w,
         top: 1.244.h,
-        bottom: 9.05.h,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,7 +76,7 @@ class _CustomAppBarTextState extends State<CustomAppBarText> {
         child: AutoSizeText(
           this.widget.customText,
           style: TextStyle(
-            fontSize: LocalHelper().getFontSize(15).sp,
+            fontSize: LocalHelper.getFontSize(15),
             color: AppColors.primaryWightColor,
             fontWeight: FontWeight.w400,
             fontFamily: Strings.ARIAL,
@@ -84,5 +86,4 @@ class _CustomAppBarTextState extends State<CustomAppBarText> {
           overflow: TextOverflow.ellipsis,
         ));
   }
-
 }

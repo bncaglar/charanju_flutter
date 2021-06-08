@@ -7,9 +7,11 @@ import 'package:sizer/sizer.dart';
 
 class AlreadyHaveAccountText extends StatelessWidget {
   final log = Logger();
-  onClickSignIn(){
+
+  onClickSignIn() {
     log.i("onClickSignIn started");
   }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,20 +21,20 @@ class AlreadyHaveAccountText extends StatelessWidget {
           S.of(context).alreadyHaveAccount,
           style: TextStyle(
             color: AppColors.textPrimaryColor,
-            fontSize: LocalHelper().getFontSize(12).sp,
+            fontSize: LocalHelper.getFontSize(12).sp,
             fontStyle: FontStyle.normal,
             fontWeight: FontWeight.normal,
           ),
         ),
         InkWell(
-          onTap: (){
+          onTap: () {
             onClickSignIn();
           },
           child: Text(
             S.of(context).signIn,
             style: TextStyle(
               color: AppColors.textSkipColor,
-              fontSize: LocalHelper().getFontSize(12).sp,
+              fontSize: LocalHelper.getFontSize(12).sp,
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.normal,
             ),
