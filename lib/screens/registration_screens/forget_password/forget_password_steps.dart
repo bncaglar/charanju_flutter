@@ -3,7 +3,7 @@ import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logic/cubit/forget_password_cubit/forget_password_cubit.dart';
 import 'package:charanju_flutter/screens/registration_screens/forget_password/enter_email_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/forget_password/terms_of_use.dart';
-import 'package:charanju_flutter/screens/registration_screens/shared_widets/build_custom_app_bar.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/custom_app_bar.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
@@ -57,20 +57,32 @@ class _ForgetPasswordStepsState extends State<ForgetPasswordSteps> {
   BlocBuilder<ForgetPasswordCubit, ForgetPasswordState> customAppBar() {
     return BlocBuilder<ForgetPasswordCubit, ForgetPasswordState>(
         builder: (context, state) {
-          if (state is CreateForgetPasswordEnterEmail) {
-            return CustomAppBarText(S.of(context).forgotPasswordText);
-          }
-          if (state is CreateForgetPasswordEnterCode) {
-            return CustomAppBarText(S.of(context).forgotPasswordText);
-          }
-          if (state is CreateForgetPasswordEnterNewPassword) {
-            return CustomAppBarText(S.of(context).forgotPasswordText);
-          }
-          if (state is CreateForgetPasswordTermsOfUse) {
-            return CustomAppBarText(S.of(context).terms);
-          }
-          return Container();
-        });
+      if (state is CreateForgetPasswordEnterEmail) {
+        return CustomAppBar(
+          title: S.of(context).forgotPasswordText,
+          bottomPadding: 0,
+        );
+      }
+      if (state is CreateForgetPasswordEnterCode) {
+        return CustomAppBar(
+          title: S.of(context).forgotPasswordText,
+          bottomPadding: 0,
+        );
+      }
+      if (state is CreateForgetPasswordEnterNewPassword) {
+        return CustomAppBar(
+          title: S.of(context).forgotPasswordText,
+          bottomPadding: 0,
+        );
+      }
+      if (state is CreateForgetPasswordTermsOfUse) {
+        return CustomAppBar(
+          title: S.of(context).terms,
+          bottomPadding: 0,
+        );
+      }
+      return Container();
+    });
   }
 
   BlocBuilder<ForgetPasswordCubit, ForgetPasswordState> buildFormSteps() {

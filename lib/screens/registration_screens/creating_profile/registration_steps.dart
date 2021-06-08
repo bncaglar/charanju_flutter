@@ -1,12 +1,14 @@
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
+import 'package:charanju_flutter/screens/registration_screens/creating_profile/add_profile_photo_and_complete_signup_screen/add_profile_photo_state_body.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_birthday_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_email_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_password_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_user_name_screen.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/custom_app_bar.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_part_text.dart';
+import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,9 +27,9 @@ class RegistrationSteps extends StatefulWidget {
 class _RegistrationStepsState extends State<RegistrationSteps> {
   final log = Logger();
 
-  onClickBackBtn() {
-    log.i("onClickBackBtn Started");
-    Navigator.pop(context);
+  onSignText() {
+    log.i("onClickSignIn started");
+    Navigator.of(context).pushNamed(SignInScreen.routeName);
   }
 
   @override
@@ -45,94 +47,47 @@ class _RegistrationStepsState extends State<RegistrationSteps> {
     return Container(
       child: Column(
         children: [
-          buildCustomAppBar(context),
-          buildTextLogo(),
-          buildReadyText(context),
+          buildCustomAppBarSteps(),
+          buildTextLogoORImage(),
           buildFormSteps(),
+          SizedBox(
+            height: 9.52.h,
+          ),
+          buildAlreadyHaveAccountText(context),
         ],
       ),
     );
   }
 
-  BlocBuilder<CreateProfileCubit, CreateProfileState> buildFormSteps() {
+  TowPartText buildAlreadyHaveAccountText(BuildContext context) {
+    return TowPartText(
+      normalText: S.of(context).alreadyHaveAccount,
+      clickableText: S.of(context).signIn,
+      onClickText: onSignText,
+    );
+  }
+
+  BlocBuilder<CreateProfileCubit, CreateProfileState> buildTextLogoORImage() {
     return BlocBuilder<CreateProfileCubit, CreateProfileState>(
-        builder: (context, state) {
-      if (state is CreateProfileStepEnterEmail) {
-        return EnterEmailScreen();
-      }
-      if (state is CreateProfileStepEnterPassword) {
-        return EnterPasswordScreen();
-      }
-      if (state is CreateProfileStepEnterUserName) {
-        return EnterUserNameScreen();
-      }
-      if (state is CreateProfileStepEnterBirthday) {
-        return EnterBirthdayScreen();
-      }
-      return Container();
-    });
-  }
+      builder: (context, state) {
+        if ((state is CreateProfileStepAddPhoto) ||
+            (state is CreateProfileStepsCompleted)) {
+          return AddProfilePhotoStep();
+        }
 
-  Container buildCustomAppBar(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        left: 5.449.w,
-        right: 5.449.w,
-        top: 1.244.h,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          buildBackBtn(),
-          Spacer(),
-          buildTitle(context),
-          Spacer(),
-          Placeholder(
-            fallbackWidth: 24.0,
-            strokeWidth: 24.0,
-            fallbackHeight: 24.0,
-            color: Colors.transparent,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Container buildTitle(BuildContext context) {
-    return Container(
-        width: 44.25.w,
-        child: AutoSizeText(
-          S.of(context).createYourProfile,
-          style: TextStyle(
-            fontSize: 15.sp,
-            color: AppColors.primaryWightColor,
-            fontWeight: FontWeight.w400,
-            fontFamily: Strings.ARIAL,
-          ),
-          minFontSize: 12,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-        ));
-  }
-
-  IconButton buildBackBtn() {
-    return IconButton(
-      onPressed: onClickBackBtn,
-      icon: Icon(
-        Icons.arrow_back_ios,
-        color: AppColors.primaryWightColor,
-        size: 17.sp,
-      ),
-    );
-  }
-
-  TextLogo buildTextLogo() {
-    return TextLogo(
-      padding: EdgeInsets.only(
-        top: 3.67.h,
-        left: 29.83.w,
-        right: 30.11.w,
-      ),
+        return Column(
+          children: [
+            TextLogo(
+              padding: EdgeInsets.only(
+                top: 3.67.h,
+                left: 29.83.w,
+                right: 30.11.w,
+              ),
+            ),
+            buildReadyText(context),
+          ],
+        );
+      },
     );
   }
 
@@ -145,6 +100,48 @@ class _RegistrationStepsState extends State<RegistrationSteps> {
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.normal,
       ),
+    );
+  }
+
+  BlocBuilder buildCustomAppBarSteps() {
+    return BlocBuilder<CreateProfileCubit, CreateProfileState>(
+      builder: (context, state) {
+        if (state is CreateProfileStepAddPhoto) {
+          return CustomAppBar(
+            title: S.of(context).addProfilePhoto,
+            bottomPadding: 9.05.h,
+          );
+        } else if (state is CreateProfileStepsCompleted) {
+          return CustomAppBar(
+            title: S.of(context).completeSignUp,
+            bottomPadding: 9.05.h,
+          );
+        }
+        return CustomAppBar(
+          title: S.of(context).createYourProfile,
+          bottomPadding: 0,
+        );
+      },
+    );
+  }
+
+  BlocBuilder<CreateProfileCubit, CreateProfileState> buildFormSteps() {
+    return BlocBuilder<CreateProfileCubit, CreateProfileState>(
+      builder: (context, state) {
+        if (state is CreateProfileStepEnterEmail) {
+          return EnterEmailScreen();
+        }
+        if (state is CreateProfileStepEnterPassword) {
+          return EnterPasswordScreen();
+        }
+        if (state is CreateProfileStepEnterUserName) {
+          return EnterUserNameScreen();
+        }
+        if (state is CreateProfileStepEnterBirthday) {
+          return EnterBirthdayScreen();
+        }
+        return Container();
+      },
     );
   }
 }

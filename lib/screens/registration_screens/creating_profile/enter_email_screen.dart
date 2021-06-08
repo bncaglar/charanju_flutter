@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:charanju_flutter/widgets/form/email_field.dart';
@@ -56,7 +57,7 @@ class _EnterEmailScreenState extends State<EnterEmailScreen> {
         S.of(context).weWillUseThisToSignYou,
         style: TextStyle(
           color: AppColors.textPrimaryColor,
-          fontSize: 12.sp,
+          fontSize: LocalHelper.getFontSize(12),
         ),
         maxLines: 2,
         minFontSize: 12,

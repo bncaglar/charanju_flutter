@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:charanju_flutter/widgets/form/password_field.dart';
@@ -55,7 +56,7 @@ class _EnterPasswordScreenState extends State<EnterPasswordScreen> {
         S.of(context).choosePassword,
         style: TextStyle(
           color: AppColors.textPrimaryColor,
-          fontSize: 12.sp,
+          fontSize: LocalHelper.getFontSize(12),
         ),
         maxLines: 2,
         minFontSize: 12,

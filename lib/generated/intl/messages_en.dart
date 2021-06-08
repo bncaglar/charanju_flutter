@@ -87,7 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "resendCodeText": MessageLookupByLibrary.simpleMessage(" Resend code."),
-        "signIn": MessageLookupByLibrary.simpleMessage("sign in"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Take photo"),

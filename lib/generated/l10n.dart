@@ -240,10 +240,10 @@ class S {
     );
   }
 
-  /// `sign in`
+  /// `Sign in`
   String get signIn {
     return Intl.message(
-      'sign in',
+      'Sign in',
       name: 'signIn',
       desc: '',
       args: [],

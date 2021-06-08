@@ -22,13 +22,11 @@ class _EnterNewPasswordState extends State<EnterNewPassword> {
   TextEditingController passwordController = TextEditingController();
   final _passwordKey = GlobalKey<FormState>();
   TextEditingController newPasswordController = TextEditingController();
-  final _newPasswordKey = GlobalKey<FormState>();
   final log = Logger();
 
   onClickConfirmPassword() {
     log.i("onClickConfirmPassword started");
-    if (_passwordKey.currentState!.validate() &&
-        passwordController.text == newPasswordController.text) {
+    if (_passwordKey.currentState!.validate()) {
       context
           .read<ForgetPasswordCubit>()
           .changeStep(CreateForgetPasswordTermsOfUse());
@@ -42,7 +40,6 @@ class _EnterNewPasswordState extends State<EnterNewPassword> {
         children: [
           buildPasswordField(),
           buildPadding(),
-          buildNewPasswordField(),
           buildMustConsistText(context),
           buildConfirmPasswordNtb()
         ],
@@ -58,35 +55,41 @@ class _EnterNewPasswordState extends State<EnterNewPassword> {
 
   Container buildPasswordField() {
     return Container(
-      padding: EdgeInsets.only(left: 4.69.w, right: 4.69.w, top: 11.95.h),
       child: Form(
         key: _passwordKey,
-        child: Hero(
-          tag: Strings.PASSWORD_FIELD_TAG,
-          child: PasswordField(
-            controller: passwordController,
-            labelText: S.of(context).newPassword,
-            passwordServerError:
-                null, //todo send the server error here after implement the API
-          ),
+        child: Column(
+          children: [newPasswordField(), confirmPasswordField()],
         ),
       ),
     );
   }
 
-  Container buildNewPasswordField() {
+  Container newPasswordField() {
+    return Container(
+      padding: EdgeInsets.only(left: 4.69.w, right: 4.69.w, top: 11.95.h),
+      child: Hero(
+        tag: Strings.EMAIL_FIELD_TAG,
+        child: PasswordField(
+          confirmPasswordController: newPasswordController,
+          controller: passwordController,
+          labelText: S.of(context).newPassword,
+          passwordServerError:
+              null, //todo send the server error here after implement the API
+        ),
+      ),
+    );
+  }
+
+  Container confirmPasswordField() {
     return Container(
       padding: EdgeInsets.only(left: 4.70.w, right: 4.69.w, bottom: 1.56.h),
-      child: Form(
-        key: _newPasswordKey,
-        child: Hero(
-          tag: Strings.PASSWORD_FIELD_TAG,
-          child: PasswordField(
-            controller: newPasswordController,
-            labelText: S.of(context).confirmPassword,
-            passwordServerError:
-                null, //todo send the server error here after implement the API
-          ),
+      child: Hero(
+        tag: Strings.EMAIL_FIELD_TAG,
+        child: PasswordField(
+          controller: newPasswordController,
+          labelText: S.of(context).confirmPassword,
+          passwordServerError:
+              null, //todo send the server error here after implement the API
         ),
       ),
     );

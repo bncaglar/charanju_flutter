@@ -4,26 +4,21 @@ import 'package:meta/meta.dart';
 part 'add_photo_state.dart';
 
 class AddPhotoCubit extends Cubit<AddPhotoState> {
-  AddPhotoCubit() : super(CreateProfileStepAddPhoto());
+  AddPhotoCubit() : super(AddPhotoStateInitial());
 
-  int stepIndex = 0;
-
-
-  changeStep(String photoURL) async {
-    if(photoURL.isEmpty){
-      emit(CreateProfileStepAddPhoto());
+  addNewPhoto({required String photoURL}) async {
+    if (photoURL.isEmpty) {
+      emit(AddPhotoStateInitial());
+    } else {
+      emit(AddPhotoStateDone(photoUrl: photoURL));
     }
-    else if(photoURL.isNotEmpty){
-      emit(CreateProfileStepCompleteSignUp());
-    }
-    emit(state);
   }
 
-  getStep() async {
+  String getPhotoUrl() {
+    return state.photoUrl;
+  }
+
+  getAddPhotoState() {
     return state;
-  }
-
-  int getStepIndex() {
-    return stepIndex;
   }
 }

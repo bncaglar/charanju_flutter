@@ -1,7 +1,7 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/logic/cubit/forget_password_cubit/forget_password_cubit.dart';
-import 'package:charanju_flutter/screens/registration_screens/shared_widets/return_to_text.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_part_text.dart';
 import 'package:charanju_flutter/widgets/form/enter_code_field.dart';
 import 'package:charanju_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ class _EnterCodeForgetPasswordState extends State<EnterCodeForgetPassword> {
       child: Form(
         key: _codeKey,
         child: Hero(
-          tag: Strings.CODE_FIELD_TAG,
+          tag: Strings.EMAIL_FIELD_TAG,
           child: EnterCodeField(
             //validator should be fixed
             controller: codeController,
