@@ -1,5 +1,4 @@
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
-import 'package:charanju_flutter/screens/registration_screens/creating_profile/add_profile_photo/add_profile_photo_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
 import 'package:charanju_flutter/screens/splash_screen/splash_screen.dart';
@@ -28,11 +27,6 @@ class Routes {
       case RegistrationSteps.routeName:
         {
           child = RegistrationSteps();
-          break;
-        }
-      case AddProfilePhotoStep.routeName:
-        {
-          child = AddProfilePhotoStep();
           break;
         }
 

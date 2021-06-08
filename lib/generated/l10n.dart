@@ -230,20 +230,20 @@ class S {
     );
   }
 
-  /// `continue`
+  /// `Continue`
   String get continueText {
     return Intl.message(
-      'continue',
+      'Continue',
       name: 'continueText',
       desc: '',
       args: [],
     );
   }
 
-  /// `sign in`
+  /// `Sign in`
   String get signIn {
     return Intl.message(
-      'sign in',
+      'Sign in',
       name: 'signIn',
       desc: '',
       args: [],

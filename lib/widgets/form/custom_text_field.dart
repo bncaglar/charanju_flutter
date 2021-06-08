@@ -1,4 +1,5 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         autovalidateMode: widget.autoValidateMode,
         textAlignVertical: TextAlignVertical.center,
         style: TextStyle(
-          fontSize: 15.sp,
+          fontSize: LocalHelper.getFontSize(16),
           fontStyle: FontStyle.normal,
           fontFamily: Strings.ABSOLUTE,
           color: AppColors.textPrimaryColor,
@@ -63,10 +64,16 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       ),
       contentPadding: EdgeInsets.only(
         left: 1.7.w,
-        bottom: 1.44.w,
+        bottom: 4.w,
+      ),
+      hintStyle: TextStyle(
+        fontSize: LocalHelper.getFontSize(16),
+        fontStyle: FontStyle.normal,
+        fontFamily: Strings.ABSOLUTE,
+        color: AppColors.textPrimaryColor,
       ),
       labelStyle: TextStyle(
-        fontSize: 15.4.sp,
+        fontSize: LocalHelper.getFontSize(16),
         fontStyle: FontStyle.normal,
         fontFamily: Strings.ABSOLUTE,
         color: AppColors.textPrimaryColor,

@@ -2,15 +2,17 @@ part of 'add_photo_cubit.dart';
 
 @immutable
 abstract class AddPhotoState {
-  final int stepIndex;
-  AddPhotoState({required this.stepIndex});
+  final String photoUrl;
+  AddPhotoState({required this.photoUrl});
 }
 
-class CreateProfileStepAddPhoto extends AddPhotoState{
-  CreateProfileStepAddPhoto() : super(stepIndex: 0);
-}
-class CreateProfileStepCompleteSignUp extends AddPhotoState{
-  CreateProfileStepCompleteSignUp() : super(stepIndex: 1);
+class AddPhotoStateInitial extends AddPhotoState {
+  AddPhotoStateInitial() : super(photoUrl: "");
 }
 
-
+class AddPhotoStateDone extends AddPhotoState {
+  final String photoUrl;
+  AddPhotoStateDone({
+    required this.photoUrl,
+  }) : super(photoUrl: photoUrl);
+}

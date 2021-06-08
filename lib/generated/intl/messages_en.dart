@@ -39,7 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Complete sign up"),
         "confirmationDoesNotMatch":
             MessageLookupByLibrary.simpleMessage("Confirmation does not match"),
-        "continueText": MessageLookupByLibrary.simpleMessage("continue"),
+        "continueText": MessageLookupByLibrary.simpleMessage("Continue"),
         "createYourProfile":
             MessageLookupByLibrary.simpleMessage("Create your profile"),
         "doYouHaveAccount":
@@ -68,7 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ready, set, challenge"),
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
-        "signIn": MessageLookupByLibrary.simpleMessage("sign in"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Take photo"),

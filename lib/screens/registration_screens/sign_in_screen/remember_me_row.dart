@@ -1,5 +1,6 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/remember_me_box.dart';
@@ -50,7 +51,7 @@ class _RememberMeRowState extends State<RememberMeRow> {
       child: Text(
         S.of(context).forgotPassword,
         style: TextStyle(
-          fontSize: 12.sp,
+          fontSize: LocalHelper.getFontSize(12),
           fontFamily: Strings.ARIAL,
           color: AppColors.textPrimaryColor,
         ),
