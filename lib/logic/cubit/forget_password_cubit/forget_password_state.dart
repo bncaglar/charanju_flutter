@@ -6,18 +6,14 @@ abstract class ForgetPasswordState {
   ForgetPasswordState({required this.stepIndex});
 }
 
-class CreateForgetPasswordEnterEmail extends ForgetPasswordState {
-  CreateForgetPasswordEnterEmail() : super(stepIndex: 0);
+class ForgetPasswordEmailStep extends ForgetPasswordState {
+  ForgetPasswordEmailStep() : super(stepIndex: 0);
 }
 
-class CreateForgetPasswordEnterCode extends ForgetPasswordState {
-  CreateForgetPasswordEnterCode() : super(stepIndex: 1);
+class ForgetPasswordCodeStep extends ForgetPasswordState {
+  ForgetPasswordCodeStep() : super(stepIndex: 1);
 }
 
-class CreateForgetPasswordEnterNewPassword extends ForgetPasswordState {
-  CreateForgetPasswordEnterNewPassword() : super(stepIndex: 2);
-}
-
-class CreateForgetPasswordTermsOfUse extends ForgetPasswordState {
-  CreateForgetPasswordTermsOfUse() : super(stepIndex: 3);
+class ForgetPasswordNewPasswordStep extends ForgetPasswordState {
+  ForgetPasswordNewPasswordStep() : super(stepIndex: 2);
 }

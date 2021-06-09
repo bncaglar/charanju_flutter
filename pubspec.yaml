@@ -31,29 +31,30 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-#check the app on multi devices
-  device_preview: ^0.7.3
-
-#Logger mechanism
-  logger: ^1.0.0
-
-# for responsive UIs
-  sizer: ^2.0.13
-
-#resizint the text automatically
+  #resizint the text automatically
   auto_size_text: ^3.0.0-nullsafety.0
-
-
-#  flutter_bloc: ^6.1.1
-  flutter_bloc: ^7.0.1
-
-# to override the == operator as well as hashCode
-  equatable: ^2.0.2
-
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
+  #check the app on multi devices
+  device_preview: ^0.7.3
+
+  # to override the == operator as well as hashCode
+  equatable: ^2.0.2
+
+  #  flutter_bloc: ^6.1.1
+  flutter_bloc: ^7.0.1
+
+  #Logger mechanism
+  logger: ^1.0.0
+
+  # for responsive UIs
+  sizer: ^2.0.13
+
+  #For Animation
+  rive: ^0.7.12
 
 dev_dependencies:
   flutter_test:
@@ -61,7 +62,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
   generate: true
@@ -75,13 +75,11 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-
+    - assets/animations/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
