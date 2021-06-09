@@ -53,10 +53,12 @@ dependencies:
   # for responsive UIs
   sizer: ^2.0.13
 
+#For Animation
+  rive: ^0.7.12
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  rive: ^0.7.12
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
