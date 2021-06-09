@@ -53,7 +53,7 @@ dependencies:
   # for responsive UIs
   sizer: ^2.0.13
 
-#For Animation
+  #For Animation
   rive: ^0.7.12
 
 dev_dependencies:

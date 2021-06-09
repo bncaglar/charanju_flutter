@@ -11,6 +11,7 @@ import 'package:sizer/sizer.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = '/';
+
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
@@ -21,16 +22,14 @@ class _SplashScreenState extends State<SplashScreen> {
   final log = getLogger();
 
   Artboard? _riveArtBoard;
-  RiveAnimationController? _controller;
-
-  bool get isPlaying => _controller?.isActive ?? false;
+  late RiveAnimationController? controller;
 
   loadAnimationFile() {
     rootBundle.load(Strings.LOGO_ICON_RIV).then(
       (data) async {
         final RiveFile file = RiveFile.import(data);
         final Artboard artBoard = file.mainArtboard;
-        artBoard.addController(_controller = SimpleAnimation(
+        artBoard.addController(controller = SimpleAnimation(
           'Animation 1',
           mix: 0.3,
         ));
