@@ -1,4 +1,5 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +78,9 @@ class NavigationButton extends StatelessWidget {
         style: TextStyle(
           color: textColor ?? AppColors.primaryWightColor,
           fontFamily: Strings.ARIAL,
-          fontSize: fontSize ?? 15.sp,
+          fontSize: fontSize == null
+              ? LocalHelper.getFontSize(15)
+              : LocalHelper.getFontSize(fontSize),
           fontStyle: FontStyle.normal,
           fontWeight: fontWeight ?? FontWeight.bold,
         ),

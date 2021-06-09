@@ -1,5 +1,6 @@
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
+import 'package:charanju_flutter/screens/registration_screens/forget_password/forget_password_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
 import 'package:charanju_flutter/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,6 +28,11 @@ class Routes {
       case RegistrationSteps.routeName:
         {
           child = RegistrationSteps();
+          break;
+        }
+      case ForgetPasswordScreen.routeName:
+        {
+          child = ForgetPasswordScreen();
           break;
         }
 

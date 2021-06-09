@@ -230,20 +230,20 @@ class S {
     );
   }
 
-  /// `continue`
+  /// `Continue`
   String get continueText {
     return Intl.message(
-      'continue',
+      'Continue',
       name: 'continueText',
       desc: '',
       args: [],
     );
   }
 
-  /// `sign in`
+  /// `Sign in`
   String get signIn {
     return Intl.message(
-      'sign in',
+      'Sign in',
       name: 'signIn',
       desc: '',
       args: [],
@@ -315,6 +315,276 @@ class S {
     return Intl.message(
       'Wrong date format use this format \'dd/mm/yyyy\'',
       name: 'wrongFormat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Import from facebook`
+  String get importFromFacebook {
+    return Intl.message(
+      'Import from facebook',
+      name: 'importFromFacebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Import from Instagram`
+  String get importFromInstagram {
+    return Intl.message(
+      'Import from Instagram',
+      name: 'importFromInstagram',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take photo`
+  String get takePhoto {
+    return Intl.message(
+      'Take photo',
+      name: 'takePhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose from gallery`
+  String get chooseFromGallery {
+    return Intl.message(
+      'Choose from gallery',
+      name: 'chooseFromGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a photo`
+  String get addPhotoText {
+    return Intl.message(
+      'Add a photo',
+      name: 'addPhotoText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get skip {
+    return Intl.message(
+      'Skip',
+      name: 'skip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a profile picture for recognition`
+  String get addaProfilePhotoRecognition {
+    return Intl.message(
+      'Add a profile picture for recognition',
+      name: 'addaProfilePhotoRecognition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add profile photo`
+  String get addProfilePhoto {
+    return Intl.message(
+      'Add profile photo',
+      name: 'addProfilePhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account? `
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have an account? ',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complete sign up`
+  String get completeSignUp {
+    return Intl.message(
+      'Complete sign up',
+      name: 'completeSignUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By registering, you agree to our terms of use, our data policy and our policy for cookies.`
+  String get addCompleteSignUpTermsText {
+    return Intl.message(
+      'By registering, you agree to our terms of use, our data policy and our policy for cookies.',
+      name: 'addCompleteSignUpTermsText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password`
+  String get forgotPasswordText {
+    return Intl.message(
+      'Forgot password',
+      name: 'forgotPasswordText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We’ll send a code to your account. You can use that to change and create a new password.`
+  String get weWillSendCode {
+    return Intl.message(
+      'We’ll send a code to your account. You can use that to change and create a new password.',
+      name: 'weWillSendCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Code`
+  String get code {
+    return Intl.message(
+      'Code',
+      name: 'code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you didn’t receive a code.`
+  String get receiveCode {
+    return Intl.message(
+      'If you didn’t receive a code.',
+      name: 'receiveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Resend code.`
+  String get resendCodeText {
+    return Intl.message(
+      ' Resend code.',
+      name: 'resendCodeText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid code`
+  String get invalidCode {
+    return Intl.message(
+      'Invalid code',
+      name: 'invalidCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get newPassword {
+    return Intl.message(
+      'New Password',
+      name: 'newPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must consist of at least 8 characters.`
+  String get passwordMustContain {
+    return Intl.message(
+      'Password must consist of at least 8 characters.',
+      name: 'passwordMustContain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms of Use`
+  String get termsOfUse {
+    return Intl.message(
+      'Terms of Use',
+      name: 'termsOfUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis nulla metus turpis ut et cursus amet fringilla. Gravida pellentesque ac volutpat ultrices orci. Massa aliquam consectetur id in feugiat velit et eget. Eget at ultricies lectus lobortis neque, amet imperdiet. Pretium libero, nisi, ut porttitor fringilla morbi purus eu rhoncus. Amet etiam quis consequat magna sed aliquet mattis dapibus tellus. Velit mauris dui eu nibh arcu tellus sapien sollicitudin. Auctor turpis odio in mus donec aliquet nam elementum sed.`
+  String get termsOfUseLongText {
+    return Intl.message(
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis nulla metus turpis ut et cursus amet fringilla. Gravida pellentesque ac volutpat ultrices orci. Massa aliquam consectetur id in feugiat velit et eget. Eget at ultricies lectus lobortis neque, amet imperdiet. Pretium libero, nisi, ut porttitor fringilla morbi purus eu rhoncus. Amet etiam quis consequat magna sed aliquet mattis dapibus tellus. Velit mauris dui eu nibh arcu tellus sapien sollicitudin. Auctor turpis odio in mus donec aliquet nam elementum sed.',
+      name: 'termsOfUseLongText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Agree`
+  String get agree {
+    return Intl.message(
+      'Agree',
+      name: 'agree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `•   Amet etiam quis consequat magna sed aliquet mattis dapibus tellus.`
+  String get paragraph1 {
+    return Intl.message(
+      '•   Amet etiam quis consequat magna sed aliquet mattis dapibus tellus.',
+      name: 'paragraph1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `•   Velit mauris dui eu nibh arcu tellus sapien sollicitudin.`
+  String get paragraph2 {
+    return Intl.message(
+      '•   Velit mauris dui eu nibh arcu tellus sapien sollicitudin.',
+      name: 'paragraph2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `•   Auctor turpis odio in mus donec aliquet nam elementum sed.`
+  String get paragraph3 {
+    return Intl.message(
+      '•   Auctor turpis odio in mus donec aliquet nam elementum sed.',
+      name: 'paragraph3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms`
+  String get terms {
+    return Intl.message(
+      'Terms',
+      name: 'terms',
       desc: '',
       args: [],
     );

@@ -1,10 +1,11 @@
 import 'package:charanju_flutter/generated/l10n.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/or_text.dart';
-import 'package:charanju_flutter/screens/registration_screens/shared_widets/return_to_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/social_media_row.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_part_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/remember_me_row.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_form.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
@@ -50,26 +51,31 @@ class _SignInScreenState extends State<SignInScreen> {
 
   Container buildSignInBody(BuildContext context) {
     return Container(
-      child: Column(
-        children: [
-          TextLogo(),
-          buildReadyText(context),
-          SignInForm(),
-          RememberMeRow(),
-          buildSignInNtb(),
-          OrText(),
-          SocialMediaRow(),
-          buildDoYouHaveAccount(context),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            TextLogo(),
+            buildReadyText(context),
+            SignInForm(),
+            RememberMeRow(),
+            buildSignInNtb(),
+            OrText(),
+            SocialMediaRow(),
+            buildDoYouHaveAccount(context),
+          ],
+        ),
       ),
     );
   }
 
   TowPartText buildDoYouHaveAccount(BuildContext context) {
     return TowPartText(
-      highlightedText: S.of(context).signUp,
+      clickableText: S.of(context).signUp,
+      onClickText: onClickHighlightedText,
       normalText: S.of(context).doYouHaveAccount,
-      onClickHighlightedText: onClickHighlightedText,
+      padding: EdgeInsets.only(
+        top: 5.363.h,
+      ),
     );
   }
 
@@ -90,7 +96,7 @@ class _SignInScreenState extends State<SignInScreen> {
       S.of(context).readySetChallenge,
       style: TextStyle(
         color: AppColors.textPrimaryColor,
-        fontSize: 12.sp,
+        fontSize: LocalHelper.getFontSize(12),
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.normal,
       ),

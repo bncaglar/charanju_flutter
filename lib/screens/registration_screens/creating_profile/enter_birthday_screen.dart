@@ -1,14 +1,19 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
+import 'package:charanju_flutter/logic/cubit/add_photo_cubit/add_photo_cubit.dart';
+import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:charanju_flutter/widgets/form/birthday_field.dart';
 import 'package:charanju_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EnterBirthdayScreen extends StatefulWidget {
+  static const routeName = '/EnterBirthdayScreen';
   const EnterBirthdayScreen({Key? key}) : super(key: key);
 
   @override
@@ -22,6 +27,8 @@ class _EnterBirthdayScreenState extends State<EnterBirthdayScreen> {
 
   onClickContinue() {
     log.i("onClickContinue Started");
+    context.read<CreateProfileCubit>().emit(CreateProfileStepAddPhoto());
+    context.read<AddPhotoCubit>().emit(AddPhotoStateInitial());
   }
 
   @override
@@ -48,7 +55,7 @@ class _EnterBirthdayScreenState extends State<EnterBirthdayScreen> {
         S.of(context).textUnderBirthdayField,
         style: TextStyle(
           color: AppColors.textPrimaryColor,
-          fontSize: 12.sp,
+          fontSize: LocalHelper.getFontSize(12),
         ),
         maxLines: 2,
         minFontSize: 12,
