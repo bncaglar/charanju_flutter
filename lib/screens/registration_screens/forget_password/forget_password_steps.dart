@@ -2,9 +2,9 @@ import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logic/cubit/forget_password_cubit/forget_password_cubit.dart';
 import 'package:charanju_flutter/screens/registration_screens/forget_password/enter_email_screen.dart';
-import 'package:charanju_flutter/screens/registration_screens/forget_password/terms_of_use.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/custom_app_bar.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
+import 'package:charanju_flutter/screens/registration_screens/terms_of_use/terms_of_use_screen.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -98,7 +98,7 @@ class _ForgetPasswordStepsState extends State<ForgetPasswordSteps> {
         return EnterNewPassword();
       }
       if (state is CreateForgetPasswordTermsOfUse) {
-        return TermsOfUse();
+        return TermsOfUseScreen();
       }
       return Container();
     });

@@ -2,14 +2,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
-import 'package:charanju_flutter/logic/cubit/forget_password_cubit/forget_password_cubit.dart';
+import 'package:charanju_flutter/screens/registration_screens/terms_of_use/terms_of_use_screen.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:charanju_flutter/widgets/form/password_field.dart';
 import 'package:charanju_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EnterNewPassword extends StatefulWidget {
   EnterNewPassword({Key? key}) : super(key: key);
@@ -26,11 +25,6 @@ class _EnterNewPasswordState extends State<EnterNewPassword> {
 
   onClickConfirmPassword() {
     log.i("onClickConfirmPassword started");
-    if (_passwordKey.currentState!.validate()) {
-      context
-          .read<ForgetPasswordCubit>()
-          .changeStep(CreateForgetPasswordTermsOfUse());
-    }
   }
 
   @override

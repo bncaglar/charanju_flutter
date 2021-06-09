@@ -102,20 +102,23 @@ class _CustomAppBarState extends State<CustomAppBar> {
     );
   }
 
-  Container buildTitle(BuildContext context) {
-    return Container(
-      width: 44.25.w,
-      child: AutoSizeText(
-        this.widget.title,
-        style: TextStyle(
-          fontSize: LocalHelper.getFontSize(15),
-          color: AppColors.primaryWightColor,
-          fontWeight: FontWeight.w400,
-          fontFamily: Strings.ARIAL,
+  Center buildTitle(BuildContext context) {
+    return Center(
+      child: Container(
+        alignment: Alignment.center,
+        width: 44.25.w,
+        child: AutoSizeText(
+          this.widget.title,
+          style: TextStyle(
+            fontSize: LocalHelper.getFontSize(15),
+            color: AppColors.primaryWightColor,
+            fontWeight: FontWeight.w400,
+            fontFamily: Strings.ARIAL,
+          ),
+          minFontSize: 12,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
         ),
-        minFontSize: 12,
-        maxLines: 2,
-        overflow: TextOverflow.ellipsis,
       ),
     );
   }

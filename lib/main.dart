@@ -74,10 +74,10 @@ class _CharanjuAppState extends State<CharanjuApp> {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, screenType) {
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-          DeviceOrientation.portraitDown,
-        ]);
+        // SystemChrome.setPreferredOrientations([
+        //   DeviceOrientation.portraitUp,
+        //   DeviceOrientation.portraitDown,
+        // ]);
         return MaterialApp(
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
