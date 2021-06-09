@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
+import 'package:charanju_flutter/logic/cubit/forget_password_cubit/forget_password_cubit.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -11,8 +12,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class CustomAppBar extends StatefulWidget {
   final String title;
   final double bottomPadding;
+  final bool fromForgetPassword;
 
-  CustomAppBar({required this.title, required this.bottomPadding});
+  CustomAppBar({
+    required this.title,
+    required this.bottomPadding,
+    this.fromForgetPassword = false,
+  });
 
   @override
   _CustomAppBarState createState() => _CustomAppBarState();
@@ -49,6 +55,21 @@ class _CustomAppBarState extends State<CustomAppBar> {
       context
           .read<CreateProfileCubit>()
           .changeStep(CreateProfileStepEnterBirthday());
+    } else {
+      Navigator.pop(context);
+    }
+  }
+
+  onClickBackBtnForForgetPassword() {
+    log.i("onClickBackBtnForForgetPassword Started");
+    ForgetPasswordState state = context.read<ForgetPasswordCubit>().state;
+    if (state is ForgetPasswordEmailStep) {
+      Navigator.pop(context);
+      context.read<ForgetPasswordCubit>().changeStep(ForgetPasswordEmailStep());
+    } else if (state is ForgetPasswordCodeStep) {
+      context.read<ForgetPasswordCubit>().changeStep(ForgetPasswordEmailStep());
+    } else if (state is ForgetPasswordNewPasswordStep) {
+      context.read<ForgetPasswordCubit>().changeStep(ForgetPasswordCodeStep());
     } else {
       Navigator.pop(context);
     }
@@ -93,7 +114,13 @@ class _CustomAppBarState extends State<CustomAppBar> {
 
   IconButton buildBackBtn() {
     return IconButton(
-      onPressed: onClickBackBtn,
+      onPressed: () {
+        if (widget.fromForgetPassword) {
+          onClickBackBtnForForgetPassword();
+        } else {
+          onClickBackBtn();
+        }
+      },
       icon: Icon(
         Icons.arrow_back_ios,
         color: AppColors.primaryWightColor,

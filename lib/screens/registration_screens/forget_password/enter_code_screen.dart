@@ -2,22 +2,21 @@ import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/logic/cubit/forget_password_cubit/forget_password_cubit.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_part_text.dart';
-import 'package:charanju_flutter/widgets/form/enter_code_field.dart';
+import 'package:charanju_flutter/widgets/form/code_field.dart';
 import 'package:charanju_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class EnterCodeForgetPassword extends StatefulWidget {
-  EnterCodeForgetPassword({Key? key}) : super(key: key);
+class EnterCodeScreen extends StatefulWidget {
+  EnterCodeScreen({Key? key}) : super(key: key);
 
   @override
-  _EnterCodeForgetPasswordState createState() =>
-      _EnterCodeForgetPasswordState();
+  _EnterCodeScreenState createState() => _EnterCodeScreenState();
 }
 
-class _EnterCodeForgetPasswordState extends State<EnterCodeForgetPassword> {
+class _EnterCodeScreenState extends State<EnterCodeScreen> {
   TextEditingController codeController = TextEditingController();
   final _codeKey = GlobalKey<FormState>();
   final log = Logger();
@@ -27,7 +26,7 @@ class _EnterCodeForgetPasswordState extends State<EnterCodeForgetPassword> {
     if (_codeKey.currentState!.validate()) {
       context
           .read<ForgetPasswordCubit>()
-          .changeStep(CreateForgetPasswordEnterNewPassword());
+          .changeStep(ForgetPasswordNewPasswordStep());
     }
   }
 
@@ -42,7 +41,7 @@ class _EnterCodeForgetPasswordState extends State<EnterCodeForgetPassword> {
         children: [
           buildCodeField(),
           resendCodeText(),
-          buildContinueNtb(),
+          buildContinueBtn(),
         ],
       ),
     );
@@ -56,8 +55,7 @@ class _EnterCodeForgetPasswordState extends State<EnterCodeForgetPassword> {
         key: _codeKey,
         child: Hero(
           tag: Strings.EMAIL_FIELD_TAG,
-          child: EnterCodeField(
-            //validator should be fixed
+          child: CodeField(
             controller: codeController,
             serverCodeErrorText:
                 null, //todo send the server error here after implement the API
@@ -67,7 +65,7 @@ class _EnterCodeForgetPasswordState extends State<EnterCodeForgetPassword> {
     );
   }
 
-  NavigationButton buildContinueNtb() {
+  NavigationButton buildContinueBtn() {
     return NavigationButton(
       navigationButtonText: S.of(context).continueText,
       onClickNavigatorButton: onClickContinue,
@@ -81,8 +79,9 @@ class _EnterCodeForgetPasswordState extends State<EnterCodeForgetPassword> {
 
   TowPartText resendCodeText() {
     return TowPartText(
-        normalText: S.of(context).receiveCode,
-        clickableText: S.of(context).resendCodeText,
-        onClickText: onClickResendCode);
+      normalText: S.of(context).receiveCode,
+      clickableText: S.of(context).resendCodeText,
+      onClickText: onClickResendCode,
+    );
   }
 }

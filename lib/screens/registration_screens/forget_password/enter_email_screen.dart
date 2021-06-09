@@ -11,15 +11,14 @@ import 'package:sizer/sizer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:charanju_flutter/widgets/navigation_button.dart';
 
-class EnterEmailForgetPassword extends StatefulWidget {
-  EnterEmailForgetPassword({Key? key}) : super(key: key);
+class EnterEmailScreen extends StatefulWidget {
+  EnterEmailScreen({Key? key}) : super(key: key);
 
   @override
-  _EnterEmailForgetPasswordState createState() =>
-      _EnterEmailForgetPasswordState();
+  _EnterEmailScreenState createState() => _EnterEmailScreenState();
 }
 
-class _EnterEmailForgetPasswordState extends State<EnterEmailForgetPassword> {
+class _EnterEmailScreenState extends State<EnterEmailScreen> {
   TextEditingController emailController = TextEditingController();
   final _emailKey = GlobalKey<FormState>();
   final log = Logger();
@@ -27,9 +26,7 @@ class _EnterEmailForgetPasswordState extends State<EnterEmailForgetPassword> {
   onClickContinue() {
     log.i("onClickContinue Started");
     if (_emailKey.currentState!.validate()) {
-      context
-          .read<ForgetPasswordCubit>()
-          .changeStep(CreateForgetPasswordEnterCode());
+      context.read<ForgetPasswordCubit>().changeStep(ForgetPasswordCodeStep());
     }
   }
 
