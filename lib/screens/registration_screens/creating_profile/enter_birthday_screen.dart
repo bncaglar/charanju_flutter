@@ -27,8 +27,10 @@ class _EnterBirthdayScreenState extends State<EnterBirthdayScreen> {
 
   onClickContinue() {
     log.i("onClickContinue Started");
-    context.read<CreateProfileCubit>().emit(CreateProfileStepAddPhoto());
-    context.read<AddPhotoCubit>().emit(AddPhotoStateInitial());
+    if (_birthdayKey.currentState!.validate()) {
+      context.read<CreateProfileCubit>().emit(CreateProfileStepAddPhoto());
+      context.read<AddPhotoCubit>().emit(AddPhotoStateInitial());
+    }
   }
 
   @override

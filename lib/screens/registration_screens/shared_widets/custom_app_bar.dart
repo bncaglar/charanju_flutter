@@ -13,11 +13,13 @@ class CustomAppBar extends StatefulWidget {
   final String title;
   final double bottomPadding;
   final bool fromForgetPassword;
+  final bool fromTerms;
 
   CustomAppBar({
     required this.title,
     required this.bottomPadding,
     this.fromForgetPassword = false,
+    this.fromTerms = false,
   });
 
   @override
@@ -75,6 +77,11 @@ class _CustomAppBarState extends State<CustomAppBar> {
     }
   }
 
+  onClickBackBtnForTerms() {
+    log.i("onClickBackBtnForTerms Started");
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -117,6 +124,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
       onPressed: () {
         if (widget.fromForgetPassword) {
           onClickBackBtnForForgetPassword();
+        } else if (widget.fromTerms) {
+          onClickBackBtnForTerms();
         } else {
           onClickBackBtn();
         }
@@ -129,23 +138,21 @@ class _CustomAppBarState extends State<CustomAppBar> {
     );
   }
 
-  Center buildTitle(BuildContext context) {
-    return Center(
-      child: Container(
-        alignment: Alignment.center,
-        width: 44.25.w,
-        child: AutoSizeText(
-          this.widget.title,
-          style: TextStyle(
-            fontSize: LocalHelper.getFontSize(15),
-            color: AppColors.primaryWightColor,
-            fontWeight: FontWeight.w400,
-            fontFamily: Strings.ARIAL,
-          ),
-          minFontSize: 12,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
+  Container buildTitle(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      width: 44.25.w,
+      child: AutoSizeText(
+        this.widget.title,
+        style: TextStyle(
+          fontSize: LocalHelper.getFontSize(15),
+          color: AppColors.primaryWightColor,
+          fontWeight: FontWeight.w400,
+          fontFamily: Strings.ARIAL,
         ),
+        minFontSize: 12,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }

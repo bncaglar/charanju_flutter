@@ -4,6 +4,8 @@ import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logic/cubit/add_photo_cubit/add_photo_cubit.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/add_profile_photo_and_complete_signup_screen/add_photo_or_complete_btn.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/add_profile_photo_and_complete_signup_screen/skip_button.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_part_text.dart';
+import 'package:charanju_flutter/screens/registration_screens/terms_of_use/terms_of_use_screen.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,6 +14,7 @@ import 'package:sizer/sizer.dart';
 
 class AddProfilePhotoStep extends StatefulWidget {
   AddProfilePhotoStep({Key? key}) : super(key: key);
+
   @override
   _AddProfilePhotoStepState createState() => _AddProfilePhotoStepState();
 }
@@ -19,8 +22,9 @@ class AddProfilePhotoStep extends StatefulWidget {
 class _AddProfilePhotoStepState extends State<AddProfilePhotoStep> {
   final log = Logger();
 
-  onClickCompleteSignUp() {
-    log.i("onClickCompleteSignUp Started");
+  goToTerms() {
+    log.i("goToTerms Started");
+    Navigator.of(context).pushNamed(TermsOfUseScreen.routeName);
   }
 
   @override
@@ -68,15 +72,11 @@ class _AddProfilePhotoStepState extends State<AddProfilePhotoStep> {
       width: 88.90.w,
       padding: EdgeInsets.only(top: 4.21.h, left: 5.54.w, right: 5.54.w),
       child: Center(
-        child: Text(
-          S.of(context).addCompleteSignUpTermsText,
-          style: TextStyle(
-            color: AppColors.textPrimaryColor,
-            fontSize: LocalHelper.getFontSize(12),
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.normal,
-            fontFamily: Strings.ARIAL,
-          ),
+        child: TowPartText(
+          heroTag: Strings.TERMS_OF_USE_TAG,
+          onClickText: goToTerms,
+          clickableText: S.of(context).addCompleteSignUpTermsTextPart2,
+          normalText: S.of(context).addCompleteSignUpTermsTextPart1,
         ),
       ),
     );
