@@ -5,6 +5,7 @@ import 'package:charanju_flutter/screens/registration_screens/forget_password/en
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/custom_app_bar.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:charanju_flutter/widgets/build_orientation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -28,12 +29,15 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundPrimaryColor,
-        body: buildForgetPasswordBody(context),
+        body: BuildOrientation(
+          landscape: buildForgetPasswordBodyLandscape(context),
+          portrait: buildForgetPasswordBodyPortrait(context),
+        ),
       ),
     );
   }
 
-  Container buildForgetPasswordBody(BuildContext context) {
+  Container buildForgetPasswordBodyPortrait(BuildContext context) {
     return Container(
       child: Column(
         children: [
@@ -42,6 +46,21 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
           buildReadyText(context),
           buildFormSteps()
         ],
+      ),
+    );
+  }
+
+  Container buildForgetPasswordBodyLandscape(BuildContext context) {
+    return Container(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            forgetPasswordAppBar(),
+            buildTextLogo(),
+            buildReadyText(context),
+            buildFormSteps()
+          ],
+        ),
       ),
     );
   }
