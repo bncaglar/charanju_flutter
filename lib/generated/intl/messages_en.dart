@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
+        "announcementText": MessageLookupByLibrary.simpleMessage(
+            "#colapickup event just started join the challenge now!"),
         "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from gallery"),

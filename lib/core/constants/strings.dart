@@ -18,7 +18,15 @@ class Strings {
   static const TWITTER_ICON_PNG = "assets/icons/twitter_icon.png";
   static const GOOGLE_ICON_PNG = "assets/icons/google_icon.png";
   static const FACEBOOK_ICON_PNG = "assets/icons/facebook_icon.png";
+  static const LeftExamplePhoto = "assets/images/photoLeftExample.png";
+  static const RightExamplePhoto = "assets/images/photoRightExample.png";
+  static const MEGAPHONE_ICON_PNG = "assets/icons/megaphone.png";
+  static const SHARE_ICON_PNG = "assets/icons/reply.png";
+  static const PROFILE_PHOTO_1_PNG = "assets/images/pp_1.png";
+  static const PROFILE_PHOTO_2_PNG = "assets/images/pp_2.png";
   static const ADD_PROFILE_PHOTO_PNG = "assets/icons/add_profile_photo.png";
+  static const APP_BAR_HOME_SCREEN_LOGO_PNG = "assets/icons/appBarLogo.png";
+  static const APP_BAR_HOME_SCREEN_BALANCE_SCALE_PNG = "assets/icons/balance-scale.png";
   static const BOTTOM_SHEET_INSTAGRAM_PNG =
       "assets/icons/bottom_sheet_instagram.png";
   static const BOTTOM_SHEET_FACEBOOK_PNG =

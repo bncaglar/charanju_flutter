@@ -1,1 +1,45 @@
-{}
+{
+  "ar": [
+    "announcementText"
+  ],
+
+  "da": [
+    "announcementText"
+  ],
+
+  "de": [
+    "announcementText"
+  ],
+
+  "es": [
+    "announcementText"
+  ],
+
+  "it": [
+    "announcementText"
+  ],
+
+  "ja": [
+    "announcementText"
+  ],
+
+  "ko": [
+    "announcementText"
+  ],
+
+  "pl": [
+    "announcementText"
+  ],
+
+  "pt": [
+    "announcementText"
+  ],
+
+  "sv": [
+    "announcementText"
+  ],
+
+  "zh": [
+    "announcementText"
+  ]
+}
