@@ -420,11 +420,21 @@ class S {
     );
   }
 
-  /// `By registering, you agree to our terms of use, our data policy and our policy for cookies.`
-  String get addCompleteSignUpTermsText {
+  /// `By registering, you agree to our `
+  String get addCompleteSignUpTermsTextPart1 {
     return Intl.message(
-      'By registering, you agree to our terms of use, our data policy and our policy for cookies.',
-      name: 'addCompleteSignUpTermsText',
+      'By registering, you agree to our ',
+      name: 'addCompleteSignUpTermsTextPart1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `terms of use, our data policy and our policy for cookies.`
+  String get addCompleteSignUpTermsTextPart2 {
+    return Intl.message(
+      'terms of use, our data policy and our policy for cookies.',
+      name: 'addCompleteSignUpTermsTextPart2',
       desc: '',
       args: [],
     );

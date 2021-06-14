@@ -8,6 +8,7 @@ class Strings {
   static const OR_TAG = "OrTaf";
   static const SCREENS_TEXT_LOGO_TAG = "LogoTextTag";
   static const DO_NOT_HAVE_ACCOUNT_TAG = "DoYouHaveAnAccountTag";
+  static const TERMS_OF_USE_TAG = "TermsOfUse";
   static const EMAIL_PATTERN =
       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
   static const LOGO_ICON_PNG = "assets/images/logo_splash_screen.png";

@@ -10,17 +10,20 @@ class TowPartText extends StatelessWidget {
   final String clickableText;
   final Function onClickText;
   final EdgeInsetsGeometry? padding;
+  final String? heroTag;
+
   TowPartText({
     required this.clickableText,
     required this.normalText,
     required this.onClickText,
     this.padding,
+    this.heroTag,
   });
 
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: Strings.DO_NOT_HAVE_ACCOUNT_TAG,
+      tag: heroTag ?? Strings.DO_NOT_HAVE_ACCOUNT_TAG,
       child: Container(
         width: 100.w,
         padding: padding,

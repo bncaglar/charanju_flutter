@@ -27,6 +27,7 @@ class _EnterNewPasswordScreenState extends State<EnterNewPasswordScreen> {
 
   onClickConfirmPassword() {
     log.i("onClickConfirmPassword started");
+
     if (_passwordKey.currentState!.validate()) {
       Navigator.of(context).pushNamed(SignInScreen.routeName);
       context.read<ForgetPasswordCubit>().changeStep(ForgetPasswordEmailStep());

@@ -1,4 +1,5 @@
 import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:charanju_flutter/widgets/build_orientation.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
@@ -27,20 +28,45 @@ abstract class LocalHelper {
     showModalBottomSheet(
       context: context,
       builder: (context) {
-        return Container(
-          width: double.infinity,
-          height: 47.16.h,
-          child: Column(
-            children: [
-              straightLine,
-              child,
-            ],
-          ),
-          decoration: BoxDecoration(
-            color: AppColors.modalBottomSheetColor,
-          ),
+        return BuildOrientation(
+          landscape: _landscapeBottomSheet(straightLine, child),
+          portrait: _portraitBottomSheet(straightLine, child),
         );
       },
+    );
+  }
+
+  static Container _landscapeBottomSheet(Padding straightLine, Widget child) {
+    return Container(
+      width: double.infinity,
+      height: 47.16.h,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            straightLine,
+            child,
+          ],
+        ),
+      ),
+      decoration: BoxDecoration(
+        color: AppColors.modalBottomSheetColor,
+      ),
+    );
+  }
+
+  static Container _portraitBottomSheet(Padding straightLine, Widget child) {
+    return Container(
+      width: double.infinity,
+      height: 47.16.h,
+      child: Column(
+        children: [
+          straightLine,
+          child,
+        ],
+      ),
+      decoration: BoxDecoration(
+        color: AppColors.modalBottomSheetColor,
+      ),
     );
   }
 }

@@ -9,6 +9,7 @@ import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/remember_me_row.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_form.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:charanju_flutter/widgets/build_orientation.dart';
 import 'package:charanju_flutter/widgets/navigation_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -44,12 +45,32 @@ class _SignInScreenState extends State<SignInScreen> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundPrimaryColor,
-        body: buildSignInBody(context),
+        body: BuildOrientation(
+          landscape: buildSignInBodyLandscape(context),
+          portrait: buildSignInBodyPortrait(context),
+        ),
       ),
     );
   }
 
-  Container buildSignInBody(BuildContext context) {
+  Container buildSignInBodyPortrait(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          TextLogo(),
+          buildReadyText(context),
+          SignInForm(),
+          RememberMeRow(),
+          buildSignInNtb(),
+          OrText(),
+          SocialMediaRow(),
+          buildDoYouHaveAccount(context),
+        ],
+      ),
+    );
+  }
+
+  Container buildSignInBodyLandscape(BuildContext context) {
     return Container(
       child: SingleChildScrollView(
         child: Column(
