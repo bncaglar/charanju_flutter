@@ -13,4 +13,5 @@ class AppColors {
   static final textSkipColor = HexColor("#41C4E1");
   static final modalBottomSheetColor = HexColor("#1C1C1F");
   static final secondaryGrayColor = HexColor("#4F4F4F");
+  static final backgroundProfileSmallIconColor = HexColor("#060606");
 }

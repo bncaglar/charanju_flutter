@@ -3,51 +3,54 @@ import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class NameTagRow extends StatelessWidget {
-  const NameTagRow({Key? key}) : super(key: key);
+class ProfileAppBar extends StatelessWidget {
+  ProfileAppBar({Key? key}) : super(key: key);
+
+  final log = getLogger();
+
+  onClickMore() {
+    log.i("onClickMore Started");
+  }
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Spacer(
-          flex: 30,
-        ),
-        Expanded(
-          flex: 22,
-          child: buildNameText(),
-        ),
-        Spacer(
-          flex: 20,
-        ),
-        Expanded(flex: 10, child: buildMenuIcon()),
+        Spacer(),
+        buildNameText(),
+        Spacer(),
+        buildMenuIcon(),
       ],
     );
   }
 
-  IconButton buildMenuIcon() {
-    final log = getLogger();
-    return IconButton(
+  Container buildMenuIcon() {
+    return Container(
+      padding: EdgeInsets.only(right: 2.7.w),
+      child: IconButton(
         icon: Image.asset(
           Strings.PROFILE_MENU_ICON,
           color: AppColors.primaryWightColor,
         ),
-        onPressed: () {
-          log.i("navigate to profile page options");
-        });
+        onPressed: onClickMore,
+      ),
+    );
   }
 
   AutoSizeText buildNameText() {
     return AutoSizeText(
-      //todo get username data
+      //todo get username from API
       "JacobSmith",
       style: TextStyle(
         color: AppColors.primaryWightColor,
         fontSize: LocalHelper.getFontSize(15),
+        fontFamily: Strings.ARIAL,
+        fontWeight: FontWeight.w400,
       ),
       maxLines: 1,
       minFontSize: 15,

@@ -1,43 +1,37 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class BiographyRow extends StatelessWidget {
-  const BiographyRow({Key? key}) : super(key: key);
+class ProfileBiography extends StatelessWidget {
+  const ProfileBiography({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(
-          width: 4.7.w,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Expanded(
-              flex: 2,
-              child: SizedBox(),
-            ),
-            Expanded(flex: 8, child: buildBiographyText(context)),
-            Expanded(
-                flex: 25,
-                child: SizedBox(
-                    child: buildBiographyContent(context), width: 90.w)),
-          ],
-        ),
-      ],
+    return Container(
+      padding: EdgeInsets.only(
+        top: 0.78.h,
+        left: 5.w,
+        right: 8.3.w,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          buildBiographyText(context),
+          buildBiographyContent(context),
+        ],
+      ),
     );
   }
 
   AutoSizeText buildBiographyContent(BuildContext context) {
     return AutoSizeText(
-      //todo get biography content
+      //todo get biography content from API
       S.of(context).biographyLongText,
       style: TextStyle(
         color: AppColors.primaryWightColor,
@@ -52,10 +46,13 @@ class BiographyRow extends StatelessWidget {
 
   AutoSizeText buildBiographyText(BuildContext context) {
     return AutoSizeText(
-      S.of(context).biography + "\n",
+      //todo get biography content from API
+      S.of(context).biography,
       style: TextStyle(
         color: AppColors.primaryWightColor,
         fontSize: LocalHelper.getFontSize(12),
+        fontWeight: FontWeight.w400,
+        fontFamily: Strings.ARIAL,
       ),
       maxLines: 1,
       minFontSize: 14,

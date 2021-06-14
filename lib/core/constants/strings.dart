@@ -31,7 +31,7 @@ class Strings {
   static const ABSOLUTE = "absolute";
   static const ARIAL = "Arial";
   static const PROFILE_MENU_ICON = "assets/icons/profile_menu_icon.png";
-  static const TROPYHY_ICON = "assets/icons/trophy_icon.png";
+  static const TROPHY_ICON = "assets/icons/trophy_icon.png";
   static const BALANCE_SCALE_ICON = "assets/icons/balance_scale_icon.png";
   static const ACHIEVEMENT_ICON = "assets/icons/achievement_icon.png";
   static const MEDAL_ICON = "assets/icons/medal_icon.png";
