@@ -6,7 +6,7 @@ import 'package:charanju_flutter/screens/registration_screens/creating_profile/e
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_password_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/enter_user_name_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/custom_app_bar.dart';
-import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/text_logo.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_part_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
 import 'package:charanju_flutter/utilities/colors.dart';

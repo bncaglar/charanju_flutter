@@ -3,7 +3,7 @@ import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/widgets/build_orientation.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/custom_app_bar.dart';
-import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/text_logo.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:charanju_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';

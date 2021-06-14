@@ -4,7 +4,7 @@ import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/or_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/social_media_row.dart';
-import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/text_logo.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_part_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/remember_me_row.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_form.dart';

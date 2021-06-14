@@ -1,1 +1,56 @@
-{}
+{
+  "ar": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "da": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "de": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "es": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "it": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "ja": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "ko": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "pl": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "pt": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "sv": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ],
+
+  "zh": [
+    "addCompleteSignUpTermsTextPart1",
+    "addCompleteSignUpTermsTextPart2"
+  ]
+}
