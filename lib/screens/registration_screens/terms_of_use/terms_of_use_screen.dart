@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
-import 'package:charanju_flutter/screens/registration_screens/shared_widets/build_orientation.dart';
+import 'package:charanju_flutter/widgets/build_orientation.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/custom_app_bar.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
@@ -9,7 +9,6 @@ import 'package:charanju_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
-
 
 class TermsOfUseScreen extends StatefulWidget {
   static const routeName = '/TermsOfUseScreen';
@@ -34,10 +33,11 @@ class _TermsOfUseScreenState extends State<TermsOfUseScreen> {
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundPrimaryColor,
         body: Container(
-            child: BuildOrientation(
-              landscape: buildBodyLandscape(),
-              portrait: buildBodyPortrait(),
-        )),
+          child: BuildOrientation(
+            landscape: buildBodyLandscape(),
+            portrait: buildBodyPortrait(),
+          ),
+        ),
       ),
     );
   }
@@ -76,6 +76,7 @@ class _TermsOfUseScreenState extends State<TermsOfUseScreen> {
     return CustomAppBar(
       title: S.of(context).terms,
       bottomPadding: 0,
+      fromTerms: true,
     );
   }
 
@@ -137,7 +138,11 @@ class _TermsOfUseScreenState extends State<TermsOfUseScreen> {
   Container termsOfUseTextLongP1() {
     return Container(
       child: Column(
-        children: [paragraph1(), paragraph2(), paragraph3()],
+        children: [
+          paragraph1(),
+          paragraph2(),
+          paragraph3(),
+        ],
       ),
     );
   }

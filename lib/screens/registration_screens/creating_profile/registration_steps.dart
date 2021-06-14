@@ -10,6 +10,7 @@ import 'package:charanju_flutter/screens/registration_screens/shared_widets/test
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_part_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:charanju_flutter/widgets/build_orientation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
@@ -38,12 +39,15 @@ class _RegistrationStepsState extends State<RegistrationSteps> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundPrimaryColor,
-        body: buildRegistrationStepsBody(context),
+        body: BuildOrientation(
+          landscape: buildRegistrationStepsBodyLandscape(context),
+          portrait: buildRegistrationStepsBodyPortrait(context),
+        ),
       ),
     );
   }
 
-  Container buildRegistrationStepsBody(BuildContext context) {
+  Container buildRegistrationStepsBodyPortrait(BuildContext context) {
     return Container(
       child: Column(
         children: [
@@ -55,6 +59,24 @@ class _RegistrationStepsState extends State<RegistrationSteps> {
           ),
           buildAlreadyHaveAccountText(context),
         ],
+      ),
+    );
+  }
+
+  Container buildRegistrationStepsBodyLandscape(BuildContext context) {
+    return Container(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            buildCustomAppBarSteps(),
+            buildTextLogoORImage(),
+            buildFormSteps(),
+            SizedBox(
+              height: 9.52.h,
+            ),
+            buildAlreadyHaveAccountText(context),
+          ],
+        ),
       ),
     );
   }
