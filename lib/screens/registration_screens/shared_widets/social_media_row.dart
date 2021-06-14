@@ -1,4 +1,5 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/screens/profile_screens/my_profile_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/social_media_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -13,6 +14,7 @@ class _SocialMediaRowState extends State<SocialMediaRow> {
   final log = Logger();
   appleOnClick() {
     log.i("appleOnClick started");
+    Navigator.pushNamed(context, MyProfileScreen.routeName);
   }
 
   facebookOnClick() {

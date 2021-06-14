@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
+        "biography": MessageLookupByLibrary.simpleMessage("Biography"),
+        "biographyLongText": MessageLookupByLibrary.simpleMessage(
+            "Volutpat maecenas volutpat blandit aliquam etiam erat velit. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Hendrerit gravida rutrum quisque non tellus orci ac auctor."),
         "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from gallery"),
@@ -49,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("Do not have an account? "),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "followers": MessageLookupByLibrary.simpleMessage("Followers"),
+        "follows": MessageLookupByLibrary.simpleMessage("Follows"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "forgotPasswordText":
@@ -80,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password must have one special character"),
         "passwordOneUppercase": MessageLookupByLibrary.simpleMessage(
             "Password must have one uppercase letter"),
+        "points": MessageLookupByLibrary.simpleMessage("Points"),
         "readySetChallenge":
             MessageLookupByLibrary.simpleMessage("ready, set, challenge"),
         "receiveCode": MessageLookupByLibrary.simpleMessage(

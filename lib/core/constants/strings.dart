@@ -29,4 +29,34 @@ class Strings {
   static const NETWORK_IMAGE = "assets/images/network_image.png";
   static const ABSOLUTE = "absolute";
   static const ARIAL = "Arial";
+  static const PROFILE_MENU_ICON = "assets/icons/profile_menu_icon.png";
+  static const TROPYHY_ICON = "assets/icons/trophy_icon.png";
+  static const BALANCE_SCALE_ICON = "assets/icons/balance_scale_icon.png";
+  static const ACHIEVEMENT_ICON = "assets/icons/achievement_icon.png";
+  static const MEDAL_ICON = "assets/icons/medal_icon.png";
+  static const SURFACE_ICON = "assets/icons/surface_icon.png";
+  static const MY_TROPHY_IMAGE_1 = "assets/images/my_trophy_image_1.png";
+  static const MY_TROPHY_IMAGE_2 = "assets/images/my_trophy_image_2.png";
+  static const MY_TROPHY_IMAGE_3 = "assets/images/my_trophy_image_3.png";
+  static const MY_TROPHY_IMAGE_4 = "assets/images/my_trophy_image_4.png";
+  static const MY_TROPHY_IMAGE_5 = "assets/images/my_trophy_image_5.png";
+  static const MY_TROPHY_IMAGE_6 = "assets/images/my_trophy_image_6.png";
+  static const MY_BALANCE_IMAGE_1 =
+      "assets/images/my_balance_scale_image_1.png";
+  static const MY_BALANCE_IMAGE_2 =
+      "assets/images/my_balance_scale_image_2.png";
+  static const MY_BALANCE_IMAGE_3 =
+      "assets/images/my_balance_scale_image_3.png";
+  static const MY_ACHIEVEMENT_IMAGE_1 =
+      "assets/images/my_achievement_image_1.png";
+  static const MY_ACHIEVEMENT_IMAGE_2 =
+      "assets/images/my_achievement_image_2.png";
+  static const MY_ACHIEVEMENT_IMAGE_3 =
+      "assets/images/my_achievement_image_3.png";
+  static const MY_ACHIEVEMENT_IMAGE_4 =
+      "assets/images/my_achievement_image_4.png";
+  static const MY_ACHIEVEMENT_IMAGE_5 =
+      "assets/images/my_achievement_image_5.png";
+  static const MY_ACHIEVEMENT_IMAGE_6 =
+      "assets/images/my_achievement_image_6.png";
 }
