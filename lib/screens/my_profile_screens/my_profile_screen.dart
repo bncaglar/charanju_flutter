@@ -3,6 +3,7 @@ import 'package:charanju_flutter/screens/my_profile_screens/profile_picture_gall
 import 'package:charanju_flutter/screens/my_profile_screens/profile_app_bar.dart';
 import 'package:charanju_flutter/screens/my_profile_screens/profile_picture_row.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:charanju_flutter/widgets/build_orientation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -18,12 +19,15 @@ class MyProfileScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundPrimaryColor,
-        body: buildMyProfileScreenBody(context),
+        body: BuildOrientation(
+          portrait: buildMyProfileScreenBodyPortrait(context),
+          landscape: buildMyProfileScreenBodyLandscape(context),
+        ),
       ),
     );
   }
 
-  Container buildMyProfileScreenBody(BuildContext context) {
+  Container buildMyProfileScreenBodyPortrait(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
         top: 0.78.h,
@@ -35,6 +39,24 @@ class MyProfileScreen extends StatelessWidget {
           ProfileBiography(),
           ProfilePictureGallery(),
         ],
+      ),
+    );
+  }
+
+  Container buildMyProfileScreenBodyLandscape(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        top: 0.78.h,
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ProfileAppBar(),
+            ProfilePictureAndData(),
+            ProfileBiography(),
+            ProfilePictureGallery(),
+          ],
+        ),
       ),
     );
   }

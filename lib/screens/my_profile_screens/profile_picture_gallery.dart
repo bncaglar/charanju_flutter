@@ -119,7 +119,7 @@ class _ProfilePictureGalleryState extends State<ProfilePictureGallery> {
 
   Container buildProfileImagesGridView() {
     return Container(
-      height: 45.h,
+      height: 43.h,
       width: double.infinity,
       child: BlocBuilder<ProfileTabSelectedCubit, ProfileTabSelectedState>(
         builder: (context, state) {
