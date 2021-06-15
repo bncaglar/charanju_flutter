@@ -21,6 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "accountActivity":
+            MessageLookupByLibrary.simpleMessage("Account activity"),
         "addCompleteSignUpTermsTextPart1": MessageLookupByLibrary.simpleMessage(
             "By registering, you agree to our "),
         "addCompleteSignUpTermsTextPart2": MessageLookupByLibrary.simpleMessage(
@@ -33,6 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
+        "animatedMiniature":
+            MessageLookupByLibrary.simpleMessage("Animated Miniature"),
+        "backupFiles": MessageLookupByLibrary.simpleMessage("Backup Files"),
         "biography": MessageLookupByLibrary.simpleMessage("Biography"),
         "biographyLongText": MessageLookupByLibrary.simpleMessage(
             "Volutpat maecenas volutpat blandit aliquam etiam erat velit. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Hendrerit gravida rutrum quisque non tellus orci ac auctor."),
@@ -48,27 +53,41 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmationDoesNotMatch":
             MessageLookupByLibrary.simpleMessage("Confirmation does not match"),
+        "contentSettings":
+            MessageLookupByLibrary.simpleMessage("Content Settings"),
         "continueText": MessageLookupByLibrary.simpleMessage("Continue"),
         "createYourProfile":
             MessageLookupByLibrary.simpleMessage("Create your profile"),
+        "dataSettings": MessageLookupByLibrary.simpleMessage("Data settings"),
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("Do not have an account? "),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
         "followers": MessageLookupByLibrary.simpleMessage("Followers"),
         "follows": MessageLookupByLibrary.simpleMessage("Follows"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "forgotPasswordText":
             MessageLookupByLibrary.simpleMessage("Forgot password"),
+        "freeUpSpace": MessageLookupByLibrary.simpleMessage("Free up space"),
+        "generalSettings":
+            MessageLookupByLibrary.simpleMessage("General Settings"),
         "hello": MessageLookupByLibrary.simpleMessage("hello"),
         "importFromFacebook":
             MessageLookupByLibrary.simpleMessage("Import from facebook"),
         "importFromInstagram":
             MessageLookupByLibrary.simpleMessage("Import from Instagram"),
+        "interestSettings":
+            MessageLookupByLibrary.simpleMessage("Interest Settings"),
         "invalidCode": MessageLookupByLibrary.simpleMessage("Invalid code"),
         "invalidEmailAddress":
             MessageLookupByLibrary.simpleMessage("Invalid Email Address"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "mobileDataUse":
+            MessageLookupByLibrary.simpleMessage("Mobile data use"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+        "on": MessageLookupByLibrary.simpleMessage("On"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
         "paragraph1": MessageLookupByLibrary.simpleMessage(
             "•   Amet etiam quis consequat magna sed aliquet mattis dapibus tellus."),
@@ -93,8 +112,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "receiveCode": MessageLookupByLibrary.simpleMessage(
             "If you didn’t receive a code."),
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
+        "removeAccount": MessageLookupByLibrary.simpleMessage("Remove account"),
+        "removePhotosensitiveVideos": MessageLookupByLibrary.simpleMessage(
+            "Remove photosensitive videos"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "resendCodeText": MessageLookupByLibrary.simpleMessage(" Resend code."),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
@@ -110,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "userName": MessageLookupByLibrary.simpleMessage("Username"),
         "userNameStartWithCapitalLetter": MessageLookupByLibrary.simpleMessage(
             "User name should start with capital letter"),
+        "videoLanguage": MessageLookupByLibrary.simpleMessage("Video Language"),
         "weWillSendCode": MessageLookupByLibrary.simpleMessage(
             "We’ll send a code to your account. You can use that to change and create a new password."),
         "weWillUseThisToSignYou": MessageLookupByLibrary.simpleMessage(
