@@ -56,6 +56,9 @@ dependencies:
   #For Animation
   rive: ^0.7.12
 
+#  #Swipe Animation
+#  dismissible_page: ^0.6.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

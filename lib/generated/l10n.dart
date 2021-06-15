@@ -819,6 +819,16 @@ class S {
       args: [],
     );
   }
+
+  /// `#colapickup event just started join the challenge now!`
+  String get announcementText {
+    return Intl.message(
+      '#colapickup event just started join the challenge now!',
+      name: 'announcementText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

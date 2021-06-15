@@ -37,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
         "animatedMiniature":
             MessageLookupByLibrary.simpleMessage("Animated Miniature"),
+        "announcementText": MessageLookupByLibrary.simpleMessage(
+            "#colapickup event just started join the challenge now!"),
         "backupFiles": MessageLookupByLibrary.simpleMessage("Backup Files"),
         "biography": MessageLookupByLibrary.simpleMessage("Biography"),
         "biographyLongText": MessageLookupByLibrary.simpleMessage(
