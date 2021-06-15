@@ -76,7 +76,6 @@ class _TermsOfUseScreenState extends State<TermsOfUseScreen> {
     return CustomAppBar(
       title: S.of(context).terms,
       bottomPadding: 0,
-      fromTerms: true,
     );
   }
 

@@ -13,13 +13,13 @@ class CustomAppBar extends StatefulWidget {
   final String title;
   final double bottomPadding;
   final bool fromForgetPassword;
-  final bool fromTerms;
+  final bool fromRegistration;
 
   CustomAppBar({
     required this.title,
     required this.bottomPadding,
     this.fromForgetPassword = false,
-    this.fromTerms = false,
+    this.fromRegistration = false,
   });
 
   @override
@@ -29,7 +29,7 @@ class CustomAppBar extends StatefulWidget {
 class _CustomAppBarState extends State<CustomAppBar> {
   final log = Logger();
 
-  onClickBackBtn() {
+  onClickBackBtnForRegistration() {
     log.i("onClickBackBtn Started");
     CreateProfileState state = context.read<CreateProfileCubit>().state;
     if (state is CreateProfileStepEnterEmail) {
@@ -77,8 +77,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
     }
   }
 
-  onClickBackBtnForTerms() {
-    log.i("onClickBackBtnForTerms Started");
+  onClickBackBtnDefault() {
+    log.i("onClickBackBtnDefault Started");
     Navigator.pop(context);
   }
 
@@ -96,7 +96,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Container buildAddPhotoAppBar(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        left: 5.449.w,
+        left: 3.249.w,
         right: 5.449.w,
         top: 1.244.h,
         bottom: widget.bottomPadding,
@@ -124,10 +124,10 @@ class _CustomAppBarState extends State<CustomAppBar> {
       onPressed: () {
         if (widget.fromForgetPassword) {
           onClickBackBtnForForgetPassword();
-        } else if (widget.fromTerms) {
-          onClickBackBtnForTerms();
+        } else if (widget.fromRegistration) {
+          onClickBackBtnForRegistration();
         } else {
-          onClickBackBtn();
+          onClickBackBtnDefault();
         }
       },
       icon: Icon(

@@ -1,14 +1,16 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
-import 'package:charanju_flutter/screens/settings_screen/shared_widgets/settings_list_tile.dart';
+import 'package:charanju_flutter/widgets/settings_list_tile.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class SettingsContainer extends StatelessWidget {
+class SettingsCategory extends StatelessWidget {
   final String header;
   final List<SettingsListTile> itemList;
-  SettingsContainer({
+
+  SettingsCategory({
     required this.header,
     required this.itemList,
   });
@@ -21,24 +23,15 @@ class SettingsContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           headerText(),
-          contentListView(),
+          contentList(),
         ],
       ),
     );
   }
 
-  Container contentListView() {
-    return Container(
-      height: itemList.length * 5.h,
-      child: ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: itemList.length,
-        padding: EdgeInsets.zero,
-        itemExtent: 4.7.h,
-        itemBuilder: (BuildContext context, int index) {
-          return itemList[index];
-        },
-      ),
+  Column contentList() {
+    return Column(
+      children: [...itemList],
     );
   }
 
@@ -48,6 +41,8 @@ class SettingsContainer extends StatelessWidget {
       style: TextStyle(
         color: AppColors.transparentGrayColor,
         fontSize: LocalHelper.getFontSize(12),
+        fontFamily: Strings.ARIAL,
+        fontWeight: FontWeight.w700,
       ),
       maxLines: 2,
       minFontSize: 12,

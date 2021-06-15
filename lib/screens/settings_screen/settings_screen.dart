@@ -1,62 +1,69 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/custom_app_bar.dart';
-import 'package:charanju_flutter/screens/settings_screen/shared_widgets/settings_container.dart';
-import 'package:charanju_flutter/screens/settings_screen/shared_widgets/settings_list_tile.dart';
+import 'package:charanju_flutter/screens/settings_screen/settings_category.dart';
+import 'package:charanju_flutter/widgets/settings_divider.dart';
+import 'package:charanju_flutter/widgets/settings_list_tile.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   static const routeName = '/SettingsScreen';
   static final log = Logger();
 
   const SettingsScreen({Key? key}) : super(key: key);
 
+  @override
+  _SettingsScreenState createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
   onTappedLanguage() {
-    log.i("onTappedLanguage Started");
+    SettingsScreen.log.i("onTappedLanguage Started");
   }
 
   onTappedNotifications() {
-    log.i("onTappedNotifications Started");
+    SettingsScreen.log.i("onTappedNotifications Started");
   }
 
   onTappedBackupFiles() {
-    log.i("onTappedBackupFiles Started");
+    SettingsScreen.log.i("onTappedBackupFiles Started");
   }
 
   onTappedVideoLanguage() {
-    log.i("onTappedVideoLanguage Started");
+    SettingsScreen.log.i("onTappedVideoLanguage Started");
   }
 
   onTappedInterestSettings() {
-    log.i("onTappedInterestSettings Started");
+    SettingsScreen.log.i("onTappedInterestSettings Started");
   }
 
   onTappedAnimatedMiniature() {
-    log.i("onTappedAnimatedMiniature Started");
+    SettingsScreen.log.i("onTappedAnimatedMiniature Started");
   }
 
   onTappedRemovePhotosensitiveVideos() {
-    log.i("onTappedRemovePhotosensitiveVideos Started");
+    SettingsScreen.log.i("onTappedRemovePhotosensitiveVideos Started");
   }
 
   onTappedMobileDataUse() {
-    log.i("onTappedMobileDataUse Started");
+    SettingsScreen.log.i("onTappedMobileDataUse Started");
   }
 
   onTappedAccountActivity() {
-    log.i("onTappedAccountActivity Started");
+    SettingsScreen.log.i("onTappedAccountActivity Started");
   }
 
   onTappedFreeUpSpace() {
-    log.i("onTappedFreeUpSpace Started");
+    SettingsScreen.log.i("onTappedFreeUpSpace Started");
   }
 
   onPressedRemoveAccount() {
-    log.i("onPressedRemoveAccount Started");
+    SettingsScreen.log.i("onPressedRemoveAccount Started");
   }
 
   @override
@@ -70,56 +77,53 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Column buildSettingsScreenBody(BuildContext context) {
-    return Column(
-      children: [
-        buildCustomAppBar(context),
-        generalSettingsContainer(context),
-        Divider(
-          color: AppColors.transparentGrayColor,
-          thickness: 1.sp,
-          indent: 4.7.w,
-          endIndent: 4.7.w,
-        ),
-        contentSettingsContainer(context),
-        Divider(
-          color: AppColors.transparentGrayColor,
-          thickness: 1.sp,
-          indent: 4.7.w,
-          endIndent: 4.7.w,
-        ),
-        dataSettingsContainer(context),
-        removeAccountTextButton(context),
-      ],
+  SingleChildScrollView buildSettingsScreenBody(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          buildSettingsAppBar(context),
+          buildGeneralSettings(context),
+          SettingsDivider(),
+          buildContentSettings(context),
+          SettingsDivider(),
+          buildDataSettings(context),
+          buildRemoveAccountBtn(context),
+        ],
+      ),
     );
   }
 
-  Padding removeAccountTextButton(BuildContext context) {
-    return Padding(
+  Container buildRemoveAccountBtn(BuildContext context) {
+    return Container(
       padding: EdgeInsets.only(
-        left: 56.5.w,
+        right: 4.44.w,
         top: 7.8.h,
       ),
-      child: TextButton(
-        onPressed: () {
-          onPressedRemoveAccount();
-        },
-        child: AutoSizeText(
-          S.of(context).removeAccount,
-          style: TextStyle(
-            color: AppColors.primaryWightColor,
-            fontSize: LocalHelper.getFontSize(15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          TextButton(
+            onPressed: onPressedRemoveAccount,
+            child: AutoSizeText(
+              S.of(context).removeAccount,
+              style: TextStyle(
+                color: AppColors.primaryWightColor,
+                fontSize: LocalHelper.getFontSize(15),
+                fontWeight: FontWeight.w400,
+                fontFamily: Strings.ARIAL,
+              ),
+              maxLines: 2,
+              minFontSize: 15,
+              textAlign: TextAlign.center,
+            ),
           ),
-          maxLines: 2,
-          minFontSize: 15,
-          textAlign: TextAlign.center,
-        ),
+        ],
       ),
     );
   }
 
-  SettingsContainer generalSettingsContainer(BuildContext context) {
-    return SettingsContainer(
+  SettingsCategory buildGeneralSettings(BuildContext context) {
+    return SettingsCategory(
       header: S.of(context).generalSettings,
       itemList: [
         SettingsListTile(
@@ -140,8 +144,8 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  SettingsContainer contentSettingsContainer(BuildContext context) {
-    return SettingsContainer(
+  SettingsCategory buildContentSettings(BuildContext context) {
+    return SettingsCategory(
       header: S.of(context).contentSettings,
       itemList: [
         SettingsListTile(
@@ -165,8 +169,8 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  SettingsContainer dataSettingsContainer(BuildContext context) {
-    return SettingsContainer(
+  SettingsCategory buildDataSettings(BuildContext context) {
+    return SettingsCategory(
       header: S.of(context).dataSettings,
       itemList: [
         SettingsListTile(
@@ -185,7 +189,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  CustomAppBar buildCustomAppBar(BuildContext context) {
+  CustomAppBar buildSettingsAppBar(BuildContext context) {
     return CustomAppBar(
       title: S.of(context).settings,
       bottomPadding: 10,

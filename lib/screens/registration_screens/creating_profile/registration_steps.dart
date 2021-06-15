@@ -132,16 +132,19 @@ class _RegistrationStepsState extends State<RegistrationSteps> {
           return CustomAppBar(
             title: S.of(context).addProfilePhoto,
             bottomPadding: 9.05.h,
+            fromRegistration: true,
           );
         } else if (state is CreateProfileStepsCompleted) {
           return CustomAppBar(
             title: S.of(context).completeSignUp,
             bottomPadding: 9.05.h,
+            fromRegistration: true,
           );
         }
         return CustomAppBar(
           title: S.of(context).createYourProfile,
           bottomPadding: 0,
+          fromRegistration: true,
         );
       },
     );

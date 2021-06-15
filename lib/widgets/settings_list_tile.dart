@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,8 @@ class SettingsListTile extends StatelessWidget {
       style: TextStyle(
         color: AppColors.primaryWightColor,
         fontSize: LocalHelper.getFontSize(15),
+        fontFamily: Strings.ARIAL,
+        fontWeight: FontWeight.w400,
       ),
       maxLines: 2,
       minFontSize: 15,
@@ -45,7 +48,7 @@ class SettingsListTile extends StatelessWidget {
       return Icon(
         Icons.arrow_forward_ios,
         color: AppColors.forthGrayColor,
-        size: 17.sp,
+        size: LocalHelper.getFontSize(17),
       );
     }
     return Row(
@@ -56,6 +59,8 @@ class SettingsListTile extends StatelessWidget {
           style: TextStyle(
             color: AppColors.transparentGrayColor,
             fontSize: LocalHelper.getFontSize(12),
+            fontWeight: FontWeight.w700,
+            fontFamily: Strings.ARIAL,
           ),
           maxLines: 2,
           minFontSize: 12,
@@ -66,7 +71,7 @@ class SettingsListTile extends StatelessWidget {
           child: Icon(
             Icons.arrow_forward_ios,
             color: AppColors.forthGrayColor,
-            size: 17.sp,
+            size: LocalHelper.getFontSize(17),
           ),
         ),
       ],
