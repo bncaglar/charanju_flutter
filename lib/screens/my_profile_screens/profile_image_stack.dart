@@ -1,5 +1,6 @@
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
 
 class ProfileImageStack extends StatelessWidget {
@@ -30,11 +31,14 @@ class ProfileImageStack extends StatelessWidget {
     return Positioned(
       top: 1,
       right: 1,
-      child: Container(
-        height: 7.73.w,
-        width: 7.73.w,
-        decoration: buildGradientBackground(),
-        child: buildTheIcon(),
+      child: ClipPath(
+        clipper: TriangleClipper(),
+        child: Container(
+          height: 7.73.w,
+          width: 7.73.w,
+          decoration: buildGradientBackground(),
+          child: buildTheIcon(),
+        ),
       ),
     );
   }
@@ -64,6 +68,7 @@ class ProfileImageStack extends StatelessWidget {
       gradient: LinearGradient(
         colors: [
           Colors.transparent,
+          Colors.transparent,
           AppColors.backgroundProfileSmallIconColor.withOpacity(0.5),
         ],
         begin: Alignment.bottomLeft,
@@ -91,5 +96,23 @@ class ProfileImageStack extends StatelessWidget {
         width: 0.27.w,
       ),
     );
+  }
+}
+
+class TriangleClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+
+    path.moveTo(0, 0);
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width, size.height);
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return true;
   }
 }

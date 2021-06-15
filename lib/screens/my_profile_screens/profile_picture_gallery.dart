@@ -91,8 +91,8 @@ class _ProfilePictureGalleryState extends State<ProfilePictureGallery> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        buildProfileTab(),
         buildProfileJudgeTab(),
+        buildProfileTab(),
         buildProfileBetTab(),
       ],
     );
