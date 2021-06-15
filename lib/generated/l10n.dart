@@ -649,6 +649,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General Settings`
+  String get generalSettings {
+    return Intl.message(
+      'General Settings',
+      name: 'generalSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get notifications {
+    return Intl.message(
+      'Notifications',
+      name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `On`
+  String get on {
+    return Intl.message(
+      'On',
+      name: 'on',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Backup Files`
+  String get backupFiles {
+    return Intl.message(
+      'Backup Files',
+      name: 'backupFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content Settings`
+  String get contentSettings {
+    return Intl.message(
+      'Content Settings',
+      name: 'contentSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Video Language`
+  String get videoLanguage {
+    return Intl.message(
+      'Video Language',
+      name: 'videoLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interest Settings`
+  String get interestSettings {
+    return Intl.message(
+      'Interest Settings',
+      name: 'interestSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animated Miniature`
+  String get animatedMiniature {
+    return Intl.message(
+      'Animated Miniature',
+      name: 'animatedMiniature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove photosensitive videos`
+  String get removePhotosensitiveVideos {
+    return Intl.message(
+      'Remove photosensitive videos',
+      name: 'removePhotosensitiveVideos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data settings`
+  String get dataSettings {
+    return Intl.message(
+      'Data settings',
+      name: 'dataSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile data use`
+  String get mobileDataUse {
+    return Intl.message(
+      'Mobile data use',
+      name: 'mobileDataUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account activity`
+  String get accountActivity {
+    return Intl.message(
+      'Account activity',
+      name: 'accountActivity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Free up space`
+  String get freeUpSpace {
+    return Intl.message(
+      'Free up space',
+      name: 'freeUpSpace',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove account`
+  String get removeAccount {
+    return Intl.message(
+      'Remove account',
+      name: 'removeAccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

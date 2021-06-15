@@ -4,6 +4,7 @@ import 'package:charanju_flutter/screens/registration_screens/creating_profile/r
 import 'package:charanju_flutter/screens/registration_screens/forget_password/forget_password_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/terms_of_use/terms_of_use_screen.dart';
+import 'package:charanju_flutter/screens/settings_screen/settings_screen.dart';
 import 'package:charanju_flutter/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,11 @@ class Routes {
       case MyProfileScreen.routeName:
         {
           child = MyProfileScreen();
+          break;
+        }
+      case SettingsScreen.routeName:
+        {
+          child = SettingsScreen();
           break;
         }
       case TermsOfUseScreen.routeName:
