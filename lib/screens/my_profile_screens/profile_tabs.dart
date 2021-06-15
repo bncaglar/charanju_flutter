@@ -1,9 +1,12 @@
+import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/logic/cubit/profile_tab_selscted_cubit/profile_tab_selected_cubit.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
-class ProfileTabs extends StatelessWidget {
+class ProfileTabs extends StatefulWidget {
   final String tapIcon;
   final bool tabSelected;
 
@@ -12,10 +15,31 @@ class ProfileTabs extends StatelessWidget {
     required this.tabSelected,
   });
 
+  @override
+  _ProfileTabsState createState() => _ProfileTabsState();
+}
+
+class _ProfileTabsState extends State<ProfileTabs> {
   final log = Logger();
 
   onClickTheTap() {
     log.i("onClickTheTap Started");
+    if (widget.tapIcon == Strings.TROPHY_ICON) {
+      log.i("ProfileTabSelected");
+      context
+          .read<ProfileTabSelectedCubit>()
+          .changeProfileTab(profileTabSelectedState: ProfileTabSelected());
+    } else if (widget.tapIcon == Strings.BALANCE_SCALE_ICON) {
+      log.i("JudgeTabSelected");
+      context
+          .read<ProfileTabSelectedCubit>()
+          .changeProfileTab(profileTabSelectedState: JudgeTabSelected());
+    } else {
+      log.i("BetTabSelected");
+      context
+          .read<ProfileTabSelectedCubit>()
+          .changeProfileTab(profileTabSelectedState: BetTabSelected());
+    }
   }
 
   @override
@@ -29,8 +53,8 @@ class ProfileTabs extends StatelessWidget {
       decoration: buildBottomBorder(),
       child: IconButton(
         icon: Image.asset(
-          tapIcon,
-          color: tabSelected
+          widget.tapIcon,
+          color: widget.tabSelected
               ? AppColors.primaryWightColor
               : AppColors.secondaryGrayColor,
           height: 5.h,
@@ -43,7 +67,7 @@ class ProfileTabs extends StatelessWidget {
 
   BoxDecoration buildBottomBorder() {
     return BoxDecoration(
-      border: tabSelected
+      border: widget.tabSelected
           ? Border(
               bottom: BorderSide(
                 width: 1.5,

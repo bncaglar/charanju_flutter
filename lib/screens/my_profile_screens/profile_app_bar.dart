@@ -21,11 +21,25 @@ class ProfileAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        buildRightPlaceHolderAsHiddenIcon(),
         Spacer(),
         buildNameText(),
         Spacer(),
         buildMenuIcon(),
       ],
+    );
+  }
+
+  Container buildRightPlaceHolderAsHiddenIcon() {
+    return Container(
+      padding: EdgeInsets.only(right: 2.7.w),
+      child: IconButton(
+        onPressed: null,
+        icon: Image.asset(
+          Strings.PROFILE_MENU_ICON,
+          color: AppColors.backgroundPrimaryColor,
+        ),
+      ),
     );
   }
 

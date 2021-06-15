@@ -34,8 +34,8 @@ class Strings {
   static const TROPHY_ICON = "assets/icons/trophy_icon.png";
   static const BALANCE_SCALE_ICON = "assets/icons/balance_scale_icon.png";
   static const ACHIEVEMENT_ICON = "assets/icons/achievement_icon.png";
-  static const MEDAL_ICON = "assets/icons/medal_icon.png";
-  static const SURFACE_ICON = "assets/icons/surface_icon.png";
+  static const LOADING_CHALLENGE_ICON =
+      "assets/icons/loading_challenge_icon.png";
   static const MY_TROPHY_IMAGE_1 = "assets/images/my_trophy_image_1.png";
   static const MY_TROPHY_IMAGE_2 = "assets/images/my_trophy_image_2.png";
   static const MY_TROPHY_IMAGE_3 = "assets/images/my_trophy_image_3.png";

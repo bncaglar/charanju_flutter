@@ -54,7 +54,6 @@ class ProfileImageStack extends StatelessWidget {
             width: 4.4.w,
             child: Image.asset(
               cornerIcon!,
-              color: AppColors.primaryWightColor,
               fit: BoxFit.contain,
             ),
           ),
