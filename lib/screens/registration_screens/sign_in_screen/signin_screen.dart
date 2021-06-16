@@ -1,6 +1,7 @@
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
+import 'package:charanju_flutter/screens/home_screens/home_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/or_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/social_media_row.dart';
@@ -31,6 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   onClickNavigatorButton() {
     log.i("onClickNavigatorButton started");
+    Navigator.pushNamed(context, HomeScreen.routeName);
   }
 
   onClickHighlightedText() {

@@ -3,6 +3,7 @@ import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile
 import 'package:charanju_flutter/logic/cubit/profile_tab_selscted_cubit/profile_tab_selected_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
 import 'package:charanju_flutter/routes.dart';
+import 'package:charanju_flutter/widgets/constant_scroll_behavior.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -82,6 +83,7 @@ class _CharanjuAppState extends State<CharanjuApp> {
         //   DeviceOrientation.portraitDown,
         // ]);
         return MaterialApp(
+          scrollBehavior: const ConstantScrollBehavior(),
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           title: Strings.APP_TITLE,

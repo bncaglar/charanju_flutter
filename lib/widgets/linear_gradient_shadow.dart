@@ -1,12 +1,11 @@
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class LinearGradientShadow extends StatefulWidget {
-  double height;
-  double topOpacity;
-  double bottomOpacity;
-  double topPadding;
+  final double height;
+  final double topOpacity;
+  final double bottomOpacity;
+  final double topPadding;
 
   LinearGradientShadow(
       {required this.height,

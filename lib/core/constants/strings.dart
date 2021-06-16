@@ -27,7 +27,8 @@ class Strings {
   static const PROFILE_PHOTO_2_PNG = "assets/images/pp_2.png";
   static const ADD_PROFILE_PHOTO_PNG = "assets/icons/add_profile_photo.png";
   static const APP_BAR_HOME_SCREEN_LOGO_PNG = "assets/icons/appBarLogo.png";
-  static const APP_BAR_HOME_SCREEN_BALANCE_SCALE_PNG = "assets/icons/balance-scale.png";
+  static const APP_BAR_HOME_SCREEN_BALANCE_SCALE_PNG =
+      "assets/icons/balance-scale.png";
   static const BOTTOM_SHEET_INSTAGRAM_PNG =
       "assets/icons/bottom_sheet_instagram.png";
   static const BOTTOM_SHEET_FACEBOOK_PNG =
@@ -50,6 +51,7 @@ class Strings {
   static const MY_TROPHY_IMAGE_4 = "assets/images/my_trophy_image_4.png";
   static const MY_TROPHY_IMAGE_5 = "assets/images/my_trophy_image_5.png";
   static const MY_TROPHY_IMAGE_6 = "assets/images/my_trophy_image_6.png";
+  static const STORY_IMAGE = "assets/images/story_image.png";
   static const MY_BALANCE_IMAGE_1 =
       "assets/images/my_balance_scale_image_1.png";
   static const MY_BALANCE_IMAGE_2 =
@@ -68,4 +70,8 @@ class Strings {
       "assets/images/my_achievement_image_5.png";
   static const MY_ACHIEVEMENT_IMAGE_6 =
       "assets/images/my_achievement_image_6.png";
+  static const P = "p";
+  static const HASH_SAMPLE = "#";
+  static const BETS = " bets";
+  static const DUMMY_USER_NAME = "@luca100";
 }
