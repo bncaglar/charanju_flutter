@@ -59,5 +59,11 @@
   "followers" : "Followers",
   "points" : "Points",
   "biography" : "Biography",
-  "biographyLongText" : "Volutpat maecenas volutpat blandit aliquam etiam erat velit. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Hendrerit gravida rutrum quisque non tellus orci ac auctor."
+  "biographyLongText" : "Volutpat maecenas volutpat blandit aliquam etiam erat velit. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Hendrerit gravida rutrum quisque non tellus orci ac auctor.",
+  "allNotifications" : "All notifications",
+  "sentYouMessage" : "sent you a message",
+  "wantsToChallengeYou" : "wants to challenge you to ",
+  "youWonTheLastChallenge" : "You won the last challenge against",
+  "youWonTheBetOn": "You won the bet on ",
+  "isYourOpponent" : "is your opponent in "
 }

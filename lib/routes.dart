@@ -1,5 +1,6 @@
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/screens/my_profile_screens/my_profile_screen.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/forget_password/forget_password_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
@@ -45,6 +46,11 @@ class Routes {
       case TermsOfUseScreen.routeName:
         {
           child = TermsOfUseScreen();
+          break;
+        }
+      case NotificationScreen.routeName:
+        {
+          child = NotificationScreen();
           break;
         }
 

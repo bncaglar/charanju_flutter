@@ -14,4 +14,6 @@ class AppColors {
   static final modalBottomSheetColor = HexColor("#1C1C1F");
   static final secondaryGrayColor = HexColor("#4F4F4F");
   static final backgroundProfileSmallIconColor = HexColor("#060606");
+  static final allNotificationsTextColor = HexColor("#8E8E93");
+  static final dismissRedColor = HexColor("#CA2A20");
 }
