@@ -16,4 +16,6 @@ class AppColors {
   static final backgroundProfileSmallIconColor = HexColor("#060606");
   static final forthGrayColor = HexColor("#BDBDBD");
   static final transparentGrayColor = HexColor("#434343");
+  static final allNotificationsTextColor = HexColor("#8E8E93");
+  static final dismissRedColor = HexColor("#CA2A20");
 }

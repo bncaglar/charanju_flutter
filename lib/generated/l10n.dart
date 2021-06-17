@@ -829,6 +829,66 @@ class S {
       args: [],
     );
   }
+
+  /// `All notifications`
+  String get allNotifications {
+    return Intl.message(
+      'All notifications',
+      name: 'allNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `sent you a message`
+  String get sentYouMessage {
+    return Intl.message(
+      'sent you a message',
+      name: 'sentYouMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `wants to challenge you to `
+  String get wantsToChallengeYou {
+    return Intl.message(
+      'wants to challenge you to ',
+      name: 'wantsToChallengeYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You won the last challenge against`
+  String get youWonTheLastChallenge {
+    return Intl.message(
+      'You won the last challenge against',
+      name: 'youWonTheLastChallenge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You won the bet on `
+  String get youWonTheBetOn {
+    return Intl.message(
+      'You won the bet on ',
+      name: 'youWonTheBetOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `is your opponent in `
+  String get isYourOpponent {
+    return Intl.message(
+      'is your opponent in ',
+      name: 'isYourOpponent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

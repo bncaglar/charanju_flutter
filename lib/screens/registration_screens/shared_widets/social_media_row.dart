@@ -1,5 +1,6 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/screens/my_profile_screens/my_profile_screen.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/social_media_logo.dart';
 import 'package:charanju_flutter/screens/settings_screen/settings_screen.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class _SocialMediaRowState extends State<SocialMediaRow> {
 
   googleOnClick() {
     log.i("googleOnClick started");
+    Navigator.pushNamed(context, NotificationScreen.routeName);
   }
 
   twitterOnClick() {

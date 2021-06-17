@@ -74,4 +74,14 @@ class Strings {
   static const HASH_SAMPLE = "#";
   static const BETS = " bets";
   static const DUMMY_USER_NAME = "@luca100";
+  static const DROP_DOWN_ICON = "assets/icons/drop_down_icon.png";
+  static const COMMENT_ICON = "assets/icons/comment_icon.png";
+  static const NOTIFICATION_AVATAR_1 =
+      "assets/images/notification_avatar_1.png";
+  static const NOTIFICATION_AVATAR_2 =
+      "assets/images/notification_avatar_2.png";
+  static const NOTIFICATION_AVATAR_3 =
+      "assets/images/notification_avatar_3.png";
+  static const NOTIFICATION_ECLIPSE = "assets/icons/notification_eclipse_1.png";
+  static const SLIDABLE_TRASH = "assets/icons/trash.png";
 }

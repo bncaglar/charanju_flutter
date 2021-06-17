@@ -77,5 +77,11 @@
   "accountActivity": "Account activity",
   "freeUpSpace": "Free up space",
   "removeAccount": "Remove account",
-  "announcementText": "#colapickup event just started join the challenge now!"
+  "announcementText": "#colapickup event just started join the challenge now!",
+  "allNotifications" : "All notifications",
+  "sentYouMessage" : "sent you a message",
+  "wantsToChallengeYou" : "wants to challenge you to ",
+  "youWonTheLastChallenge" : "You won the last challenge against",
+  "youWonTheBetOn": "You won the bet on ",
+  "isYourOpponent" : "is your opponent in "
 }

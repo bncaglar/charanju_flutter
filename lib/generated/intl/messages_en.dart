@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addaProfilePhotoRecognition": MessageLookupByLibrary.simpleMessage(
             "Add a profile picture for recognition"),
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
+        "allNotifications":
+            MessageLookupByLibrary.simpleMessage("All notifications"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
         "animatedMiniature":
@@ -84,6 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidCode": MessageLookupByLibrary.simpleMessage("Invalid code"),
         "invalidEmailAddress":
             MessageLookupByLibrary.simpleMessage("Invalid Email Address"),
+        "isYourOpponent":
+            MessageLookupByLibrary.simpleMessage("is your opponent in "),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "mobileDataUse":
             MessageLookupByLibrary.simpleMessage("Mobile data use"),
@@ -119,6 +123,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Remove photosensitive videos"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "resendCodeText": MessageLookupByLibrary.simpleMessage(" Resend code."),
+        "sentYouMessage":
+            MessageLookupByLibrary.simpleMessage("sent you a message"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
@@ -136,11 +142,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "userNameStartWithCapitalLetter": MessageLookupByLibrary.simpleMessage(
             "User name should start with capital letter"),
         "videoLanguage": MessageLookupByLibrary.simpleMessage("Video Language"),
+        "wantsToChallengeYou":
+            MessageLookupByLibrary.simpleMessage("wants to challenge you to "),
         "weWillSendCode": MessageLookupByLibrary.simpleMessage(
             "We’ll send a code to your account. You can use that to change and create a new password."),
         "weWillUseThisToSignYou": MessageLookupByLibrary.simpleMessage(
             "We’ll use this to sign you in or create an account if you don’t have one yet"),
         "wrongFormat": MessageLookupByLibrary.simpleMessage(
-            "Wrong date format use this format \'dd/mm/yyyy\'")
+            "Wrong date format use this format \'dd/mm/yyyy\'"),
+        "youWonTheBetOn":
+            MessageLookupByLibrary.simpleMessage("You won the bet on "),
+        "youWonTheLastChallenge": MessageLookupByLibrary.simpleMessage(
+            "You won the last challenge against")
       };
 }
