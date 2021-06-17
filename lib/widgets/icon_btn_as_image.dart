@@ -4,11 +4,13 @@ import 'package:sizer/sizer.dart';
 class IconBtnAsPngImage extends StatelessWidget {
   final String imageUrl;
   final VoidCallback onClickBtn;
+  final BoxFit? boxFit;
 
   const IconBtnAsPngImage({
     Key? key,
     required this.imageUrl,
     required this.onClickBtn,
+    this.boxFit,
   }) : super(key: key);
 
   @override
@@ -20,7 +22,7 @@ class IconBtnAsPngImage extends StatelessWidget {
         width: 6.66.w,
         child: Image.asset(
           imageUrl,
-          fit: BoxFit.fill,
+          fit: boxFit ?? BoxFit.fill,
         ),
       ),
     );
