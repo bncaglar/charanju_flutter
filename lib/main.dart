@@ -1,7 +1,9 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
+import 'package:charanju_flutter/logic/cubit/profile_tab_selscted_cubit/profile_tab_selected_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
 import 'package:charanju_flutter/routes.dart';
+import 'package:charanju_flutter/widgets/constant_scroll_behavior.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -47,9 +49,11 @@ class MyApp extends StatelessWidget {
         BlocProvider<CreateProfileCubit>(
             create: (BuildContext context) => CreateProfileCubit()),
         BlocProvider<AddPhotoCubit>(
-          create: (BuildContext context) => AddPhotoCubit()),
+            create: (BuildContext context) => AddPhotoCubit()),
         BlocProvider<ForgetPasswordCubit>(
             create: (BuildContext context) => ForgetPasswordCubit()),
+        BlocProvider<ProfileTabSelectedCubit>(
+            create: (BuildContext context) => ProfileTabSelectedCubit()),
       ],
       child: CharanjuApp(),
     );
@@ -79,6 +83,7 @@ class _CharanjuAppState extends State<CharanjuApp> {
         //   DeviceOrientation.portraitDown,
         // ]);
         return MaterialApp(
+          scrollBehavior: const ConstantScrollBehavior(),
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           title: Strings.APP_TITLE,

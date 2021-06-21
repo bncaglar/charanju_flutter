@@ -21,8 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "addCompleteSignUpTermsText": MessageLookupByLibrary.simpleMessage(
-            "By registering, you agree to our terms of use, our data policy and our policy for cookies."),
+        "accountActivity":
+            MessageLookupByLibrary.simpleMessage("Account activity"),
         "addCompleteSignUpTermsTextPart1": MessageLookupByLibrary.simpleMessage(
             "By registering, you agree to our "),
         "addCompleteSignUpTermsTextPart2": MessageLookupByLibrary.simpleMessage(
@@ -33,10 +33,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "addaProfilePhotoRecognition": MessageLookupByLibrary.simpleMessage(
             "Add a profile picture for recognition"),
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
+        "allNotifications":
+            MessageLookupByLibrary.simpleMessage("All notifications"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
+        "animatedMiniature":
+            MessageLookupByLibrary.simpleMessage("Animated Miniature"),
         "announcementText": MessageLookupByLibrary.simpleMessage(
             "#colapickup event just started join the challenge now!"),
+        "backupFiles": MessageLookupByLibrary.simpleMessage("Backup Files"),
+        "biography": MessageLookupByLibrary.simpleMessage("Biography"),
+        "biographyLongText": MessageLookupByLibrary.simpleMessage(
+            "Volutpat maecenas volutpat blandit aliquam etiam erat velit. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Hendrerit gravida rutrum quisque non tellus orci ac auctor."),
         "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from gallery"),
@@ -49,25 +57,43 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmationDoesNotMatch":
             MessageLookupByLibrary.simpleMessage("Confirmation does not match"),
+        "contentSettings":
+            MessageLookupByLibrary.simpleMessage("Content Settings"),
         "continueText": MessageLookupByLibrary.simpleMessage("Continue"),
         "createYourProfile":
             MessageLookupByLibrary.simpleMessage("Create your profile"),
+        "dataSettings": MessageLookupByLibrary.simpleMessage("Data settings"),
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("Do not have an account? "),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
+        "followers": MessageLookupByLibrary.simpleMessage("Followers"),
+        "follows": MessageLookupByLibrary.simpleMessage("Follows"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "forgotPasswordText":
             MessageLookupByLibrary.simpleMessage("Forgot password"),
+        "freeUpSpace": MessageLookupByLibrary.simpleMessage("Free up space"),
+        "generalSettings":
+            MessageLookupByLibrary.simpleMessage("General Settings"),
         "hello": MessageLookupByLibrary.simpleMessage("hello"),
         "importFromFacebook":
             MessageLookupByLibrary.simpleMessage("Import from facebook"),
         "importFromInstagram":
             MessageLookupByLibrary.simpleMessage("Import from Instagram"),
+        "interestSettings":
+            MessageLookupByLibrary.simpleMessage("Interest Settings"),
         "invalidCode": MessageLookupByLibrary.simpleMessage("Invalid code"),
         "invalidEmailAddress":
             MessageLookupByLibrary.simpleMessage("Invalid Email Address"),
+        "isYourOpponent":
+            MessageLookupByLibrary.simpleMessage("is your opponent in "),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "mobileDataUse":
+            MessageLookupByLibrary.simpleMessage("Mobile data use"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+        "on": MessageLookupByLibrary.simpleMessage("On"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
         "paragraph1": MessageLookupByLibrary.simpleMessage(
             "•   Amet etiam quis consequat magna sed aliquet mattis dapibus tellus."),
@@ -86,13 +112,20 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password must have one special character"),
         "passwordOneUppercase": MessageLookupByLibrary.simpleMessage(
             "Password must have one uppercase letter"),
+        "points": MessageLookupByLibrary.simpleMessage("Points"),
         "readySetChallenge":
             MessageLookupByLibrary.simpleMessage("ready, set, challenge"),
         "receiveCode": MessageLookupByLibrary.simpleMessage(
             "If you didn’t receive a code."),
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
+        "removeAccount": MessageLookupByLibrary.simpleMessage("Remove account"),
+        "removePhotosensitiveVideos": MessageLookupByLibrary.simpleMessage(
+            "Remove photosensitive videos"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "resendCodeText": MessageLookupByLibrary.simpleMessage(" Resend code."),
+        "sentYouMessage":
+            MessageLookupByLibrary.simpleMessage("sent you a message"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
@@ -108,11 +141,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "userName": MessageLookupByLibrary.simpleMessage("Username"),
         "userNameStartWithCapitalLetter": MessageLookupByLibrary.simpleMessage(
             "User name should start with capital letter"),
+        "videoLanguage": MessageLookupByLibrary.simpleMessage("Video Language"),
+        "wantsToChallengeYou":
+            MessageLookupByLibrary.simpleMessage("wants to challenge you to "),
         "weWillSendCode": MessageLookupByLibrary.simpleMessage(
             "We’ll send a code to your account. You can use that to change and create a new password."),
         "weWillUseThisToSignYou": MessageLookupByLibrary.simpleMessage(
             "We’ll use this to sign you in or create an account if you don’t have one yet"),
         "wrongFormat": MessageLookupByLibrary.simpleMessage(
-            "Wrong date format use this format \'dd/mm/yyyy\'")
+            "Wrong date format use this format \'dd/mm/yyyy\'"),
+        "youWonTheBetOn":
+            MessageLookupByLibrary.simpleMessage("You won the bet on "),
+        "youWonTheLastChallenge": MessageLookupByLibrary.simpleMessage(
+            "You won the last challenge against")
       };
 }

@@ -11,8 +11,10 @@ class CustomTextFormField extends StatefulWidget {
   final String? labelText;
   final TextEditingController? controller;
   final bool? obscureText;
+  final bool? fromRegistration;
   final TextInputType? keyboardType;
   final Widget? suffixIcon;
+  final VoidCallback? onEditingComplete;
 
   CustomTextFormField({
     this.validator,
@@ -20,8 +22,10 @@ class CustomTextFormField extends StatefulWidget {
     required this.controller,
     required this.labelText,
     this.obscureText = false,
+    this.fromRegistration = true,
     this.keyboardType,
     this.suffixIcon,
+    this.onEditingComplete,
   });
 
   @override
@@ -40,18 +44,23 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         validator: widget.validator,
         autovalidateMode: widget.autoValidateMode,
         textAlignVertical: TextAlignVertical.center,
+        onEditingComplete: widget.onEditingComplete,
         style: TextStyle(
-          fontSize: LocalHelper.getFontSize(16),
+          fontSize: widget.fromRegistration!
+              ? LocalHelper.getFontSize(16)
+              : LocalHelper.getFontSize(15),
           fontStyle: FontStyle.normal,
           fontFamily: Strings.ABSOLUTE,
           color: AppColors.textPrimaryColor,
         ),
-        decoration: buildInputDecoration(),
+        decoration: widget.fromRegistration!
+            ? buildInputDecorationForRegistrationScreens()
+            : buildDefaultInputDecoration(),
       ),
     );
   }
 
-  InputDecoration buildInputDecoration() {
+  InputDecoration buildInputDecorationForRegistrationScreens() {
     return InputDecoration(
       floatingLabelBehavior: FloatingLabelBehavior.never,
       filled: true,
@@ -98,6 +107,40 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           color: AppColors.errorColor,
         ),
       ),
+    );
+  }
+
+  InputDecoration buildDefaultInputDecoration() {
+    return InputDecoration(
+      floatingLabelBehavior: FloatingLabelBehavior.never,
+      filled: true,
+      fillColor: AppColors.modalBottomSheetColor,
+      labelText: widget.labelText,
+      focusColor: AppColors.primaryColor,
+      suffixIcon: widget.suffixIcon ?? null,
+      errorStyle: TextStyle(
+        fontSize: LocalHelper.getFontSize(8),
+      ),
+      contentPadding: EdgeInsets.only(
+        left: 1.7.w,
+        bottom: 4.w,
+      ),
+      hintStyle: TextStyle(
+        fontSize: LocalHelper.getFontSize(15),
+        fontStyle: FontStyle.normal,
+        fontFamily: Strings.ABSOLUTE,
+        color: AppColors.textPrimaryColor,
+      ),
+      labelStyle: TextStyle(
+        fontSize: LocalHelper.getFontSize(15),
+        fontStyle: FontStyle.normal,
+        fontFamily: Strings.ABSOLUTE,
+        color: AppColors.textPrimaryColor,
+      ),
+      focusedBorder: InputBorder.none,
+      enabledBorder: InputBorder.none,
+      errorBorder: InputBorder.none,
+      focusedErrorBorder: InputBorder.none,
     );
   }
 }

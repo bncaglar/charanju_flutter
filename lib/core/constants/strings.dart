@@ -27,7 +27,8 @@ class Strings {
   static const PROFILE_PHOTO_2_PNG = "assets/images/pp_2.png";
   static const ADD_PROFILE_PHOTO_PNG = "assets/icons/add_profile_photo.png";
   static const APP_BAR_HOME_SCREEN_LOGO_PNG = "assets/icons/appBarLogo.png";
-  static const APP_BAR_HOME_SCREEN_BALANCE_SCALE_PNG = "assets/icons/balance-scale.png";
+  static const APP_BAR_HOME_SCREEN_BALANCE_SCALE_PNG =
+      "assets/icons/balance-scale.png";
   static const BOTTOM_SHEET_INSTAGRAM_PNG =
       "assets/icons/bottom_sheet_instagram.png";
   static const BOTTOM_SHEET_FACEBOOK_PNG =
@@ -43,4 +44,49 @@ class Strings {
   static const NAVIGATION_NOTIFICATIONS_PNG ="assets/icons/navigation_bar_notifications.png";
   static const NAVIGATION_SEARCH_PNG ="assets/icons/navigation_bar_search.png";
   static const NAVIGATION_USER_PNG ="assets/icons/navigation_bar_user.png";
+  static const PROFILE_MENU_ICON = "assets/icons/profile_menu_icon.png";
+  static const TROPHY_ICON = "assets/icons/trophy_icon.png";
+  static const BALANCE_SCALE_ICON = "assets/icons/balance_scale_icon.png";
+  static const ACHIEVEMENT_ICON = "assets/icons/achievement_icon.png";
+  static const LOADING_CHALLENGE_ICON =
+      "assets/icons/loading_challenge_icon.png";
+  static const MY_TROPHY_IMAGE_1 = "assets/images/my_trophy_image_1.png";
+  static const MY_TROPHY_IMAGE_2 = "assets/images/my_trophy_image_2.png";
+  static const MY_TROPHY_IMAGE_3 = "assets/images/my_trophy_image_3.png";
+  static const MY_TROPHY_IMAGE_4 = "assets/images/my_trophy_image_4.png";
+  static const MY_TROPHY_IMAGE_5 = "assets/images/my_trophy_image_5.png";
+  static const MY_TROPHY_IMAGE_6 = "assets/images/my_trophy_image_6.png";
+  static const STORY_IMAGE = "assets/images/story_image.png";
+  static const MY_BALANCE_IMAGE_1 =
+      "assets/images/my_balance_scale_image_1.png";
+  static const MY_BALANCE_IMAGE_2 =
+      "assets/images/my_balance_scale_image_2.png";
+  static const MY_BALANCE_IMAGE_3 =
+      "assets/images/my_balance_scale_image_3.png";
+  static const MY_ACHIEVEMENT_IMAGE_1 =
+      "assets/images/my_achievement_image_1.png";
+  static const MY_ACHIEVEMENT_IMAGE_2 =
+      "assets/images/my_achievement_image_2.png";
+  static const MY_ACHIEVEMENT_IMAGE_3 =
+      "assets/images/my_achievement_image_3.png";
+  static const MY_ACHIEVEMENT_IMAGE_4 =
+      "assets/images/my_achievement_image_4.png";
+  static const MY_ACHIEVEMENT_IMAGE_5 =
+      "assets/images/my_achievement_image_5.png";
+  static const MY_ACHIEVEMENT_IMAGE_6 =
+      "assets/images/my_achievement_image_6.png";
+  static const P = "p";
+  static const HASH_SAMPLE = "#";
+  static const BETS = " bets";
+  static const DUMMY_USER_NAME = "@luca100";
+  static const DROP_DOWN_ICON = "assets/icons/drop_down_icon.png";
+  static const COMMENT_ICON = "assets/icons/comment_icon.png";
+  static const NOTIFICATION_AVATAR_1 =
+      "assets/images/notification_avatar_1.png";
+  static const NOTIFICATION_AVATAR_2 =
+      "assets/images/notification_avatar_2.png";
+  static const NOTIFICATION_AVATAR_3 =
+      "assets/images/notification_avatar_3.png";
+  static const NOTIFICATION_ECLIPSE = "assets/icons/notification_eclipse_1.png";
+  static const SLIDABLE_TRASH = "assets/icons/trash.png";
 }

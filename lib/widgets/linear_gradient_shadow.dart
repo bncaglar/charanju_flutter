@@ -1,12 +1,12 @@
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class LinearGradientShadow extends StatefulWidget {
-  double height;
-  double topOpacity;
-  double bottomOpacity;
-  double topPadding;
+  final double height;
+  final double topOpacity;
+  final double bottomOpacity;
+  final double topPadding;
+
   LinearGradientShadow(
       {required this.height,
       required this.topOpacity,
@@ -21,13 +21,12 @@ class _LinearGradientShadowState extends State<LinearGradientShadow> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
-        top: widget.topPadding
-      ),
+      padding: EdgeInsets.only(top: widget.topPadding),
       child: linearGradient(),
     );
   }
-  Container linearGradient(){
+
+  Container linearGradient() {
     return Container(
       height: widget.height,
       width: double.infinity,

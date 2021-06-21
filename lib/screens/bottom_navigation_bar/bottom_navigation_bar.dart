@@ -30,11 +30,11 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           currentIndex: _selectedIndex,
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
-            homepage(),
-            search(),
-            circle(),
-            notifications(),
-            user()
+            navigationItem(Strings.NAVIGATION_HOME_PNG),
+            navigationItem(Strings.NAVIGATION_SEARCH_PNG),
+            navigationItem(Strings.NAVIGATION_CIRCLE_PNG),
+            navigationItem(Strings.NAVIGATION_NOTIFICATIONS_PNG),
+            navigationItem(Strings.NAVIGATION_USER_PNG),
           ],
           onTap: (index) {
             setState(() {
@@ -44,48 +44,13 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
         ));
   }
 
-  BottomNavigationBarItem homepage() {
+  BottomNavigationBarItem navigationItem(String iconPath) {
     return BottomNavigationBarItem(
         icon: CreateIcon(
-          iconPath: Strings.NAVIGATION_HOME_PNG,
+          iconPath: iconPath,
         ),
         label: "",
         backgroundColor: Colors.transparent);
   }
 
-  BottomNavigationBarItem search() {
-    return BottomNavigationBarItem(
-        icon: CreateIcon(
-          iconPath: Strings.NAVIGATION_SEARCH_PNG,
-        ),
-        label: "",
-        backgroundColor: Colors.transparent);
-  }
-
-  BottomNavigationBarItem circle() {
-    return BottomNavigationBarItem(
-        icon: CreateIcon(
-          iconPath: Strings.NAVIGATION_CIRCLE_PNG,
-        ),
-        label: "",
-        backgroundColor: Colors.transparent);
-  }
-
-  BottomNavigationBarItem notifications() {
-    return BottomNavigationBarItem(
-        icon: CreateIcon(
-          iconPath: Strings.NAVIGATION_NOTIFICATIONS_PNG,
-        ),
-        label: "",
-        backgroundColor: Colors.transparent);
-  }
-
-  BottomNavigationBarItem user() {
-    return BottomNavigationBarItem(
-        icon: CreateIcon(
-          iconPath: Strings.NAVIGATION_USER_PNG,
-        ),
-        label: "",
-        backgroundColor: Colors.transparent);
-  }
 }

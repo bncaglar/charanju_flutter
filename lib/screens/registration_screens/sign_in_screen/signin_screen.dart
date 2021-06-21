@@ -1,11 +1,11 @@
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
-import 'package:charanju_flutter/screens/home_screens/main_home_screen.dart';
+import 'package:charanju_flutter/screens/home_screens/home_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/or_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/social_media_row.dart';
-import 'package:charanju_flutter/screens/registration_screens/shared_widets/test_logo.dart';
+import 'package:charanju_flutter/screens/registration_screens/shared_widets/text_logo.dart';
 import 'package:charanju_flutter/screens/registration_screens/shared_widets/tow_part_text.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/remember_me_row.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_form.dart';
@@ -32,6 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   onClickNavigatorButton() {
     log.i("onClickNavigatorButton started");
+    Navigator.pushNamed(context, HomeScreen.routeName);
   }
 
   onClickHighlightedText() {
@@ -92,13 +93,9 @@ class _SignInScreenState extends State<SignInScreen> {
 
   TowPartText buildDoYouHaveAccount(BuildContext context) {
     return TowPartText(
-      clickableText: S
-          .of(context)
-          .signUp,
+      clickableText: S.of(context).signUp,
       onClickText: onClickHighlightedText,
-      normalText: S
-          .of(context)
-          .doYouHaveAccount,
+      normalText: S.of(context).doYouHaveAccount,
       padding: EdgeInsets.only(
         top: 5.363.h,
       ),
@@ -107,9 +104,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   NavigationButton buildSignInNtb() {
     return NavigationButton(
-      navigationButtonText: S
-          .of(context)
-          .signIn,
+      navigationButtonText: S.of(context).signIn,
       onClickNavigatorButton: onClickNavigatorButton,
       margin: EdgeInsets.only(
         left: 4.69.w,
@@ -121,9 +116,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   Text buildReadyText(BuildContext context) {
     return Text(
-      S
-          .of(context)
-          .readySetChallenge,
+      S.of(context).readySetChallenge,
       style: TextStyle(
         color: AppColors.textPrimaryColor,
         fontSize: LocalHelper.getFontSize(12),

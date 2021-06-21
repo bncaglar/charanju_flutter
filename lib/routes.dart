@@ -1,10 +1,13 @@
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/screens/bottom_navigation_bar/bottom_navigation_bar.dart';
-import 'package:charanju_flutter/screens/home_screens/main_home_screen.dart';
+import 'package:charanju_flutter/screens/home_screens/home_screen.dart';
+import 'package:charanju_flutter/screens/my_profile_screens/my_profile_screen.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/forget_password/forget_password_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/terms_of_use/terms_of_use_screen.dart';
+import 'package:charanju_flutter/screens/settings_screen/settings_screen.dart';
 import 'package:charanju_flutter/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,9 +41,14 @@ class Routes {
           child = ForgetPasswordScreen();
           break;
         }
-      case MainHomeScreen.routeName:
+      case MyProfileScreen.routeName:
         {
-          child = MainHomeScreen();
+          child = MyProfileScreen();
+          break;
+        }
+      case SettingsScreen.routeName:
+        {
+          child = SettingsScreen();
           break;
         }
       case TermsOfUseScreen.routeName:
@@ -50,7 +58,18 @@ class Routes {
         }
       case BottomNavigationBarScreen.routeName:
         {
-          child=BottomNavigationBarScreen();
+          child = BottomNavigationBarScreen();
+          break;
+        }
+      case HomeScreen.routeName:
+        {
+          child = HomeScreen();
+          break;
+        }
+      case NotificationScreen.routeName:
+        {
+          child = NotificationScreen();
+
           break;
         }
 

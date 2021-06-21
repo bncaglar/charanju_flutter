@@ -420,11 +420,21 @@ class S {
     );
   }
 
-  /// `By registering, you agree to our terms of use, our data policy and our policy for cookies.`
-  String get addCompleteSignUpTermsText {
+  /// `By registering, you agree to our `
+  String get addCompleteSignUpTermsTextPart1 {
     return Intl.message(
-      'By registering, you agree to our terms of use, our data policy and our policy for cookies.',
-      name: 'addCompleteSignUpTermsText',
+      'By registering, you agree to our ',
+      name: 'addCompleteSignUpTermsTextPart1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `terms of use, our data policy and our policy for cookies.`
+  String get addCompleteSignUpTermsTextPart2 {
+    return Intl.message(
+      'terms of use, our data policy and our policy for cookies.',
+      name: 'addCompleteSignUpTermsTextPart2',
       desc: '',
       args: [],
     );
@@ -590,6 +600,226 @@ class S {
     );
   }
 
+  /// `Follows`
+  String get follows {
+    return Intl.message(
+      'Follows',
+      name: 'follows',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Followers`
+  String get followers {
+    return Intl.message(
+      'Followers',
+      name: 'followers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Points`
+  String get points {
+    return Intl.message(
+      'Points',
+      name: 'points',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Biography`
+  String get biography {
+    return Intl.message(
+      'Biography',
+      name: 'biography',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Volutpat maecenas volutpat blandit aliquam etiam erat velit. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Hendrerit gravida rutrum quisque non tellus orci ac auctor.`
+  String get biographyLongText {
+    return Intl.message(
+      'Volutpat maecenas volutpat blandit aliquam etiam erat velit. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Hendrerit gravida rutrum quisque non tellus orci ac auctor.',
+      name: 'biographyLongText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General Settings`
+  String get generalSettings {
+    return Intl.message(
+      'General Settings',
+      name: 'generalSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get notifications {
+    return Intl.message(
+      'Notifications',
+      name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `On`
+  String get on {
+    return Intl.message(
+      'On',
+      name: 'on',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Backup Files`
+  String get backupFiles {
+    return Intl.message(
+      'Backup Files',
+      name: 'backupFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content Settings`
+  String get contentSettings {
+    return Intl.message(
+      'Content Settings',
+      name: 'contentSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Video Language`
+  String get videoLanguage {
+    return Intl.message(
+      'Video Language',
+      name: 'videoLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interest Settings`
+  String get interestSettings {
+    return Intl.message(
+      'Interest Settings',
+      name: 'interestSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animated Miniature`
+  String get animatedMiniature {
+    return Intl.message(
+      'Animated Miniature',
+      name: 'animatedMiniature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove photosensitive videos`
+  String get removePhotosensitiveVideos {
+    return Intl.message(
+      'Remove photosensitive videos',
+      name: 'removePhotosensitiveVideos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data settings`
+  String get dataSettings {
+    return Intl.message(
+      'Data settings',
+      name: 'dataSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile data use`
+  String get mobileDataUse {
+    return Intl.message(
+      'Mobile data use',
+      name: 'mobileDataUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account activity`
+  String get accountActivity {
+    return Intl.message(
+      'Account activity',
+      name: 'accountActivity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Free up space`
+  String get freeUpSpace {
+    return Intl.message(
+      'Free up space',
+      name: 'freeUpSpace',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove account`
+  String get removeAccount {
+    return Intl.message(
+      'Remove account',
+      name: 'removeAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `#colapickup event just started join the challenge now!`
   String get announcementText {
     return Intl.message(
@@ -600,21 +830,61 @@ class S {
     );
   }
 
-  /// `By registering, you agree to our `
-  String get addCompleteSignUpTermsTextPart1 {
+  /// `All notifications`
+  String get allNotifications {
     return Intl.message(
-      'By registering, you agree to our ',
-      name: 'addCompleteSignUpTermsTextPart1',
+      'All notifications',
+      name: 'allNotifications',
       desc: '',
       args: [],
     );
   }
 
-  /// `terms of use, our data policy and our policy for cookies.`
-  String get addCompleteSignUpTermsTextPart2 {
+  /// `sent you a message`
+  String get sentYouMessage {
     return Intl.message(
-      'terms of use, our data policy and our policy for cookies.',
-      name: 'addCompleteSignUpTermsTextPart2',
+      'sent you a message',
+      name: 'sentYouMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `wants to challenge you to `
+  String get wantsToChallengeYou {
+    return Intl.message(
+      'wants to challenge you to ',
+      name: 'wantsToChallengeYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You won the last challenge against`
+  String get youWonTheLastChallenge {
+    return Intl.message(
+      'You won the last challenge against',
+      name: 'youWonTheLastChallenge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You won the bet on `
+  String get youWonTheBetOn {
+    return Intl.message(
+      'You won the bet on ',
+      name: 'youWonTheBetOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `is your opponent in `
+  String get isYourOpponent {
+    return Intl.message(
+      'is your opponent in ',
+      name: 'isYourOpponent',
       desc: '',
       args: [],
     );
