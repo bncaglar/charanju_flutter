@@ -1,4 +1,5 @@
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
+import 'package:charanju_flutter/screens/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:charanju_flutter/screens/home_screens/main_home_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/forget_password/forget_password_screen.dart';
@@ -45,6 +46,11 @@ class Routes {
       case TermsOfUseScreen.routeName:
         {
           child = TermsOfUseScreen();
+          break;
+        }
+      case BottomNavigationBarScreen.routeName:
+        {
+          child=BottomNavigationBarScreen();
           break;
         }
 

@@ -39,7 +39,7 @@
   "completeSignUp": "Complete sign up",
   "addCompleteSignUpTermsText" : "By registering, you agree to our terms of use, our data policy and our policy for cookies.",
   "forgotPasswordText" : "Forgot password",
-  "announcementText" : "#colapickup event just started join the challenge now!"
+  "announcementText" : "#colapickup event just started join the challenge now!",
   "addCompleteSignUpTermsTextPart1": "By registering, you agree to our ",
   "addCompleteSignUpTermsTextPart2": "terms of use, our data policy and our policy for cookies.",
   "weWillSendCode": "We’ll send a code to your account. You can use that to change and create a new password.",

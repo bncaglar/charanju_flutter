@@ -21,6 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addCompleteSignUpTermsText": MessageLookupByLibrary.simpleMessage(
+            "By registering, you agree to our terms of use, our data policy and our policy for cookies."),
         "addCompleteSignUpTermsTextPart1": MessageLookupByLibrary.simpleMessage(
             "By registering, you agree to our "),
         "addCompleteSignUpTermsTextPart2": MessageLookupByLibrary.simpleMessage(

@@ -38,7 +38,7 @@
   "alreadyHaveAccount": "Already have an account? ",
   "completeSignUp": "Complete sign up",
   "addCompleteSignUpTermsText" : "By registering, you agree to our terms of use, our data policy and our policy for cookies.",
-  "announcementText" : "#colapickup event just started join the challenge now!"
+  "announcementText" : "#colapickup event just started join the challenge now!",
   "addCompleteSignUpTermsTextPart1": "By registering, you agree to our ",
   "addCompleteSignUpTermsTextPart2": "terms of use, our data policy and our policy for cookies.",
   "forgotPasswordText": "Forgot password",

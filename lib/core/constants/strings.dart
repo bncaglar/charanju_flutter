@@ -38,4 +38,9 @@ class Strings {
   static const NETWORK_IMAGE = "assets/images/network_image.png";
   static const ABSOLUTE = "absolute";
   static const ARIAL = "Arial";
+  static const NAVIGATION_CIRCLE_PNG ="assets/icons/navigation_bar_circle.png";
+  static const NAVIGATION_HOME_PNG ="assets/icons/navigation_bar_home.png";
+  static const NAVIGATION_NOTIFICATIONS_PNG ="assets/icons/navigation_bar_notifications.png";
+  static const NAVIGATION_SEARCH_PNG ="assets/icons/navigation_bar_search.png";
+  static const NAVIGATION_USER_PNG ="assets/icons/navigation_bar_user.png";
 }
