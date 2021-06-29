@@ -33,17 +33,18 @@ class Strings {
       "assets/icons/bottom_sheet_instagram.png";
   static const BOTTOM_SHEET_FACEBOOK_PNG =
       "assets/icons/bottom_sheet_facebook.png";
-  static const BOTTOM_SHEET_TAKE_PHOTO_PNG = "assets/icons/Take_photo.png";
+  static const BOTTOM_SHEET_TAKE_PHOTO_PNG = "assets/icons/take_photo.png";
   static const BOTTOM_SHEET_CHOOSE_FROM_GALLERY_PNG =
-      "assets/icons/Choose_from_Gallery.png";
+      "assets/icons/choose_from_gallery.png";
   static const NETWORK_IMAGE = "assets/images/network_image.png";
   static const ABSOLUTE = "absolute";
   static const ARIAL = "Arial";
-  static const NAVIGATION_CIRCLE_PNG ="assets/icons/navigation_bar_circle.png";
-  static const NAVIGATION_HOME_PNG ="assets/icons/navigation_bar_home.png";
-  static const NAVIGATION_NOTIFICATIONS_PNG ="assets/icons/navigation_bar_notifications.png";
-  static const NAVIGATION_SEARCH_PNG ="assets/icons/navigation_bar_search.png";
-  static const NAVIGATION_USER_PNG ="assets/icons/navigation_bar_user.png";
+  static const NAVIGATION_CIRCLE_PNG = "assets/icons/navigation_bar_circle.png";
+  static const NAVIGATION_HOME_PNG = "assets/icons/navigation_bar_home.png";
+  static const NAVIGATION_NOTIFICATIONS_PNG =
+      "assets/icons/navigation_bar_notifications.png";
+  static const NAVIGATION_SEARCH_PNG = "assets/icons/navigation_bar_search.png";
+  static const NAVIGATION_USER_PNG = "assets/icons/navigation_bar_user.png";
   static const PROFILE_MENU_ICON = "assets/icons/profile_menu_icon.png";
   static const TROPHY_ICON = "assets/icons/trophy_icon.png";
   static const BALANCE_SCALE_ICON = "assets/icons/balance_scale_icon.png";
@@ -89,4 +90,8 @@ class Strings {
       "assets/images/notification_avatar_3.png";
   static const NOTIFICATION_ECLIPSE = "assets/icons/notification_eclipse_1.png";
   static const SLIDABLE_TRASH = "assets/icons/trash.png";
+  static const HASH_TAG_PNG = "assets/icons/hash_tag_icon.png";
+  static const CREATE_CHALLENGE_PNG = "assets/icons/create_challenge_icon.png";
+  static const GO_LIVE = "assets/icons/go_live_icon.png";
+  static const CREATE_STORY_PNG = "assets/icons/create_story_png.png";
 }

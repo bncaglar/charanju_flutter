@@ -83,5 +83,9 @@
   "wantsToChallengeYou" : "wants to challenge you to ",
   "youWonTheLastChallenge" : "You won the last challenge against",
   "youWonTheBetOn": "You won the bet on ",
-  "isYourOpponent" : "is your opponent in "
+  "isYourOpponent": "is your opponent in ",
+  "joinChallenge": "Join challenge",
+  "createChallenge": "Create challenge",
+  "goLive": "Go Live",
+  "createStory": "Create Story"
 }

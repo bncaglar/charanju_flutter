@@ -5,13 +5,13 @@ class LinearGradientShadow extends StatefulWidget {
   final double height;
   final double topOpacity;
   final double bottomOpacity;
-  final double topPadding;
+  final double? topPadding;
 
   LinearGradientShadow(
       {required this.height,
       required this.topOpacity,
       required this.bottomOpacity,
-      required this.topPadding});
+      this.topPadding});
 
   @override
   _LinearGradientShadowState createState() => _LinearGradientShadowState();
@@ -21,7 +21,9 @@ class _LinearGradientShadowState extends State<LinearGradientShadow> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: widget.topPadding),
+      padding: (widget.topPadding == null)
+          ? EdgeInsets.zero
+          : EdgeInsets.only(top: widget.topPadding!),
       child: linearGradient(),
     );
   }

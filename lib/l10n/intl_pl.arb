@@ -37,7 +37,6 @@
   "addProfilePhoto": "Add profile photo",
   "alreadyHaveAccount": "Already have an account? ",
   "completeSignUp": "Complete sign up",
-  "addCompleteSignUpTermsText" : "By registering, you agree to our terms of use, our data policy and our policy for cookies.",
   "announcementText": "#colapickup event just started join the challenge now!",
   "addCompleteSignUpTermsTextPart1": "By registering, you agree to our ",
   "addCompleteSignUpTermsTextPart2": "terms of use, our data policy and our policy for cookies.",
@@ -84,5 +83,9 @@
   "wantsToChallengeYou" : "wants to challenge you to ",
   "youWonTheLastChallenge" : "You won the last challenge against",
   "youWonTheBetOn": "You won the bet on ",
-  "isYourOpponent" : "is your opponent in "
+  "isYourOpponent": "is your opponent in ",
+  "joinChallenge": "Join challenge",
+  "createChallenge": "Create challenge",
+  "goLive": "Go Live",
+  "createStory": "Create Story"
 }

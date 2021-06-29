@@ -1,11 +1,17 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
-import 'package:charanju_flutter/screens/bottom_navigation_bar/example_pages/page1.dart';
-import 'package:charanju_flutter/screens/bottom_navigation_bar/example_pages/page2.dart';
-import 'package:charanju_flutter/screens/bottom_navigation_bar/example_pages/page3.dart';
-import 'package:charanju_flutter/screens/bottom_navigation_bar/example_pages/page4.dart';
-import 'package:charanju_flutter/screens/bottom_navigation_bar/example_pages/page5.dart';
-import 'package:charanju_flutter/screens/bottom_navigation_bar/shared_widget/create_icon.dart';
+import 'package:charanju_flutter/helper/local_data/local_helper.dart';
+import 'package:charanju_flutter/logic/cubit/naviigation_system_cubit/navigation_system_cubit.dart';
+import 'package:charanju_flutter/screens/bottom_navigation_bar/navigation_bottom_sheet.dart';
+import 'package:charanju_flutter/screens/home_screens/home_screen.dart';
+import 'package:charanju_flutter/screens/my_profile_screens/my_profile_screen.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_screen.dart';
+import 'package:charanju_flutter/screens/search_screen/mock_search_screen.dart';
+import 'package:charanju_flutter/widgets/icon_btn_as_image.dart';
+import 'package:charanju_flutter/widgets/linear_gradient_shadow.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:logger/logger.dart';
+import 'package:sizer/sizer.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
   static const routeName = '/BottomNavigationBarScreen';
@@ -16,41 +22,168 @@ class BottomNavigationBarScreen extends StatefulWidget {
 }
 
 class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
-  int _selectedIndex = 0;
-  final tabs = [Page1(), Page2(), Page3(), Page4(), Page5()];
+  final log = Logger();
+
+  selectTheScreen({
+    required NavigationSystemState navigationSystemState,
+    bool? showBottomSheet = false,
+  }) {
+    log.i("selectTheScreen Started");
+    context
+        .read<NavigationSystemCubit>()
+        .changeScreen(navigationSystemState: navigationSystemState);
+
+    if (showBottomSheet!) {
+      LocalHelper.showTheBottomSheet(
+        context: context,
+        child: NavigationBottomSheet(),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
         extendBody: true,
-        body: tabs[_selectedIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.black.withOpacity(0),
-          elevation: 0,
-          currentIndex: _selectedIndex,
-          type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
-            navigationItem(Strings.NAVIGATION_HOME_PNG),
-            navigationItem(Strings.NAVIGATION_SEARCH_PNG),
-            navigationItem(Strings.NAVIGATION_CIRCLE_PNG),
-            navigationItem(Strings.NAVIGATION_NOTIFICATIONS_PNG),
-            navigationItem(Strings.NAVIGATION_USER_PNG),
+        body: Stack(
+          children: [
+            buildScreens(),
+            buildBarGradientShadow(),
+            buildBottomNavigationBar(),
           ],
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-        ));
-  }
-
-  BottomNavigationBarItem navigationItem(String iconPath) {
-    return BottomNavigationBarItem(
-        icon: CreateIcon(
-          iconPath: iconPath,
         ),
-        label: "",
-        backgroundColor: Colors.transparent);
+      ),
+    );
   }
 
+  Align buildBottomNavigationBar() {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        padding: EdgeInsets.only(
+          right: 5.w,
+          left: 5.w,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            buildHomeBtn(),
+            buildSearchBtn(),
+            buildBottomSheetBtn(),
+            buildNotificationBtn(),
+            buildProfileBtn(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  IconBtnAsPngImage buildProfileBtn() {
+    return IconBtnAsPngImage(
+      imageUrl: Strings.NAVIGATION_USER_PNG,
+      onClickBtn: () {
+        selectTheScreen(
+          navigationSystemState: ProfileScreenState(),
+        );
+      },
+    );
+  }
+
+  IconBtnAsPngImage buildNotificationBtn() {
+    return IconBtnAsPngImage(
+      imageUrl: Strings.NAVIGATION_NOTIFICATIONS_PNG,
+      onClickBtn: () {
+        selectTheScreen(
+          navigationSystemState: NotificationsScreenState(),
+        );
+      },
+    );
+  }
+
+  BlocBuilder<NavigationSystemCubit, NavigationSystemState>
+      buildBottomSheetBtn() {
+    return BlocBuilder<NavigationSystemCubit, NavigationSystemState>(
+      builder: (context, state) {
+        return IconBtnAsPngImage(
+          imageUrl: Strings.NAVIGATION_CIRCLE_PNG,
+          onClickBtn: () {
+            selectTheScreen(
+              navigationSystemState:
+                  context.read<NavigationSystemCubit>().getTheCurrentScreen(),
+              showBottomSheet: true,
+            );
+          },
+        );
+      },
+    );
+  }
+
+  IconBtnAsPngImage buildSearchBtn() {
+    return IconBtnAsPngImage(
+      imageUrl: Strings.NAVIGATION_SEARCH_PNG,
+      onClickBtn: () {
+        selectTheScreen(
+          navigationSystemState: SearchScreenState(),
+        );
+      },
+    );
+  }
+
+  IconBtnAsPngImage buildHomeBtn() {
+    return IconBtnAsPngImage(
+      imageUrl: Strings.NAVIGATION_HOME_PNG,
+      onClickBtn: () {
+        selectTheScreen(
+          navigationSystemState: HomeScreenState(),
+        );
+      },
+    );
+  }
+
+  BlocBuilder<NavigationSystemCubit, NavigationSystemState>
+      buildBarGradientShadow() {
+    return BlocBuilder<NavigationSystemCubit, NavigationSystemState>(
+      builder: (context, navigationSystemState) {
+        if (navigationSystemState is ProfileScreenState) {
+          return Align(
+            alignment: Alignment.bottomCenter,
+            child: LinearGradientShadow(
+              height: 7.h,
+              topOpacity: 1,
+              bottomOpacity: 1,
+            ),
+          );
+        }
+        return Align(
+          alignment: Alignment.bottomCenter,
+          child: LinearGradientShadow(
+            height: 10.h,
+            topOpacity: 0,
+            bottomOpacity: 0.6,
+          ),
+        );
+      },
+    );
+  }
+
+  BlocBuilder<NavigationSystemCubit, NavigationSystemState> buildScreens() {
+    return BlocBuilder<NavigationSystemCubit, NavigationSystemState>(
+      builder: (context, navigationSystemState) {
+        if (navigationSystemState is HomeScreenState) {
+          return HomeScreen();
+        }
+        if (navigationSystemState is SearchScreenState) {
+          return MockSearchScreen();
+        }
+        if (navigationSystemState is NotificationsScreenState) {
+          return NotificationScreen();
+        }
+        if (navigationSystemState is ProfileScreenState) {
+          return MyProfileScreen();
+        }
+        return Container();
+      },
+    );
+  }
 }

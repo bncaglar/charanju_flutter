@@ -37,7 +37,8 @@
   "addProfilePhoto": "Add profile photo",
   "alreadyHaveAccount": "Already have an account? ",
   "completeSignUp": "Complete sign up",
-  "addCompleteSignUpTermsText" : "By registering, you agree to our terms of use, our data policy and our policy for cookies.",
+  "addCompleteSignUpTermsTextPart1": "By registering, you agree to our ",
+  "addCompleteSignUpTermsTextPart2": "terms of use, our data policy and our policy for cookies.",
   "forgotPasswordText" : "Forgot password",
   "weWillSendCode" : "We’ll send a code to your account. You can use that to change and create a new password.",
   "code" : "Code",
@@ -76,10 +77,15 @@
   "accountActivity": "Account activity",
   "freeUpSpace": "Free up space",
   "removeAccount": "Remove account",
+  "announcementText": "#colapickup event just started join the challenge now!",
   "allNotifications" : "All notifications",
   "sentYouMessage" : "sent you a message",
   "wantsToChallengeYou" : "wants to challenge you to ",
   "youWonTheLastChallenge" : "You won the last challenge against",
   "youWonTheBetOn": "You won the bet on ",
-  "isYourOpponent" : "is your opponent in "
+  "isYourOpponent": "is your opponent in ",
+  "joinChallenge": "Join challenge",
+  "createChallenge": "Create challenge",
+  "goLive": "Go Live",
+  "createStory": "Create Story"
 }

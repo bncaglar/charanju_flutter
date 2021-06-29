@@ -60,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "contentSettings":
             MessageLookupByLibrary.simpleMessage("Content Settings"),
         "continueText": MessageLookupByLibrary.simpleMessage("Continue"),
+        "createChallenge":
+            MessageLookupByLibrary.simpleMessage("Create challenge"),
+        "createStory": MessageLookupByLibrary.simpleMessage("Create Story"),
         "createYourProfile":
             MessageLookupByLibrary.simpleMessage("Create your profile"),
         "dataSettings": MessageLookupByLibrary.simpleMessage("Data settings"),
@@ -76,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "freeUpSpace": MessageLookupByLibrary.simpleMessage("Free up space"),
         "generalSettings":
             MessageLookupByLibrary.simpleMessage("General Settings"),
+        "goLive": MessageLookupByLibrary.simpleMessage("Go Live"),
         "hello": MessageLookupByLibrary.simpleMessage("hello"),
         "importFromFacebook":
             MessageLookupByLibrary.simpleMessage("Import from facebook"),
@@ -88,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Invalid Email Address"),
         "isYourOpponent":
             MessageLookupByLibrary.simpleMessage("is your opponent in "),
+        "joinChallenge": MessageLookupByLibrary.simpleMessage("Join challenge"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "mobileDataUse":
             MessageLookupByLibrary.simpleMessage("Mobile data use"),

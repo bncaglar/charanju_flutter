@@ -1,5 +1,6 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile_cubit.dart';
+import 'package:charanju_flutter/logic/cubit/naviigation_system_cubit/navigation_system_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/profile_tab_selscted_cubit/profile_tab_selected_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
 import 'package:charanju_flutter/routes.dart';
@@ -52,6 +53,8 @@ class MyApp extends StatelessWidget {
             create: (BuildContext context) => AddPhotoCubit()),
         BlocProvider<ForgetPasswordCubit>(
             create: (BuildContext context) => ForgetPasswordCubit()),
+        BlocProvider<NavigationSystemCubit>(
+            create: (BuildContext context) => NavigationSystemCubit()),
         BlocProvider<ProfileTabSelectedCubit>(
             create: (BuildContext context) => ProfileTabSelectedCubit()),
       ],
