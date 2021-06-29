@@ -5,6 +5,10 @@ class NotificationModule {
   final String notificationFromUserName;
   final String challengeName;
   final bool isSeen;
+  final String lastMessage;
+  final String username;
+  final String groupMembers;
+  final String groupTitle;
 
   const NotificationModule(
       {required this.urlAvatar,
@@ -12,5 +16,9 @@ class NotificationModule {
       required this.receivedTime,
       required this.notificationFromUserName,
       required this.challengeName,
-      required this.isSeen});
+      required this.isSeen,
+      required this.lastMessage,
+      required this.username,
+      required this.groupMembers,
+      required this.groupTitle});
 }

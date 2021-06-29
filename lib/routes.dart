@@ -2,6 +2,11 @@ import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/screens/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:charanju_flutter/screens/home_screens/home_screen.dart';
 import 'package:charanju_flutter/screens/my_profile_screens/my_profile_screen.dart';
+import 'package:charanju_flutter/screens/notifications_screens/conversations_screens/conversation_page.dart';
+import 'package:charanju_flutter/screens/notifications_screens/conversations_screens/conversation_page.dart';
+import 'package:charanju_flutter/screens/notifications_screens/conversations_screens/conversation_page.dart';
+import 'package:charanju_flutter/screens/notifications_screens/profile_of_another_user_screen/profile_of_another_user.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_messages_screen.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/forget_password/forget_password_screen.dart';
@@ -11,6 +16,8 @@ import 'package:charanju_flutter/screens/settings_screen/settings_screen.dart';
 import 'package:charanju_flutter/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'screens/notifications_screens/conversations_screens/conversation_page.dart';
 
 final log = getLogger();
 
@@ -72,6 +79,24 @@ class Routes {
 
           break;
         }
+      case NotificationMessagesScreen.routeName:
+        {
+          child = NotificationMessagesScreen();
+          break;
+        }
+
+      case ConversationPageScreen.routeName:
+        {
+          child = _buildConversationPageScreenRoute(
+              settings.arguments as ConversationPageArguments);
+          break;
+        }
+      case ProfileOfAnotherUser.routeName:
+        {
+          child =_buildProfileOfAnotherUserRoute(
+          settings.arguments as ProfileOfAnotherUserArguments);
+          break;
+        }
 
       default:
         child = Scaffold(
@@ -94,5 +119,25 @@ class Routes {
         child: child,
       );
     });
+  }
+
+  static Widget _buildConversationPageScreenRoute(
+      ConversationPageArguments arguments) {
+    String urlAvatar = arguments.urlAvatar;
+    String username = arguments.username;
+    return ConversationPageScreen(
+      username: username,
+      urlAvatar: urlAvatar,
+    );
+  }
+
+  static Widget _buildProfileOfAnotherUserRoute(
+      ProfileOfAnotherUserArguments arguments){
+    String urlAvatar = arguments.urlAvatar;
+    String username = arguments.username;
+    return ProfileOfAnotherUser(
+      username: username,
+      urlAvatar: urlAvatar,
+    );
   }
 }
