@@ -87,5 +87,15 @@
   "joinChallenge": "Join challenge",
   "createChallenge": "Create challenge",
   "goLive": "Go Live",
-  "createStory": "Create Story"
+  "createStory": "Create Story",
+  "addUsersToThis": "Add users to this chat",
+  "challenge": "Challenge ",
+  "createTeamChallengeWith": "Create team challange with ",
+  "silenceChat": "Silence chat",
+  "block": "Block",
+  "report": "Report",
+  "non": "",
+  "addFriend": "Add Friend",
+  "showProfile": "Show Profile",
+  "aa": " Aa"
 }

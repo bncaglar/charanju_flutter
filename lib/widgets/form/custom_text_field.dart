@@ -15,6 +15,8 @@ class CustomTextFormField extends StatefulWidget {
   final TextInputType? keyboardType;
   final Widget? suffixIcon;
   final VoidCallback? onEditingComplete;
+  final TextStyle? style;
+  final InputDecoration? decoration;
 
   CustomTextFormField({
     this.validator,
@@ -26,6 +28,8 @@ class CustomTextFormField extends StatefulWidget {
     this.keyboardType,
     this.suffixIcon,
     this.onEditingComplete,
+    this.style,
+    this.decoration,
   });
 
   @override
@@ -45,17 +49,19 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         autovalidateMode: widget.autoValidateMode,
         textAlignVertical: TextAlignVertical.center,
         onEditingComplete: widget.onEditingComplete,
-        style: TextStyle(
-          fontSize: widget.fromRegistration!
-              ? LocalHelper.getFontSize(16)
-              : LocalHelper.getFontSize(15),
-          fontStyle: FontStyle.normal,
-          fontFamily: Strings.ABSOLUTE,
-          color: AppColors.textPrimaryColor,
-        ),
-        decoration: widget.fromRegistration!
-            ? buildInputDecorationForRegistrationScreens()
-            : buildDefaultInputDecoration(),
+        style: widget.style ??
+            TextStyle(
+              fontSize: widget.fromRegistration!
+                  ? LocalHelper.getFontSize(16)
+                  : LocalHelper.getFontSize(15),
+              fontStyle: FontStyle.normal,
+              fontFamily: Strings.ABSOLUTE,
+              color: AppColors.textPrimaryColor,
+            ),
+        decoration: widget.decoration ??
+            (widget.fromRegistration!
+                ? buildInputDecorationForRegistrationScreens()
+                : buildDefaultInputDecoration()),
       ),
     );
   }

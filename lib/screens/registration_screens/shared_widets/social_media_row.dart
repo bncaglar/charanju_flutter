@@ -12,6 +12,7 @@ class SocialMediaRow extends StatefulWidget {
 
 class _SocialMediaRowState extends State<SocialMediaRow> {
   final log = Logger();
+
   appleOnClick() {
     log.i("appleOnClick started");
   }

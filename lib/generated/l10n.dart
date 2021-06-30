@@ -929,6 +929,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Add users to this chat`
+  String get addUsersToThis {
+    return Intl.message(
+      'Add users to this chat',
+      name: 'addUsersToThis',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Challenge `
+  String get challenge {
+    return Intl.message(
+      'Challenge ',
+      name: 'challenge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create team challange with `
+  String get createTeamChallengeWith {
+    return Intl.message(
+      'Create team challange with ',
+      name: 'createTeamChallengeWith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Silence chat`
+  String get silenceChat {
+    return Intl.message(
+      'Silence chat',
+      name: 'silenceChat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Block`
+  String get block {
+    return Intl.message(
+      'Block',
+      name: 'block',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report`
+  String get report {
+    return Intl.message(
+      'Report',
+      name: 'report',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get non {
+    return Intl.message(
+      '',
+      name: 'non',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Friend`
+  String get addFriend {
+    return Intl.message(
+      'Add Friend',
+      name: 'addFriend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Profile`
+  String get showProfile {
+    return Intl.message(
+      'Show Profile',
+      name: 'showProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Aa`
+  String get aa {
+    return Intl.message(
+      ' Aa',
+      name: 'aa',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

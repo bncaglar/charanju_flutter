@@ -82,6 +82,10 @@ class Strings {
   static const DUMMY_USER_NAME = "@luca100";
   static const DROP_DOWN_ICON = "assets/icons/drop_down_icon.png";
   static const COMMENT_ICON = "assets/icons/comment_icon.png";
+  static const COMMENT_INFO_ICON = "assets/icons/comment-info.png";
+  static const COMMENT_EDIT_ICON = "assets/icons/comment-edit.png";
+  static const IMAGE_PLUS_ICON = "assets/icons/image-plus.png";
+  static const ARROW_CIRCLE_UP_ICON = "assets/icons/circle_up.png";
   static const NOTIFICATION_AVATAR_1 =
       "assets/images/notification_avatar_1.png";
   static const NOTIFICATION_AVATAR_2 =

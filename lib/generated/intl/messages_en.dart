@@ -21,15 +21,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aa": MessageLookupByLibrary.simpleMessage(" Aa"),
         "accountActivity":
             MessageLookupByLibrary.simpleMessage("Account activity"),
         "addCompleteSignUpTermsTextPart1": MessageLookupByLibrary.simpleMessage(
             "By registering, you agree to our "),
         "addCompleteSignUpTermsTextPart2": MessageLookupByLibrary.simpleMessage(
             "terms of use, our data policy and our policy for cookies."),
+        "addFriend": MessageLookupByLibrary.simpleMessage("Add Friend"),
         "addPhotoText": MessageLookupByLibrary.simpleMessage("Add a photo"),
         "addProfilePhoto":
             MessageLookupByLibrary.simpleMessage("Add profile photo"),
+        "addUsersToThis":
+            MessageLookupByLibrary.simpleMessage("Add users to this chat"),
         "addaProfilePhotoRecognition": MessageLookupByLibrary.simpleMessage(
             "Add a profile picture for recognition"),
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
@@ -46,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "biographyLongText": MessageLookupByLibrary.simpleMessage(
             "Volutpat maecenas volutpat blandit aliquam etiam erat velit. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Hendrerit gravida rutrum quisque non tellus orci ac auctor."),
         "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
+        "block": MessageLookupByLibrary.simpleMessage("Block"),
+        "challenge": MessageLookupByLibrary.simpleMessage("Challenge "),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from gallery"),
         "choosePassword": MessageLookupByLibrary.simpleMessage(
@@ -63,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "createChallenge":
             MessageLookupByLibrary.simpleMessage("Create challenge"),
         "createStory": MessageLookupByLibrary.simpleMessage("Create Story"),
+        "createTeamChallengeWith":
+            MessageLookupByLibrary.simpleMessage("Create team challange with "),
         "createYourProfile":
             MessageLookupByLibrary.simpleMessage("Create your profile"),
         "dataSettings": MessageLookupByLibrary.simpleMessage("Data settings"),
@@ -97,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "mobileDataUse":
             MessageLookupByLibrary.simpleMessage("Mobile data use"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+        "non": MessageLookupByLibrary.simpleMessage(""),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "on": MessageLookupByLibrary.simpleMessage("On"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
@@ -126,13 +135,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeAccount": MessageLookupByLibrary.simpleMessage("Remove account"),
         "removePhotosensitiveVideos": MessageLookupByLibrary.simpleMessage(
             "Remove photosensitive videos"),
+        "report": MessageLookupByLibrary.simpleMessage("Report"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "resendCodeText": MessageLookupByLibrary.simpleMessage(" Resend code."),
         "sentYouMessage":
             MessageLookupByLibrary.simpleMessage("sent you a message"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "showProfile": MessageLookupByLibrary.simpleMessage("Show Profile"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "silenceChat": MessageLookupByLibrary.simpleMessage("Silence chat"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Take photo"),
         "terms": MessageLookupByLibrary.simpleMessage("Terms"),

@@ -1,15 +1,18 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_data.dart';
 import 'package:charanju_flutter/helper/modules/notification_module.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notifications_app_bar.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/avatar.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/time_field.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/notifications_app_bar.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
+
+import 'messages_screen.dart';
 
 class NotificationScreen extends StatefulWidget {
   static const routeName = '/NotificationScreen';
@@ -26,24 +29,44 @@ class _NotificationScreenState extends State<NotificationScreen> {
     log.i("onNotificationClicked Started Item is:$item");
   }
 
+  onClickChatIcon() {
+    log.i("onClickChatIcon started");
+    Navigator.pushNamed(context, MessagesScreen.routeName);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(7.5.h),
-          child: NotificationsAppBar(),
-        ),
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundPrimaryColor,
-        body: ListView.builder(
-          padding: EdgeInsets.zero,
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return buildSlidAble(item, index);
-          },
-        ),
+        appBar: buildNotificationAppBar(),
+        body: buildNotificationBody(),
+      ),
+    );
+  }
+
+  ListView buildNotificationBody() {
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return buildSlidAble(item, index);
+      },
+    );
+  }
+
+  PreferredSize buildNotificationAppBar() {
+    return PreferredSize(
+      preferredSize: Size.fromHeight(7.5.h),
+      child: NotificationsAppBar(
+        addIconOnAppBar: true,
+        addUserPhoto: false,
+        addUserName: false,
+        addFilterMenu: true,
+        onClickBtn: onClickChatIcon,
+        iconURL: Strings.COMMENT_ICON,
       ),
     );
   }
@@ -105,58 +128,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
           right: 14.6.w,
           bottom: 1.64.h,
         ),
-        leading: avatar(item),
+        leading: NotificationAvatar(
+          imagePath: item.urlAvatar,
+          notificationEllipse: notificationEllipse(item),
+        ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [notificationContent(item)],
         ),
-        subtitle: timeField(item),
+        subtitle: TimeField(
+          item: item,
+        ),
         onTap: () {
           onNotificationClicked(item);
         },
       );
-
-  AutoSizeText timeField(item) {
-    return AutoSizeText(
-      ///todo timer will come from API
-      item.receivedTime,
-      style: TextStyle(
-        fontSize: LocalHelper.getFontSize(12),
-        color: AppColors.textPrimaryColor,
-        fontWeight: FontWeight.w400,
-        fontFamily: Strings.ARIAL,
-      ),
-    );
-  }
-
-  Stack avatar(item) {
-    return Stack(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: Colors.white,
-            ),
-          ),
-          child: CircleAvatar(
-            ///todo photoURL will come from API
-            radius: 30,
-            backgroundImage: AssetImage(
-              item.urlAvatar,
-            ),
-            backgroundColor: Colors.transparent,
-          ),
-        ),
-        Positioned(
-          top: 0,
-          right: 0,
-          child: notificationEllipse(item),
-        )
-      ],
-    );
-  }
 
   Container notificationEllipse(item) {
     return Container(
