@@ -57,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "choosePassword": MessageLookupByLibrary.simpleMessage(
             "Choose a password so we can create an account for you. It must consist of at least 8 characters"),
         "code": MessageLookupByLibrary.simpleMessage("Code"),
+        "comments": MessageLookupByLibrary.simpleMessage("Comments"),
         "completeSignUp":
             MessageLookupByLibrary.simpleMessage("Complete sign up"),
         "confirmPassword":
@@ -68,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "continueText": MessageLookupByLibrary.simpleMessage("Continue"),
         "createChallenge":
             MessageLookupByLibrary.simpleMessage("Create challenge"),
+        "createGroupChat":
+            MessageLookupByLibrary.simpleMessage("Create group chat"),
         "createStory": MessageLookupByLibrary.simpleMessage("Create Story"),
         "createTeamChallengeWith":
             MessageLookupByLibrary.simpleMessage("Create team challange with "),
@@ -79,6 +82,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "followers": MessageLookupByLibrary.simpleMessage("Followers"),
+        "followingFollowers":
+            MessageLookupByLibrary.simpleMessage("Following and followers"),
         "follows": MessageLookupByLibrary.simpleMessage("Follows"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
@@ -102,9 +107,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("is your opponent in "),
         "joinChallenge": MessageLookupByLibrary.simpleMessage("Join challenge"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "mobileDataUse":
             MessageLookupByLibrary.simpleMessage("Mobile data use"),
+        "newChallengeRequest":
+            MessageLookupByLibrary.simpleMessage("New challenge requests"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+        "newVideosVictories":
+            MessageLookupByLibrary.simpleMessage("New videos and victories"),
         "non": MessageLookupByLibrary.simpleMessage(""),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "on": MessageLookupByLibrary.simpleMessage("On"),
@@ -138,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "report": MessageLookupByLibrary.simpleMessage("Report"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "resendCodeText": MessageLookupByLibrary.simpleMessage(" Resend code."),
+        "searchUser": MessageLookupByLibrary.simpleMessage("Search user"),
         "sentYouMessage":
             MessageLookupByLibrary.simpleMessage("sent you a message"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),

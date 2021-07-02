@@ -1,6 +1,7 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/widgets/icon_btn_as_image.dart';
+import 'package:charanju_flutter/widgets/notification_drop_down_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -31,20 +32,28 @@ class _SearchNotificationFieldState extends State<SearchNotificationField> {
     log.i("onArrowClicked Started");
   }
 
+  onClickSearchIcon() {
+    log.i("onClickSearchIcon started");
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      labelText: S.of(context).allNotifications,
+      prefixIcon: prefixIcon(),
+      labelText: S.of(context).searchUser,
       controller: widget.controller,
       onEditingComplete: onEditingComplete,
       fromRegistration: false,
       autoValidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: TextInputType.text,
-      suffixIcon: IconBtnAsPngImage(
-        imageUrl: Strings.DROP_DOWN_ICON,
-        onClickBtn: onArrowClicked,
-        boxFit: BoxFit.cover,
-      ),
+    );
+  }
+
+  IconBtnAsPngImage prefixIcon() {
+    return IconBtnAsPngImage(
+      imageUrl: Strings.SEARCH_ICON_PNG,
+      onClickBtn: onClickSearchIcon,
+      boxFit: BoxFit.contain,
     );
   }
 }

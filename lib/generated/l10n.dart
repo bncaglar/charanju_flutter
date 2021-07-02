@@ -1029,6 +1029,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Following and followers`
+  String get followingFollowers {
+    return Intl.message(
+      'Following and followers',
+      name: 'followingFollowers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New videos and victories`
+  String get newVideosVictories {
+    return Intl.message(
+      'New videos and victories',
+      name: 'newVideosVictories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comments`
+  String get comments {
+    return Intl.message(
+      'Comments',
+      name: 'comments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Messages`
+  String get messages {
+    return Intl.message(
+      'Messages',
+      name: 'messages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New challenge requests`
+  String get newChallengeRequest {
+    return Intl.message(
+      'New challenge requests',
+      name: 'newChallengeRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search user`
+  String get searchUser {
+    return Intl.message(
+      'Search user',
+      name: 'searchUser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create group chat`
+  String get createGroupChat {
+    return Intl.message(
+      'Create group chat',
+      name: 'createGroupChat',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

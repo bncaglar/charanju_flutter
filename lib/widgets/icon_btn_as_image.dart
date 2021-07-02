@@ -22,7 +22,7 @@ class IconBtnAsPngImage extends StatelessWidget {
         width: 6.66.w,
         child: Image.asset(
           imageUrl,
-          fit: boxFit ?? BoxFit.fill,
+          fit: boxFit ?? BoxFit.contain,
         ),
       ),
     );

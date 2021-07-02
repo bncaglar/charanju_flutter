@@ -18,4 +18,5 @@ class AppColors {
   static final transparentGrayColor = HexColor("#434343");
   static final allNotificationsTextColor = HexColor("#8E8E93");
   static final dismissRedColor = HexColor("#CA2A20");
+  static final dropDownMenuColor = HexColor("#323236");
 }

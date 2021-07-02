@@ -51,6 +51,8 @@ class _ProfileOfAnotherUserScreenState
     return PreferredSize(
       preferredSize: Size.fromHeight(7.5.h),
       child: NotificationsAppBar(
+        addSearchField: false,
+        addBackBtn: true,
         username: widget.username,
         addIconOnAppBar: false,
         addUserPhoto: false,

@@ -17,6 +17,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'logic/cubit/add_photo_cubit/add_photo_cubit.dart';
 import 'logic/cubit/forget_password_cubit/forget_password_cubit.dart';
+import 'logic/cubit/notification_drop_down_cubit/notification_drop_down_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,6 +58,8 @@ class MyApp extends StatelessWidget {
             create: (BuildContext context) => NavigationSystemCubit()),
         BlocProvider<ProfileTabSelectedCubit>(
             create: (BuildContext context) => ProfileTabSelectedCubit()),
+        BlocProvider<NotificationDropDownCubit>(
+            create: (BuildContext context) =>NotificationDropDownCubit()),
       ],
       child: CharanjuApp(),
     );

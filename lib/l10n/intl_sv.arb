@@ -97,5 +97,12 @@
   "non": "",
   "addFriend": "Add Friend",
   "showProfile": "Show Profile",
-  "aa": " Aa"
+  "aa": " Aa",
+  "followingFollowers" : "Following and followers",
+  "newVideosVictories" : "New videos and victories",
+  "comments" : "Comments",
+  "messages" : "Messages",
+  "newChallengeRequest" : "New challenge requests",
+  "searchUser" : "Search user",
+  "createGroupChat" : "Create group chat"
 }

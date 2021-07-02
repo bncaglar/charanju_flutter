@@ -1,5 +1,7 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
+import 'package:charanju_flutter/logic/cubit/notification_drop_down_cubit/notification_drop_down_cubit.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_data.dart';
 import 'package:charanju_flutter/helper/modules/notification_module.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/avatar.dart';
@@ -8,6 +10,7 @@ import 'package:charanju_flutter/screens/notifications_screens/notification_scre
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
@@ -46,7 +49,57 @@ class _NotificationScreenState extends State<NotificationScreen> {
     );
   }
 
-  ListView buildNotificationBody() {
+  BlocBuilder<NotificationDropDownCubit, NotificationDropDownState>
+      buildNotificationBody() {
+    return BlocBuilder<NotificationDropDownCubit, NotificationDropDownState>(
+      builder: (context, state) {
+        if (state is FollowingAndFollowers) {
+          return buildFollowingAndFollowersList();
+        }
+        if (state is NewVideosAndVictories) {
+          return buildNewVideosAndVictoriesList();
+        }
+        if (state is Comments) {
+          return buildCommentsList();
+        }
+        if (state is Messages) {
+          return buildMessagesList();
+        }
+        if (state is NewChallengeRequests) {
+          return buildNewChallengeRequestsList();
+        }
+        return buildAllNotificationList();
+      },
+    );
+  }
+
+  ListView buildFollowingAndFollowersList() {
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return item.categories == S.of(context).followingFollowers
+            ? buildSlidAble(item, index)
+            : Container();
+      },
+    );
+  }
+
+  ListView buildCommentsList() {
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return item.categories == S.of(context).comments
+            ? buildSlidAble(item, index)
+            : Container();
+      },
+    );
+  }
+
+  ListView buildAllNotificationList() {
     return ListView.builder(
       padding: EdgeInsets.zero,
       itemCount: items.length,
@@ -57,16 +110,57 @@ class _NotificationScreenState extends State<NotificationScreen> {
     );
   }
 
+  ListView buildNewChallengeRequestsList() {
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return item.categories == S.of(context).newChallengeRequest
+            ? buildSlidAble(item, index)
+            : Container();
+      },
+    );
+  }
+
+  ListView buildNewVideosAndVictoriesList() {
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return item.categories == S.of(context).newVideosVictories
+            ? buildSlidAble(item, index)
+            : Container();
+      },
+    );
+  }
+
+  ListView buildMessagesList() {
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return item.categories == S.of(context).messages
+            ? buildSlidAble(item, index)
+            : Container();
+      },
+    );
+  }
+
   PreferredSize buildNotificationAppBar() {
     return PreferredSize(
       preferredSize: Size.fromHeight(7.5.h),
       child: NotificationsAppBar(
+        addSearchField: false,
         addIconOnAppBar: true,
         addUserPhoto: false,
         addUserName: false,
         addFilterMenu: true,
         onClickBtn: onClickChatIcon,
         iconURL: Strings.COMMENT_ICON,
+        addBackBtn: false,
       ),
     );
   }

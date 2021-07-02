@@ -9,6 +9,7 @@ class NotificationModule {
   final String username;
   final String groupMembers;
   final String groupTitle;
+  final String categories;
 
   const NotificationModule(
       {required this.urlAvatar,
@@ -20,5 +21,6 @@ class NotificationModule {
       required this.lastMessage,
       required this.username,
       required this.groupMembers,
-      required this.groupTitle});
+      required this.groupTitle,
+      required this.categories});
 }

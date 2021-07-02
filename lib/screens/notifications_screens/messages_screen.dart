@@ -5,6 +5,7 @@ import 'package:charanju_flutter/screens/notifications_screens/chat_screens/grou
 import 'package:charanju_flutter/screens/notifications_screens/notification_data.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/avatar.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/time_field.dart';
+import 'package:charanju_flutter/screens/notifications_screens/search_user_screen/search_user_screen.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -26,6 +27,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
 
   onClickCommentEditIcon() {
     log.i("onClickCommentEditIcon started");
+    Navigator.pushNamed(context, SearchUserScreen.routeName);
   }
 
   onUserClicked(item) {
@@ -61,6 +63,8 @@ class _MessagesScreenState extends State<MessagesScreen> {
     return PreferredSize(
       preferredSize: Size.fromHeight(7.5.h),
       child: NotificationsAppBar(
+        addSearchField: false,
+        addBackBtn: true,
         addIconOnAppBar: true,
         addUserPhoto: false,
         addUserName: false,

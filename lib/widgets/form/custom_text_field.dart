@@ -14,6 +14,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool? fromRegistration;
   final TextInputType? keyboardType;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final VoidCallback? onEditingComplete;
   final TextStyle? style;
   final InputDecoration? decoration;
@@ -30,6 +31,7 @@ class CustomTextFormField extends StatefulWidget {
     this.onEditingComplete,
     this.style,
     this.decoration,
+    this.prefixIcon
   });
 
   @override
@@ -73,6 +75,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       fillColor: AppColors.backgroundPrimaryColor,
       labelText: widget.labelText,
       focusColor: AppColors.primaryColor,
+      prefixIcon: widget.prefixIcon ?? null,
       suffixIcon: widget.suffixIcon ?? null,
       errorStyle: TextStyle(
         fontSize: 8.57.sp,
@@ -123,6 +126,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       fillColor: AppColors.modalBottomSheetColor,
       labelText: widget.labelText,
       focusColor: AppColors.primaryColor,
+      prefixIcon: widget.prefixIcon ?? null,
       suffixIcon: widget.suffixIcon ?? null,
       errorStyle: TextStyle(
         fontSize: LocalHelper.getFontSize(8),

@@ -47,6 +47,8 @@ class _ChatScreenState extends State<ChatScreen> {
     return PreferredSize(
       preferredSize: Size.fromHeight(7.5.h),
       child: NotificationsAppBar(
+        addSearchField: false,
+        addBackBtn: true,
         username: widget.username,
         addIconOnAppBar: true,
         addUserPhoto: true,

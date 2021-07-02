@@ -98,4 +98,7 @@ class Strings {
   static const CREATE_CHALLENGE_PNG = "assets/icons/create_challenge_icon.png";
   static const GO_LIVE = "assets/icons/go_live_icon.png";
   static const CREATE_STORY_PNG = "assets/icons/create_story_png.png";
+  static const USER_PLUS_PNG = "assets/icons/search_user-plus.png";
+  static const USER_ALT_PNG = "assets/icons/users-alt.png";
+  static const SEARCH_ICON_PNG = "assets/icons/mangnifying_glass.png";
 }

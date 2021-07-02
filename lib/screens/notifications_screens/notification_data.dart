@@ -5,6 +5,7 @@ import 'package:charanju_flutter/helper/modules/notification_module.dart';
 class NotificationData {
   static var notifications = <NotificationModule>[
     NotificationModule(
+      categories: S.current.messages,
       urlAvatar: Strings.NOTIFICATION_AVATAR_1,
       notificationMessage: S.current.sentYouMessage,
       receivedTime: "30 min",
@@ -17,6 +18,7 @@ class NotificationData {
       groupTitle: "",
     ),
     NotificationModule(
+      categories: S.current.newChallengeRequest,
       urlAvatar: Strings.NOTIFICATION_AVATAR_2,
       notificationMessage: S.current.wantsToChallengeYou,
       receivedTime: "30 min",
@@ -29,6 +31,7 @@ class NotificationData {
       groupTitle: "",
     ),
     NotificationModule(
+      categories: S.current.newVideosVictories,
       urlAvatar: Strings.NOTIFICATION_AVATAR_1,
       notificationMessage: S.current.youWonTheLastChallenge,
       receivedTime: "30 min",
@@ -41,6 +44,7 @@ class NotificationData {
       groupTitle: "Group chat",
     ),
     NotificationModule(
+      categories: S.current.newVideosVictories,
       urlAvatar: Strings.NOTIFICATION_AVATAR_3,
       notificationMessage: S.current.youWonTheBetOn,
       receivedTime: "30 min",
@@ -53,6 +57,7 @@ class NotificationData {
       groupTitle: "",
     ),
     NotificationModule(
+      categories: S.current.newChallengeRequest,
       urlAvatar: Strings.NOTIFICATION_AVATAR_1,
       notificationMessage: S.current.wantsToChallengeYou,
       receivedTime: "1w",
@@ -65,6 +70,7 @@ class NotificationData {
       groupTitle: "",
     ),
     NotificationModule(
+      categories: S.current.newVideosVictories,
       urlAvatar: Strings.NOTIFICATION_AVATAR_3,
       notificationMessage: S.current.isYourOpponent,
       receivedTime: "2w",

@@ -6,6 +6,7 @@ import 'package:charanju_flutter/screens/notifications_screens/chat_screens/chat
 import 'package:charanju_flutter/screens/notifications_screens/profile_of_another_user_screen/profile_of_another_user_screen.dart';
 import 'package:charanju_flutter/screens/notifications_screens/messages_screen.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen.dart';
+import 'package:charanju_flutter/screens/notifications_screens/search_user_screen/search_user_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';
 import 'package:charanju_flutter/screens/registration_screens/forget_password/forget_password_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
@@ -92,6 +93,11 @@ class Routes {
         {
           child = _buildProfileOfAnotherUserRoute(
               settings.arguments as ProfileOfAnotherUserScreenArguments);
+          break;
+        }
+      case SearchUserScreen.routeName:
+        {
+          child = SearchUserScreen();
           break;
         }
 
