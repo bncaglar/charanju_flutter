@@ -34,12 +34,13 @@ class _NotificationDropDownMenuState extends State<NotificationDropDownMenu> {
       S.of(context).newChallengeRequest,
     ];
     return Container(
-        width: 81.38.w,
-        height: 5.62.h,
-        padding: EdgeInsets.only(left: 3.88.w),
-        color: AppColors.modalBottomSheetColor,
+      width: 81.38.w,
+      height: 5.62.h,
+      color: AppColors.modalBottomSheetColor,
+      child: ButtonTheme(
+        alignedDropdown: true,
         child: DropdownButton(
-          //menuMaxHeight: 28.43.h,
+          setSelectedItemOffset: -5.65.h,
           icon: IconBtnAsPngImage(
             imageUrl: Strings.DROP_DOWN_ICON,
             onClickBtn: onArrowClicked,
@@ -67,10 +68,14 @@ class _NotificationDropDownMenuState extends State<NotificationDropDownMenu> {
           items: _dropDownItems.map(
             (value) {
               return DropdownMenuItem(
-                  value: value, child: dropDownTextItem(value));
+                value: value,
+                child: dropDownTextItem(value),
+              );
             },
           ).toList(),
-        ));
+        ),
+      ),
+    );
   }
 
   AutoSizeText dropDownTextItem(value) {
@@ -100,9 +105,9 @@ class _NotificationDropDownMenuState extends State<NotificationDropDownMenu> {
     } else if (dropDownValue == S.current.messages) {
       context.read<NotificationDropDownCubit>().changeStep(Messages());
     } else if (dropDownValue == S.current.newChallengeRequest) {
-      context
-          .read<NotificationDropDownCubit>()
-          .changeStep(NewChallengeRequests());
+      context.read<NotificationDropDownCubit>().changeStep(
+            NewChallengeRequests(),
+          );
     }
   }
 }

@@ -69,8 +69,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        widget.addBackBtn ?
-        buildBackBtn() : Container(),
+        widget.addBackBtn ? buildBackBtn() : Container(),
         dropDownMenuField(),
         chatIconSection(),
       ],
@@ -83,7 +82,9 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
       children: [
         buildLeading(),
         widget.addSearchField ? searchNotificationsField() : Container(),
-        SizedBox(width: 1.05.w,),
+        SizedBox(
+          width: 1.05.w,
+        ),
         widget.addIconOnAppBar ? chatIconSection() : Container()
       ],
     );
@@ -97,7 +98,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     return IconBtnAsPngImage(
       onClickBtn: widget.onClickBtn!,
       imageUrl: widget.iconURL!,
-     // boxFit: BoxFit.contain,
+      // boxFit: BoxFit.contain,
     );
   }
 
@@ -169,5 +170,4 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
       ),
     );
   }
-
 }

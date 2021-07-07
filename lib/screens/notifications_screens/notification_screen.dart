@@ -15,6 +15,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
+import 'chat_screens/chat_screen.dart';
 import 'messages_screen.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -35,6 +36,16 @@ class _NotificationScreenState extends State<NotificationScreen> {
   onClickChatIcon() {
     log.i("onClickChatIcon started");
     Navigator.pushNamed(context, MessagesScreen.routeName);
+  }
+
+  onMessageNotificationClicked(item) {
+    log.i("onMessageNotificationClicked started");
+    Navigator.pushNamed(
+      context,
+      ChatScreen.routeName,
+      arguments: ChatScreenArguments(
+          urlAvatar: item.urlAvatar, username: item.username),
+    );
   }
 
   @override
@@ -235,6 +246,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
         ),
         onTap: () {
           onNotificationClicked(item);
+          item.categories == S.of(context).messages
+              ? onMessageNotificationClicked(item)
+              : Container();
         },
       );
 
@@ -254,25 +268,26 @@ class _NotificationScreenState extends State<NotificationScreen> {
     ///TODO content of the notification title will come from API
     return RichText(
       text: TextSpan(
-          style: TextStyle(
-            fontSize: LocalHelper.getFontSize(15),
-            color: AppColors.primaryWightColor,
-            fontWeight: FontWeight.w400,
+        style: TextStyle(
+          fontSize: LocalHelper.getFontSize(15),
+          color: AppColors.primaryWightColor,
+          fontWeight: FontWeight.w400,
+        ),
+        children: [
+          TextSpan(
+            text: item.notificationFromUserName,
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+            ),
           ),
-          children: [
-            TextSpan(
-              text: item.notificationFromUserName,
-              style: TextStyle(
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            TextSpan(
-              text: item.notificationMessage,
-            ),
-            TextSpan(
-              text: item.challengeName,
-            ),
-          ]),
+          TextSpan(
+            text: item.notificationMessage,
+          ),
+          TextSpan(
+            text: item.challengeName,
+          ),
+        ],
+      ),
     );
   }
 }
