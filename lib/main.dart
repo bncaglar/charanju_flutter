@@ -3,6 +3,7 @@ import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile
 import 'package:charanju_flutter/logic/cubit/naviigation_system_cubit/navigation_system_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/profile_tab_selscted_cubit/profile_tab_selected_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
+import 'package:charanju_flutter/logic/cubit/search_discover_challenges_cubit/discover_challenges_screens_cubit.dart';
 import 'package:charanju_flutter/routes.dart';
 import 'package:charanju_flutter/widgets/constant_scroll_behavior.dart';
 import 'package:device_preview/device_preview.dart';
@@ -59,7 +60,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<ProfileTabSelectedCubit>(
             create: (BuildContext context) => ProfileTabSelectedCubit()),
         BlocProvider<NotificationDropDownCubit>(
-            create: (BuildContext context) =>NotificationDropDownCubit()),
+            create: (BuildContext context) => NotificationDropDownCubit()),
+        BlocProvider<DiscoverChallengesScreensCubit>(
+            create: (BuildContext context) => DiscoverChallengesScreensCubit()),
       ],
       child: CharanjuApp(),
     );

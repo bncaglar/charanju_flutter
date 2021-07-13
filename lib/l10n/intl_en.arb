@@ -104,5 +104,20 @@
   "messages" : "Messages",
   "newChallengeRequest" : "New challenge requests",
   "searchUser" : "Search user",
-  "createGroupChat" : "Create group chat"
+  "createGroupChat" : "Create group chat",
+  "searchChallenges" : "Search challenges",
+  "trending": "Trending",
+  "sport" : "Sport",
+  "fashion" : "Fashion",
+  "art" : "Art",
+  "dance" : "Dance",
+  "sing" : "Sing",
+  "outDoorChallenge" : "#outdoorchallange",
+  "newStyle" : "#newstyle",
+  "dogPortrait" : "#dogportrait",
+  "makeUp" : "#makeup",
+  "walkOnRamp" : "#walkonramp",
+  "streetFashion" : "#streetfashion",
+  "sponsorEvents" : "Sponsor Events",
+  "colaChallenge" : "Cola Challenge"
 }

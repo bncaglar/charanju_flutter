@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Animated Miniature"),
         "announcementText": MessageLookupByLibrary.simpleMessage(
             "#colapickup event just started join the challenge now!"),
+        "art": MessageLookupByLibrary.simpleMessage("Art"),
         "backupFiles": MessageLookupByLibrary.simpleMessage("Backup Files"),
         "biography": MessageLookupByLibrary.simpleMessage("Biography"),
         "biographyLongText": MessageLookupByLibrary.simpleMessage(
@@ -57,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "choosePassword": MessageLookupByLibrary.simpleMessage(
             "Choose a password so we can create an account for you. It must consist of at least 8 characters"),
         "code": MessageLookupByLibrary.simpleMessage("Code"),
+        "colaChallenge": MessageLookupByLibrary.simpleMessage("Cola Challenge"),
         "comments": MessageLookupByLibrary.simpleMessage("Comments"),
         "completeSignUp":
             MessageLookupByLibrary.simpleMessage("Complete sign up"),
@@ -76,11 +78,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create team challange with "),
         "createYourProfile":
             MessageLookupByLibrary.simpleMessage("Create your profile"),
+        "dance": MessageLookupByLibrary.simpleMessage("Dance"),
         "dataSettings": MessageLookupByLibrary.simpleMessage("Data settings"),
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("Do not have an account? "),
+        "dogPortrait": MessageLookupByLibrary.simpleMessage("#dogportrait"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "fashion": MessageLookupByLibrary.simpleMessage("Fashion"),
         "followers": MessageLookupByLibrary.simpleMessage("Followers"),
         "followingFollowers":
             MessageLookupByLibrary.simpleMessage("Following and followers"),
@@ -107,18 +112,22 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("is your opponent in "),
         "joinChallenge": MessageLookupByLibrary.simpleMessage("Join challenge"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "makeUp": MessageLookupByLibrary.simpleMessage("#makeup"),
         "messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "mobileDataUse":
             MessageLookupByLibrary.simpleMessage("Mobile data use"),
         "newChallengeRequest":
             MessageLookupByLibrary.simpleMessage("New challenge requests"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+        "newStyle": MessageLookupByLibrary.simpleMessage("#newstyle"),
         "newVideosVictories":
             MessageLookupByLibrary.simpleMessage("New videos and victories"),
         "non": MessageLookupByLibrary.simpleMessage(""),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "on": MessageLookupByLibrary.simpleMessage("On"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
+        "outDoorChallenge":
+            MessageLookupByLibrary.simpleMessage("#outdoorchallange"),
         "paragraph1": MessageLookupByLibrary.simpleMessage(
             "•   Amet etiam quis consequat magna sed aliquet mattis dapibus tellus."),
         "paragraph2": MessageLookupByLibrary.simpleMessage(
@@ -148,6 +157,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "report": MessageLookupByLibrary.simpleMessage("Report"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "resendCodeText": MessageLookupByLibrary.simpleMessage(" Resend code."),
+        "searchChallenges":
+            MessageLookupByLibrary.simpleMessage("Search challenges"),
         "searchUser": MessageLookupByLibrary.simpleMessage("Search user"),
         "sentYouMessage":
             MessageLookupByLibrary.simpleMessage("sent you a message"),
@@ -156,7 +167,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
         "silenceChat": MessageLookupByLibrary.simpleMessage("Silence chat"),
+        "sing": MessageLookupByLibrary.simpleMessage("Sing"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "sponsorEvents": MessageLookupByLibrary.simpleMessage("Sponsor Events"),
+        "sport": MessageLookupByLibrary.simpleMessage("Sport"),
+        "streetFashion": MessageLookupByLibrary.simpleMessage("#streetfashion"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Take photo"),
         "terms": MessageLookupByLibrary.simpleMessage("Terms"),
         "termsOfUse": MessageLookupByLibrary.simpleMessage("Terms of Use"),
@@ -166,10 +181,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "This information won’t be shown publicly."),
         "textUnderUserNameField": MessageLookupByLibrary.simpleMessage(
             "Come up with your nickname so people can easily find you "),
+        "trending": MessageLookupByLibrary.simpleMessage("Trending"),
         "userName": MessageLookupByLibrary.simpleMessage("Username"),
         "userNameStartWithCapitalLetter": MessageLookupByLibrary.simpleMessage(
             "User name should start with capital letter"),
         "videoLanguage": MessageLookupByLibrary.simpleMessage("Video Language"),
+        "walkOnRamp": MessageLookupByLibrary.simpleMessage("#walkonramp"),
         "wantsToChallengeYou":
             MessageLookupByLibrary.simpleMessage("wants to challenge you to "),
         "weWillSendCode": MessageLookupByLibrary.simpleMessage(

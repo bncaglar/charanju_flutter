@@ -18,6 +18,7 @@ class CustomTextFormField extends StatefulWidget {
   final VoidCallback? onEditingComplete;
   final TextStyle? style;
   final InputDecoration? decoration;
+  final VoidCallback? onChanged;
 
   CustomTextFormField({
     this.validator,
@@ -31,7 +32,8 @@ class CustomTextFormField extends StatefulWidget {
     this.onEditingComplete,
     this.style,
     this.decoration,
-    this.prefixIcon
+    this.prefixIcon,
+    this.onChanged
   });
 
   @override
@@ -51,6 +53,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         autovalidateMode: widget.autoValidateMode,
         textAlignVertical: TextAlignVertical.center,
         onEditingComplete: widget.onEditingComplete,
+        onTap: widget.onChanged,
         style: widget.style ??
             TextStyle(
               fontSize: widget.fromRegistration!

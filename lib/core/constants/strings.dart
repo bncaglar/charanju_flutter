@@ -39,6 +39,7 @@ class Strings {
   static const NETWORK_IMAGE = "assets/images/network_image.png";
   static const ABSOLUTE = "absolute";
   static const ARIAL = "Arial";
+  static const MULISH = "Mulish";
   static const NAVIGATION_CIRCLE_PNG = "assets/icons/navigation_bar_circle.png";
   static const NAVIGATION_HOME_PNG = "assets/icons/navigation_bar_home.png";
   static const NAVIGATION_NOTIFICATIONS_PNG =
@@ -101,4 +102,13 @@ class Strings {
   static const USER_PLUS_PNG = "assets/icons/search_user-plus.png";
   static const USER_ALT_PNG = "assets/icons/users-alt.png";
   static const SEARCH_ICON_PNG = "assets/icons/mangnifying_glass.png";
+  static const QR_CODE_SCANNING_PNG = "assets/icons/qrcode-scan.png";
+  static const CLOSE_ICON_PNG = "assets/icons/close.png";
+  static const DISCOVER_CHALLENGE_PHOTO_LEFT = "assets/images/discover_challenge_photo_left.png";
+  static const DISCOVER_CHALLENGE_PHOTO_RIGHT = "assets/images/discover_challenge_photo_right.png";
+  static const SPONSOR_HEADER_PHOTO = "assets/images/event_header_photo.png";
+  static const DISCOVER_CHALLENGE_PHOTO_LEFT1 = "assets/images/discover_challenge_photo_left1.png";
+  static const DISCOVER_CHALLENGE_PHOTO_RIGHT1 = "assets/images/discover_challenge_photo_right1.png";
+  static const DISCOVER_CHALLENGE_PHOTO_LEFT2 = "assets/images/discover_challenge_photo_left2.png";
+  static const DISCOVER_CHALLENGE_PHOTO_RIGHT2 = "assets/images/discover_challenge_photo_right2.png";
 }

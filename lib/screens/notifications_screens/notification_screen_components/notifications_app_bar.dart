@@ -22,6 +22,11 @@ class NotificationsAppBar extends StatefulWidget {
   final bool addBackBtn;
   final bool addSearchField;
   final String? searchFieldTitle;
+  final String? addSearchFieldTitle;
+  final VoidCallback? onEditingComplete;
+  final VoidCallback? onChanged;
+  final double? searchFieldHeight;
+  final double? searchFieldWidth;
 
   NotificationsAppBar(
       {Key? key,
@@ -35,7 +40,12 @@ class NotificationsAppBar extends StatefulWidget {
       this.username,
       required this.addBackBtn,
       required this.addSearchField,
-      this.searchFieldTitle})
+      this.searchFieldTitle,
+      this.addSearchFieldTitle,
+      this.onChanged,
+      this.onEditingComplete,
+      this.searchFieldHeight,
+      this.searchFieldWidth})
       : super(key: key);
 
   @override
@@ -80,7 +90,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        buildLeading(),
+        widget.addBackBtn ? buildLeading(): Container(),
         widget.addSearchField ? searchNotificationsField() : Container(),
         SizedBox(
           width: 1.05.w,
@@ -162,9 +172,12 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
 
   Container searchNotificationsField() {
     return Container(
-      width: 72.w,
-      height: 5.62.h,
+      width: widget.searchFieldWidth ?? 72.w,
+      height: widget.searchFieldHeight ?? 5.62.h,
       child: SearchNotificationField(
+        onChanged: widget.onChanged,
+        onEditingComplete: widget.onEditingComplete,
+        addSearchFieldTitle: widget.addSearchFieldTitle,
         controller: searchController,
         serverSearchErrorText: null, //todo send server error here
       ),

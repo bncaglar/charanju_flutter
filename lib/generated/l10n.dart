@@ -1099,6 +1099,156 @@ class S {
       args: [],
     );
   }
+
+  /// `Search challenges`
+  String get searchChallenges {
+    return Intl.message(
+      'Search challenges',
+      name: 'searchChallenges',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trending`
+  String get trending {
+    return Intl.message(
+      'Trending',
+      name: 'trending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sport`
+  String get sport {
+    return Intl.message(
+      'Sport',
+      name: 'sport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fashion`
+  String get fashion {
+    return Intl.message(
+      'Fashion',
+      name: 'fashion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Art`
+  String get art {
+    return Intl.message(
+      'Art',
+      name: 'art',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dance`
+  String get dance {
+    return Intl.message(
+      'Dance',
+      name: 'dance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sing`
+  String get sing {
+    return Intl.message(
+      'Sing',
+      name: 'sing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#outdoorchallange`
+  String get outDoorChallenge {
+    return Intl.message(
+      '#outdoorchallange',
+      name: 'outDoorChallenge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#newstyle`
+  String get newStyle {
+    return Intl.message(
+      '#newstyle',
+      name: 'newStyle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#dogportrait`
+  String get dogPortrait {
+    return Intl.message(
+      '#dogportrait',
+      name: 'dogPortrait',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#makeup`
+  String get makeUp {
+    return Intl.message(
+      '#makeup',
+      name: 'makeUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#walkonramp`
+  String get walkOnRamp {
+    return Intl.message(
+      '#walkonramp',
+      name: 'walkOnRamp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#streetfashion`
+  String get streetFashion {
+    return Intl.message(
+      '#streetfashion',
+      name: 'streetFashion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sponsor Events`
+  String get sponsorEvents {
+    return Intl.message(
+      'Sponsor Events',
+      name: 'sponsorEvents',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cola Challenge`
+  String get colaChallenge {
+    return Intl.message(
+      'Cola Challenge',
+      name: 'colaChallenge',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

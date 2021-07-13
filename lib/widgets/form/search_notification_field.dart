@@ -10,10 +10,16 @@ import 'custom_text_field.dart';
 class SearchNotificationField extends StatefulWidget {
   final String? serverSearchErrorText;
   final TextEditingController controller;
+  final String? addSearchFieldTitle;
+  final VoidCallback? onChanged;
+  final VoidCallback? onEditingComplete;
 
   SearchNotificationField({
     required this.controller,
     this.serverSearchErrorText,
+    this.addSearchFieldTitle,
+    this.onChanged,
+    this.onEditingComplete
   });
 
   @override
@@ -23,10 +29,6 @@ class SearchNotificationField extends StatefulWidget {
 
 class _SearchNotificationFieldState extends State<SearchNotificationField> {
   final log = Logger();
-
-  onEditingComplete() {
-    log.i("onEditingComplete Started");
-  }
 
   onArrowClicked() {
     log.i("onArrowClicked Started");
@@ -40,12 +42,13 @@ class _SearchNotificationFieldState extends State<SearchNotificationField> {
   Widget build(BuildContext context) {
     return CustomTextFormField(
       prefixIcon: prefixIcon(),
-      labelText: S.of(context).searchUser,
+      labelText: widget.addSearchFieldTitle ?? S.of(context).searchUser,
       controller: widget.controller,
-      onEditingComplete: onEditingComplete,
+      onEditingComplete: widget.onEditingComplete,
       fromRegistration: false,
       autoValidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: TextInputType.text,
+      onChanged: widget.onChanged,
     );
   }
 
