@@ -40,7 +40,7 @@ class _NotificationDropDownMenuState extends State<NotificationDropDownMenu> {
       child: ButtonTheme(
         alignedDropdown: true,
         child: DropdownButton(
-          setSelectedItemOffset: -5.65.h,
+          // setSelectedItemOffset: -5.65.h,
           icon: IconBtnAsPngImage(
             imageUrl: Strings.DROP_DOWN_ICON,
             onClickBtn: onArrowClicked,
