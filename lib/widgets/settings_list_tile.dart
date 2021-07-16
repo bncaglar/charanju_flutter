@@ -34,7 +34,7 @@ class SettingsListTile extends StatelessWidget {
       style: TextStyle(
         color: AppColors.primaryWightColor,
         fontSize: LocalHelper.getFontSize(15),
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
         fontWeight: FontWeight.w400,
       ),
       maxLines: 2,
@@ -60,7 +60,7 @@ class SettingsListTile extends StatelessWidget {
             color: AppColors.transparentGrayColor,
             fontSize: LocalHelper.getFontSize(12),
             fontWeight: FontWeight.w700,
-            fontFamily: Strings.ARIAL,
+            fontFamily: Strings.C_ARIAL,
           ),
           maxLines: 2,
           minFontSize: 12,

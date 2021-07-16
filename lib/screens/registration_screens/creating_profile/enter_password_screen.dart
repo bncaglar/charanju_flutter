@@ -72,7 +72,7 @@ class _EnterPasswordScreenState extends State<EnterPasswordScreen> {
       child: Form(
         key: _passwordKey,
         child: Hero(
-          tag: Strings.EMAIL_FIELD_TAG,
+          tag: Strings.T_EMAIL_FIELD_TAG,
           child: PasswordField(
             controller: passwordController,
             labelText: S.of(context).password,

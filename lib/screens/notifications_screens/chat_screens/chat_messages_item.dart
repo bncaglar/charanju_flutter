@@ -51,7 +51,7 @@ class ChatMessagesItem extends StatelessWidget {
               left: 1.66.w,
               right: 4.72.w,
             ),
-            urlAvatar: Strings.NOTIFICATION_AVATAR_2);
+            urlAvatar: Strings.IM_NOTIFICATION_AVATAR_2);
 
     return isLeftUser ? leftUser : rightUser;
   }

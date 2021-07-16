@@ -1,6 +1,6 @@
 import 'dart:async';
+import 'package:charanju_flutter/helper/dummy_data/chat_data.dart';
 import 'package:charanju_flutter/helper/modules/chat_module.dart';
-import 'package:charanju_flutter/screens/notifications_screens/chat_screens/chat_data/chat_data.dart';
 import 'package:charanju_flutter/screens/notifications_screens/chat_screens/chat_message_field_form.dart';
 import 'package:charanju_flutter/screens/notifications_screens/chat_screens/chat_messages_item.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
@@ -19,8 +19,6 @@ class ChatBody extends StatefulWidget {
 }
 
 class _ChatBodyState extends State<ChatBody> {
-  List<ChatModule> items = List.of(ChatData.chats);
-
   final ScrollController listViewController = ScrollController();
 
   @override
@@ -29,7 +27,8 @@ class _ChatBodyState extends State<ChatBody> {
       builder: (BuildContext _context) {
         return Stack(
           children: <Widget>[
-            buildChatMessages(items, widget.urlAvatar!, listViewController),
+            buildChatMessages(
+                ChatData.items, widget.urlAvatar!, listViewController),
             ChatMessageFieldForm(),
           ],
         );

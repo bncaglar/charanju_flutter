@@ -59,7 +59,7 @@ class BottomSheetRow extends StatelessWidget {
         fontSize: LocalHelper.getFontSize(15),
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w400,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
     );
   }

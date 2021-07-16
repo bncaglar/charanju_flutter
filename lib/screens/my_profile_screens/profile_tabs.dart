@@ -24,12 +24,12 @@ class _ProfileTabsState extends State<ProfileTabs> {
 
   onClickTheTap() {
     log.i("onClickTheTap Started");
-    if (widget.tapIcon == Strings.TROPHY_ICON) {
+    if (widget.tapIcon == Strings.IC_TROPHY_ICON) {
       log.i("ProfileTabSelected");
       context
           .read<ProfileTabSelectedCubit>()
           .changeProfileTab(profileTabSelectedState: ProfileTabSelected());
-    } else if (widget.tapIcon == Strings.BALANCE_SCALE_ICON) {
+    } else if (widget.tapIcon == Strings.IC_BALANCE_SCALE_ICON) {
       log.i("JudgeTabSelected");
       context
           .read<ProfileTabSelectedCubit>()

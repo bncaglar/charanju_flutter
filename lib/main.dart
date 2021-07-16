@@ -3,7 +3,8 @@ import 'package:charanju_flutter/logic/cubit/create_profile_cubit/create_profile
 import 'package:charanju_flutter/logic/cubit/naviigation_system_cubit/navigation_system_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/profile_tab_selscted_cubit/profile_tab_selected_cubit.dart';
 import 'package:charanju_flutter/logic/cubit/remember_me_cubit.dart';
-import 'package:charanju_flutter/logic/cubit/search_discover_challenges_cubit/discover_challenges_screens_cubit.dart';
+import 'package:charanju_flutter/logic/cubit/search_discover_challenges_cubit/discover_challenges_cubit.dart';
+import 'package:charanju_flutter/logic/cubit/sponsor_current_image_index.dart';
 import 'package:charanju_flutter/routes.dart';
 import 'package:charanju_flutter/widgets/constant_scroll_behavior.dart';
 import 'package:device_preview/device_preview.dart';
@@ -61,8 +62,10 @@ class MyApp extends StatelessWidget {
             create: (BuildContext context) => ProfileTabSelectedCubit()),
         BlocProvider<NotificationDropDownCubit>(
             create: (BuildContext context) => NotificationDropDownCubit()),
-        BlocProvider<DiscoverChallengesScreensCubit>(
-            create: (BuildContext context) => DiscoverChallengesScreensCubit()),
+        BlocProvider<DiscoverChallengesCubit>(
+            create: (BuildContext context) => DiscoverChallengesCubit()),
+        BlocProvider<SponsorCurrentImageIndexCubit>(
+            create: (BuildContext context) => SponsorCurrentImageIndexCubit()),
       ],
       child: CharanjuApp(),
     );

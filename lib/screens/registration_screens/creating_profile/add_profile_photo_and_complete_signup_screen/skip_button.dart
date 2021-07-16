@@ -42,7 +42,7 @@ class _SkipButtonState extends State<SkipButton> {
                 fontSize: LocalHelper.getFontSize(15),
                 fontStyle: FontStyle.normal,
                 fontWeight: FontWeight.normal,
-                fontFamily: Strings.ARIAL,
+                fontFamily: Strings.C_ARIAL,
               ),
             ),
           );

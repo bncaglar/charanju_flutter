@@ -72,7 +72,7 @@ class _EnterNewPasswordScreenState extends State<EnterNewPasswordScreen> {
     return Container(
       padding: EdgeInsets.only(left: 4.69.w, right: 4.69.w, top: 11.95.h),
       child: Hero(
-        tag: Strings.EMAIL_FIELD_TAG,
+        tag: Strings.T_EMAIL_FIELD_TAG,
         child: PasswordField(
           confirmPasswordController: confirmPasswordController,
           controller: newPasswordController,
@@ -88,7 +88,7 @@ class _EnterNewPasswordScreenState extends State<EnterNewPasswordScreen> {
     return Container(
       padding: EdgeInsets.only(left: 4.70.w, right: 4.69.w, bottom: 1.56.h),
       child: Hero(
-        tag: Strings.EMAIL_FIELD_TAG,
+        tag: Strings.T_EMAIL_FIELD_TAG,
         child: PasswordField(
           controller: confirmPasswordController,
           confirmPasswordController: newPasswordController,

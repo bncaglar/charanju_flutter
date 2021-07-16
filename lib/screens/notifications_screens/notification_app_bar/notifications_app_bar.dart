@@ -1,13 +1,13 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
+import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/avatar.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
-import 'package:charanju_flutter/widgets/form/search_notification_field.dart';
+import 'package:charanju_flutter/widgets/form/search_challenges_field.dart';
 import 'package:charanju_flutter/widgets/icon_btn_as_image.dart';
-import 'package:charanju_flutter/widgets/notification_drop_down_menu.dart';
+import 'package:charanju_flutter/widgets/notification_drop_down_menu/notification_drop_down_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
 class NotificationsAppBar extends StatefulWidget {
@@ -28,25 +28,25 @@ class NotificationsAppBar extends StatefulWidget {
   final double? searchFieldHeight;
   final double? searchFieldWidth;
 
-  NotificationsAppBar(
-      {Key? key,
-      this.onClickBtn,
-      this.iconURL,
-      required this.addFilterMenu,
-      required this.addUserName,
-      this.profilePicturePath,
-      required this.addUserPhoto,
-      required this.addIconOnAppBar,
-      this.username,
-      required this.addBackBtn,
-      required this.addSearchField,
-      this.searchFieldTitle,
-      this.addSearchFieldTitle,
-      this.onChanged,
-      this.onEditingComplete,
-      this.searchFieldHeight,
-      this.searchFieldWidth})
-      : super(key: key);
+  NotificationsAppBar({
+    Key? key,
+    this.onClickBtn,
+    this.iconURL,
+    required this.addFilterMenu,
+    required this.addUserName,
+    this.profilePicturePath,
+    required this.addUserPhoto,
+    required this.addIconOnAppBar,
+    this.username,
+    required this.addBackBtn,
+    required this.addSearchField,
+    this.searchFieldTitle,
+    this.addSearchFieldTitle,
+    this.onChanged,
+    this.onEditingComplete,
+    this.searchFieldHeight,
+    this.searchFieldWidth,
+  }) : super(key: key);
 
   @override
   _NotificationsAppBarState createState() => _NotificationsAppBarState();
@@ -55,7 +55,7 @@ class NotificationsAppBar extends StatefulWidget {
 class _NotificationsAppBarState extends State<NotificationsAppBar> {
   TextEditingController searchController = TextEditingController();
 
-  final log = Logger();
+  final log = getLogger();
 
   onClickBackBtn() {
     log.i("onClickBackBtn started");
@@ -80,7 +80,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         widget.addBackBtn ? buildBackBtn() : Container(),
-        dropDownMenuField(),
+        NotificationFilterDropDownMenu(),
         chatIconSection(),
       ],
     );
@@ -90,8 +90,8 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        widget.addBackBtn ? buildLeading(): Container(),
-        widget.addSearchField ? searchNotificationsField() : Container(),
+        widget.addBackBtn ? buildLeading() : Container(),
+        widget.addSearchField ? searchChallengesField() : Container(),
         SizedBox(
           width: 1.05.w,
         ),
@@ -100,15 +100,10 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     );
   }
 
-  Widget dropDownMenuField() {
-    return NotificationDropDownMenu();
-  }
-
   IconBtnAsPngImage chatIconSection() {
     return IconBtnAsPngImage(
       onClickBtn: widget.onClickBtn!,
       imageUrl: widget.iconURL!,
-      // boxFit: BoxFit.contain,
     );
   }
 
@@ -123,17 +118,13 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
   }
 
   SizedBox buildPadding() {
-    return SizedBox(
-      width: 2.77.w,
-    );
+    return SizedBox(width: 2.77.w);
   }
 
   Widget buildUserPhoto() {
     return widget.addUserPhoto
         ? NotificationAvatar(imagePath: widget.profilePicturePath!, radius: 18)
-        : Container(
-            width: 5.56.w,
-          );
+        : Container(width: 5.56.w);
   }
 
   Text buildUserName() {
@@ -143,7 +134,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
         fontSize: LocalHelper.getFontSize(15),
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w700,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
     );
   }
@@ -170,11 +161,11 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     );
   }
 
-  Container searchNotificationsField() {
+  Container searchChallengesField() {
     return Container(
       width: widget.searchFieldWidth ?? 72.w,
       height: widget.searchFieldHeight ?? 5.62.h,
-      child: SearchNotificationField(
+      child: SearchChallengesField(
         onChanged: widget.onChanged,
         onEditingComplete: widget.onEditingComplete,
         addSearchFieldTitle: widget.addSearchFieldTitle,

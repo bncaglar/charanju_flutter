@@ -110,7 +110,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 color: AppColors.primaryWightColor,
                 fontSize: LocalHelper.getFontSize(15),
                 fontWeight: FontWeight.w400,
-                fontFamily: Strings.ARIAL,
+                fontFamily: Strings.C_ARIAL,
               ),
               maxLines: 2,
               minFontSize: 15,

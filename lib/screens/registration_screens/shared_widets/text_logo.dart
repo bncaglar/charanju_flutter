@@ -10,7 +10,7 @@ class TextLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: Strings.SCREENS_TEXT_LOGO_TAG,
+      tag: Strings.T_SCREENS_TEXT_LOGO_TAG,
       child: Container(
         alignment: Alignment.center,
         padding: padding ??
@@ -20,7 +20,7 @@ class TextLogo extends StatelessWidget {
               right: 30.11.w,
             ),
         child: Image.asset(
-          Strings.SCREENS_TEXT_LOGO_PNG,
+          Strings.IM_SCREENS_TEXT_LOGO_PNG,
         ),
       ),
     );

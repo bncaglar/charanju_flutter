@@ -29,7 +29,7 @@ class TextBtn extends StatelessWidget {
           fontSize: LocalHelper.getFontSize(textSize ?? 15),
           color: AppColors.primaryWightColor,
           fontWeight: fontWeight ?? FontWeight.w400,
-          fontFamily: Strings.ARIAL,
+          fontFamily: Strings.C_ARIAL,
         ),
         minFontSize: textSize ?? 15,
         textAlign: textAlign ?? null,

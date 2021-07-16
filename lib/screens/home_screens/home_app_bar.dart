@@ -18,31 +18,31 @@ class _HomeAppBarState extends State<HomeAppBar> {
   final List<Widget> storyList = [
     StoryWidget(
       title: "story No.1",
-      image: Strings.STORY_IMAGE,
+      image: Strings.IM_STORY_IMAGE,
     ),
     StoryWidget(
       title: "story No.2",
-      image: Strings.STORY_IMAGE,
+      image: Strings.IM_STORY_IMAGE,
     ),
     StoryWidget(
       title: "story No.3",
-      image: Strings.STORY_IMAGE,
+      image: Strings.IM_STORY_IMAGE,
     ),
     StoryWidget(
       title: "story No.4",
-      image: Strings.STORY_IMAGE,
+      image: Strings.IM_STORY_IMAGE,
     ),
     StoryWidget(
       title: "story No.5",
-      image: Strings.STORY_IMAGE,
+      image: Strings.IM_STORY_IMAGE,
     ),
     StoryWidget(
       title: "story No.6",
-      image: Strings.STORY_IMAGE,
+      image: Strings.IM_STORY_IMAGE,
     ),
     StoryWidget(
       title: "story No.7",
-      image: Strings.STORY_IMAGE,
+      image: Strings.IM_STORY_IMAGE,
     ),
   ];
 
@@ -110,14 +110,14 @@ class _HomeAppBarState extends State<HomeAppBar> {
   IconBtnAsPngImage leadingBtn() {
     return IconBtnAsPngImage(
       onClickBtn: onClickAppBarLogo,
-      imageUrl: Strings.APP_BAR_HOME_SCREEN_LOGO_PNG,
+      imageUrl: Strings.IC_APP_BAR_HOME_SCREEN_LOGO_PNG,
     );
   }
 
   IconBtnAsPngImage actionBtn() {
     return IconBtnAsPngImage(
       onClickBtn: onClickJudge,
-      imageUrl: Strings.APP_BAR_HOME_SCREEN_BALANCE_SCALE_PNG,
+      imageUrl: Strings.IC_APP_BAR_HOME_SCREEN_BALANCE_SCALE_PNG,
     );
   }
 }

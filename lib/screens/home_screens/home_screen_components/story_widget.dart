@@ -60,7 +60,7 @@ class StoryWidget extends StatelessWidget {
       title,
       style: TextStyle(
         color: AppColors.primaryGreyColor,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
         fontWeight: FontWeight.w400,
         fontSize: LocalHelper.getFontSize(10),
       ),

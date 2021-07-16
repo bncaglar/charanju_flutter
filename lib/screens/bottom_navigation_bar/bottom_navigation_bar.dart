@@ -5,7 +5,7 @@ import 'package:charanju_flutter/screens/bottom_navigation_bar/navigation_bottom
 import 'package:charanju_flutter/screens/home_screens/home_screen.dart';
 import 'package:charanju_flutter/screens/my_profile_screens/my_profile_screen.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen.dart';
-import 'package:charanju_flutter/screens/search_screen/mock_search_screen.dart';
+import 'package:charanju_flutter/screens/search_screen/search_screen.dart';
 import 'package:charanju_flutter/widgets/icon_btn_as_image.dart';
 import 'package:charanju_flutter/widgets/linear_gradient_shadow.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +81,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 
   IconBtnAsPngImage buildProfileBtn() {
     return IconBtnAsPngImage(
-      imageUrl: Strings.NAVIGATION_USER_PNG,
+      imageUrl: Strings.IC_NAVIGATION_USER_PNG,
       onClickBtn: () {
         selectTheScreen(
           navigationSystemState: ProfileScreenState(),
@@ -92,7 +92,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 
   IconBtnAsPngImage buildNotificationBtn() {
     return IconBtnAsPngImage(
-      imageUrl: Strings.NAVIGATION_NOTIFICATIONS_PNG,
+      imageUrl: Strings.IC_NAVIGATION_NOTIFICATIONS_PNG,
       onClickBtn: () {
         selectTheScreen(
           navigationSystemState: NotificationsScreenState(),
@@ -106,7 +106,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
     return BlocBuilder<NavigationSystemCubit, NavigationSystemState>(
       builder: (context, state) {
         return IconBtnAsPngImage(
-          imageUrl: Strings.NAVIGATION_CIRCLE_PNG,
+          imageUrl: Strings.IC_NAVIGATION_CIRCLE_PNG,
           onClickBtn: () {
             selectTheScreen(
               navigationSystemState:
@@ -121,7 +121,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 
   IconBtnAsPngImage buildSearchBtn() {
     return IconBtnAsPngImage(
-      imageUrl: Strings.NAVIGATION_SEARCH_PNG,
+      imageUrl: Strings.IC_NAVIGATION_SEARCH_PNG,
       onClickBtn: () {
         selectTheScreen(
           navigationSystemState: SearchScreenState(),
@@ -132,7 +132,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 
   IconBtnAsPngImage buildHomeBtn() {
     return IconBtnAsPngImage(
-      imageUrl: Strings.NAVIGATION_HOME_PNG,
+      imageUrl: Strings.IC_NAVIGATION_HOME_PNG,
       onClickBtn: () {
         selectTheScreen(
           navigationSystemState: HomeScreenState(),
@@ -174,7 +174,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           return HomeScreen();
         }
         if (navigationSystemState is SearchScreenState) {
-          return MockSearchScreen();
+          return SearchScreen();
         }
         if (navigationSystemState is NotificationsScreenState) {
           return NotificationScreen();

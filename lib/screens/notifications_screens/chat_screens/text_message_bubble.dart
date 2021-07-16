@@ -37,7 +37,7 @@ class TextMessageBubble extends StatelessWidget {
               fontSize: LocalHelper.getFontSize(15),
               color: AppColors.primaryWightColor,
               fontWeight: FontWeight.w700,
-              fontFamily: Strings.ARIAL,
+              fontFamily: Strings.C_ARIAL,
             ),
             maxLines: 8,
             textAlign: TextAlign.left,

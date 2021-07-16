@@ -36,7 +36,7 @@ class ProfileAppBar extends StatelessWidget {
       child: IconButton(
         onPressed: null,
         icon: Image.asset(
-          Strings.PROFILE_MENU_ICON,
+          Strings.IC_PROFILE_MENU_ICON,
           color: AppColors.backgroundPrimaryColor,
         ),
       ),
@@ -48,7 +48,7 @@ class ProfileAppBar extends StatelessWidget {
       padding: EdgeInsets.only(right: 2.7.w),
       child: IconButton(
         icon: Image.asset(
-          Strings.PROFILE_MENU_ICON,
+          Strings.IC_PROFILE_MENU_ICON,
           color: AppColors.primaryWightColor,
         ),
         onPressed: onClickMore,
@@ -63,7 +63,7 @@ class ProfileAppBar extends StatelessWidget {
       style: TextStyle(
         color: AppColors.primaryWightColor,
         fontSize: LocalHelper.getFontSize(15),
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
         fontWeight: FontWeight.w400,
       ),
       maxLines: 1,

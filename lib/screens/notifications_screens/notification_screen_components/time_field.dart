@@ -24,7 +24,7 @@ class _TimeFieldState extends State<TimeField> {
         fontSize: LocalHelper.getFontSize(12),
         color: AppColors.textPrimaryColor,
         fontWeight: FontWeight.w400,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
     );
   }

@@ -6,7 +6,7 @@ class NotificationData {
   static var notifications = <NotificationModule>[
     NotificationModule(
       categories: S.current.messages,
-      urlAvatar: Strings.NOTIFICATION_AVATAR_1,
+      urlAvatar: Strings.IM_NOTIFICATION_AVATAR_1,
       notificationMessage: S.current.sentYouMessage,
       receivedTime: "30 min",
       notificationFromUserName: "Karenne ",
@@ -19,7 +19,7 @@ class NotificationData {
     ),
     NotificationModule(
       categories: S.current.newChallengeRequest,
-      urlAvatar: Strings.NOTIFICATION_AVATAR_2,
+      urlAvatar: Strings.IM_NOTIFICATION_AVATAR_2,
       notificationMessage: S.current.wantsToChallengeYou,
       receivedTime: "30 min",
       notificationFromUserName: "Molivis ",
@@ -32,7 +32,7 @@ class NotificationData {
     ),
     NotificationModule(
       categories: S.current.newVideosVictories,
-      urlAvatar: Strings.NOTIFICATION_AVATAR_1,
+      urlAvatar: Strings.IM_NOTIFICATION_AVATAR_1,
       notificationMessage: S.current.youWonTheLastChallenge,
       receivedTime: "30 min",
       notificationFromUserName: "",
@@ -40,12 +40,12 @@ class NotificationData {
       isSeen: false,
       lastMessage: "Display: Last Message",
       username: "Karenne",
-      groupMembers: Strings.NOTIFICATION_AVATAR_2,
+      groupMembers: Strings.IM_NOTIFICATION_AVATAR_2,
       groupTitle: "Group chat",
     ),
     NotificationModule(
       categories: S.current.newVideosVictories,
-      urlAvatar: Strings.NOTIFICATION_AVATAR_3,
+      urlAvatar: Strings.IM_NOTIFICATION_AVATAR_3,
       notificationMessage: S.current.youWonTheBetOn,
       receivedTime: "30 min",
       notificationFromUserName: "",
@@ -58,7 +58,7 @@ class NotificationData {
     ),
     NotificationModule(
       categories: S.current.newChallengeRequest,
-      urlAvatar: Strings.NOTIFICATION_AVATAR_1,
+      urlAvatar: Strings.IM_NOTIFICATION_AVATAR_1,
       notificationMessage: S.current.wantsToChallengeYou,
       receivedTime: "1w",
       notificationFromUserName: "Karenne ",
@@ -71,7 +71,7 @@ class NotificationData {
     ),
     NotificationModule(
       categories: S.current.newVideosVictories,
-      urlAvatar: Strings.NOTIFICATION_AVATAR_3,
+      urlAvatar: Strings.IM_NOTIFICATION_AVATAR_3,
       notificationMessage: S.current.isYourOpponent,
       receivedTime: "2w",
       notificationFromUserName: "Lennord  ",
@@ -83,4 +83,7 @@ class NotificationData {
       groupTitle: "",
     ),
   ];
+
+  static List<NotificationModule> items =
+      List.of(NotificationData.notifications);
 }

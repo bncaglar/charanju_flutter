@@ -40,7 +40,7 @@ class _AddPhotoOrCompleteButtonState extends State<AddPhotoOrCompleteButton> {
     //todo get the image from the API
     context
         .read<AddPhotoCubit>()
-        .addNewPhoto(photoURL: Strings.SCREENS_TEXT_LOGO_PNG);
+        .addNewPhoto(photoURL: Strings.IM_SCREENS_TEXT_LOGO_PNG);
     context.read<CreateProfileCubit>().emit(CreateProfileStepsCompleted());
     Navigator.pop(context);
   }
@@ -50,7 +50,7 @@ class _AddPhotoOrCompleteButtonState extends State<AddPhotoOrCompleteButton> {
     //todo get the image from the API
     context
         .read<AddPhotoCubit>()
-        .addNewPhoto(photoURL: Strings.SCREENS_TEXT_LOGO_PNG);
+        .addNewPhoto(photoURL: Strings.IM_SCREENS_TEXT_LOGO_PNG);
     context.read<CreateProfileCubit>().emit(CreateProfileStepsCompleted());
     Navigator.pop(context);
   }
@@ -60,7 +60,7 @@ class _AddPhotoOrCompleteButtonState extends State<AddPhotoOrCompleteButton> {
     //todo get the image from the camera
     context
         .read<AddPhotoCubit>()
-        .addNewPhoto(photoURL: Strings.SCREENS_TEXT_LOGO_PNG);
+        .addNewPhoto(photoURL: Strings.IM_SCREENS_TEXT_LOGO_PNG);
     context.read<CreateProfileCubit>().emit(CreateProfileStepsCompleted());
     Navigator.pop(context);
   }
@@ -70,7 +70,7 @@ class _AddPhotoOrCompleteButtonState extends State<AddPhotoOrCompleteButton> {
     //todo get the image from the Gallery
     context
         .read<AddPhotoCubit>()
-        .addNewPhoto(photoURL: Strings.SCREENS_TEXT_LOGO_PNG);
+        .addNewPhoto(photoURL: Strings.IM_SCREENS_TEXT_LOGO_PNG);
     context.read<CreateProfileCubit>().emit(CreateProfileStepsCompleted());
     Navigator.pop(context);
   }
@@ -115,7 +115,7 @@ class _AddPhotoOrCompleteButtonState extends State<AddPhotoOrCompleteButton> {
 
   BottomSheetRow buildGalleryRow() {
     return BottomSheetRow(
-      iconUrl: Strings.BOTTOM_SHEET_CHOOSE_FROM_GALLERY_PNG,
+      iconUrl: Strings.IC_BOTTOM_SHEET_CHOOSE_FROM_GALLERY_PNG,
       onClickRow: onClickFromGallery,
       rowText: S.of(context).chooseFromGallery,
       padding: EdgeInsets.only(
@@ -127,7 +127,7 @@ class _AddPhotoOrCompleteButtonState extends State<AddPhotoOrCompleteButton> {
 
   BottomSheetRow buildTakePhotoRow() {
     return BottomSheetRow(
-      iconUrl: Strings.BOTTOM_SHEET_TAKE_PHOTO_PNG,
+      iconUrl: Strings.IC_BOTTOM_SHEET_TAKE_PHOTO_PNG,
       onClickRow: onClickTakePhoto,
       rowText: S.of(context).takePhoto,
       padding: EdgeInsets.only(
@@ -139,7 +139,7 @@ class _AddPhotoOrCompleteButtonState extends State<AddPhotoOrCompleteButton> {
 
   BottomSheetRow buildInstagramRow() {
     return BottomSheetRow(
-      iconUrl: Strings.BOTTOM_SHEET_INSTAGRAM_PNG,
+      iconUrl: Strings.IC_BOTTOM_SHEET_INSTAGRAM_PNG,
       onClickRow: onClickInstagram,
       rowText: S.of(context).importFromInstagram,
       padding: EdgeInsets.only(
@@ -151,7 +151,7 @@ class _AddPhotoOrCompleteButtonState extends State<AddPhotoOrCompleteButton> {
 
   BottomSheetRow buildFacebookRow() {
     return BottomSheetRow(
-      iconUrl: Strings.BOTTOM_SHEET_FACEBOOK_PNG,
+      iconUrl: Strings.IC_BOTTOM_SHEET_FACEBOOK_PNG,
       onClickRow: onClickFacebook,
       rowText: S.of(context).importFromFacebook,
     );

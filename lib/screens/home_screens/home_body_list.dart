@@ -73,7 +73,7 @@ class _HomeBodyListState extends State<HomeBodyList> {
 
   IconBtnAsPngImage buildIMegaPhoneIcon() {
     return IconBtnAsPngImage(
-      imageUrl: Strings.MEGAPHONE_ICON_PNG,
+      imageUrl: Strings.IC_MEGAPHONE_ICON_PNG,
       onClickBtn: onClickBtn,
     );
   }
@@ -107,21 +107,21 @@ class _HomeBodyListState extends State<HomeBodyList> {
 
   IconBtnAsPngImage buildShareIcon() {
     return IconBtnAsPngImage(
-      imageUrl: Strings.SHARE_ICON_PNG,
+      imageUrl: Strings.IC_SHARE_ICON_PNG,
       onClickBtn: onClickBtn,
     );
   }
 
   TextBtn buildTitleHashtagText() {
     return TextBtn(
-      text: Strings.HASH_SAMPLE + "outdoorchallenge",
+      text: Strings.P_HASH_SAMPLE + "outdoorchallenge",
       onClickText: onClickChallengeName,
     );
   }
 
   TextBtn buildPointsText() {
     return TextBtn(
-      text: "180" + Strings.P,
+      text: "180" + Strings.C_LETTER_P,
     );
   }
 
@@ -141,7 +141,7 @@ class _HomeBodyListState extends State<HomeBodyList> {
     return Expanded(
       flex: 50,
       child: OneBackgroundSplitImage(
-        imagePath: Strings.LeftExamplePhoto,
+        imagePath: Strings.IM_LeftExamplePhoto,
         rightImage: false,
         leftImage: true,
       ),
@@ -152,7 +152,7 @@ class _HomeBodyListState extends State<HomeBodyList> {
     return Expanded(
       flex: 50,
       child: OneBackgroundSplitImage(
-        imagePath: Strings.RightExamplePhoto,
+        imagePath: Strings.IM_RightExamplePhoto,
         rightImage: true,
         leftImage: false,
       ),

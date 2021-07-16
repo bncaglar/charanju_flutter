@@ -73,7 +73,7 @@ class _EnterBirthdayScreenState extends State<EnterBirthdayScreen> {
       child: Form(
         key: _birthdayKey,
         child: Hero(
-          tag: Strings.EMAIL_FIELD_TAG,
+          tag: Strings.T_EMAIL_FIELD_TAG,
           child: BirthdayField(
             controller: birthdayController,
             serverBirthdayErrorText:

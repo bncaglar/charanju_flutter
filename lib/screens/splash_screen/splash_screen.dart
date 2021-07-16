@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   late RiveAnimationController? controller;
 
   loadAnimationFile() {
-    rootBundle.load(Strings.LOGO_ICON_RIV).then(
+    rootBundle.load(Strings.AN_LOGO_ICON_RIV).then(
       (data) async {
         final RiveFile file = RiveFile.import(data);
         final Artboard artBoard = file.mainArtboard;

@@ -54,7 +54,7 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
       child: Form(
         key: _codeKey,
         child: Hero(
-          tag: Strings.EMAIL_FIELD_TAG,
+          tag: Strings.T_EMAIL_FIELD_TAG,
           child: CodeField(
             controller: codeController,
             serverCodeErrorText:

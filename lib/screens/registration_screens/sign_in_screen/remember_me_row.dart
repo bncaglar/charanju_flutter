@@ -56,7 +56,7 @@ class _RememberMeRowState extends State<RememberMeRow> {
         S.of(context).forgotPassword,
         style: TextStyle(
           fontSize: LocalHelper.getFontSize(12),
-          fontFamily: Strings.ARIAL,
+          fontFamily: Strings.C_ARIAL,
           color: AppColors.textPrimaryColor,
         ),
       ),
@@ -71,7 +71,7 @@ class _RememberMeRowState extends State<RememberMeRow> {
         style: TextStyle(
           color: AppColors.textPrimaryColor,
           fontSize: 12.sp,
-          fontFamily: Strings.ARIAL,
+          fontFamily: Strings.C_ARIAL,
           fontWeight: FontWeight.normal,
         ),
         // Strings.REMEMBER_ME,

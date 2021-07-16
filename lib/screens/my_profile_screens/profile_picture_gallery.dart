@@ -21,46 +21,46 @@ class _ProfilePictureGalleryState extends State<ProfilePictureGallery> {
 // todo this list data should fetch from the API
   final List<ProfileImageStack> _profileTabImages = [
     ProfileImageStack(
-        backgroundImage: Strings.MY_TROPHY_IMAGE_1,
-        cornerIcon: Strings.LOADING_CHALLENGE_ICON),
+        backgroundImage: Strings.IM_MY_TROPHY_IMAGE_1,
+        cornerIcon: Strings.IC_LOADING_CHALLENGE_ICON),
     ProfileImageStack(
-        backgroundImage: Strings.MY_TROPHY_IMAGE_2,
-        cornerIcon: Strings.TROPHY_ICON),
+        backgroundImage: Strings.IM_MY_TROPHY_IMAGE_2,
+        cornerIcon: Strings.IC_TROPHY_ICON),
     ProfileImageStack(
-      backgroundImage: Strings.MY_TROPHY_IMAGE_3,
+      backgroundImage: Strings.IM_MY_TROPHY_IMAGE_3,
     ),
     ProfileImageStack(
-      backgroundImage: Strings.MY_TROPHY_IMAGE_4,
+      backgroundImage: Strings.IM_MY_TROPHY_IMAGE_4,
     ),
     ProfileImageStack(
-      backgroundImage: Strings.MY_TROPHY_IMAGE_5,
+      backgroundImage: Strings.IM_MY_TROPHY_IMAGE_5,
     ),
     ProfileImageStack(
-        backgroundImage: Strings.MY_TROPHY_IMAGE_6,
-        cornerIcon: Strings.TROPHY_ICON),
+        backgroundImage: Strings.IM_MY_TROPHY_IMAGE_6,
+        cornerIcon: Strings.IC_TROPHY_ICON),
   ];
 
 // todo this list data should fetch from the API
   final List<ProfileImageStack> _balanceImages = [
-    ProfileImageStack(backgroundImage: Strings.MY_BALANCE_IMAGE_1),
+    ProfileImageStack(backgroundImage: Strings.IM_MY_BALANCE_IMAGE_1),
     ProfileImageStack(
-        backgroundImage: Strings.MY_BALANCE_IMAGE_2,
-        cornerIcon: Strings.TROPHY_ICON),
-    ProfileImageStack(backgroundImage: Strings.MY_BALANCE_IMAGE_3),
+        backgroundImage: Strings.IM_MY_BALANCE_IMAGE_2,
+        cornerIcon: Strings.IC_TROPHY_ICON),
+    ProfileImageStack(backgroundImage: Strings.IM_MY_BALANCE_IMAGE_3),
   ];
 
 // todo this list data should fetch from the API
   final List<ProfileImageStack> _achievementImages = [
-    ProfileImageStack(backgroundImage: Strings.MY_ACHIEVEMENT_IMAGE_1),
+    ProfileImageStack(backgroundImage: Strings.IM_MY_ACHIEVEMENT_IMAGE_1),
     ProfileImageStack(
-        backgroundImage: Strings.MY_ACHIEVEMENT_IMAGE_2,
-        cornerIcon: Strings.TROPHY_ICON),
-    ProfileImageStack(backgroundImage: Strings.MY_ACHIEVEMENT_IMAGE_3),
+        backgroundImage: Strings.IM_MY_ACHIEVEMENT_IMAGE_2,
+        cornerIcon: Strings.IC_TROPHY_ICON),
+    ProfileImageStack(backgroundImage: Strings.IM_MY_ACHIEVEMENT_IMAGE_3),
     ProfileImageStack(
-        backgroundImage: Strings.MY_ACHIEVEMENT_IMAGE_4,
-        cornerIcon: Strings.TROPHY_ICON),
-    ProfileImageStack(backgroundImage: Strings.MY_ACHIEVEMENT_IMAGE_5),
-    ProfileImageStack(backgroundImage: Strings.MY_ACHIEVEMENT_IMAGE_6),
+        backgroundImage: Strings.IM_MY_ACHIEVEMENT_IMAGE_4,
+        cornerIcon: Strings.IC_TROPHY_ICON),
+    ProfileImageStack(backgroundImage: Strings.IM_MY_ACHIEVEMENT_IMAGE_5),
+    ProfileImageStack(backgroundImage: Strings.IM_MY_ACHIEVEMENT_IMAGE_6),
   ];
 
   @override
@@ -88,7 +88,7 @@ class _ProfilePictureGalleryState extends State<ProfilePictureGallery> {
     return BlocBuilder<ProfileTabSelectedCubit, ProfileTabSelectedState>(
       builder: (context, state) {
         return ProfileTabs(
-          tapIcon: Strings.ACHIEVEMENT_ICON,
+          tapIcon: Strings.IC_ACHIEVEMENT_ICON,
           tabSelected: state is BetTabSelected,
         );
       },
@@ -99,7 +99,7 @@ class _ProfilePictureGalleryState extends State<ProfilePictureGallery> {
     return BlocBuilder<ProfileTabSelectedCubit, ProfileTabSelectedState>(
       builder: (context, state) {
         return ProfileTabs(
-          tapIcon: Strings.TROPHY_ICON,
+          tapIcon: Strings.IC_TROPHY_ICON,
           tabSelected: state is ProfileTabSelected,
         );
       },
@@ -110,7 +110,7 @@ class _ProfilePictureGalleryState extends State<ProfilePictureGallery> {
     return BlocBuilder<ProfileTabSelectedCubit, ProfileTabSelectedState>(
       builder: (context, state) {
         return ProfileTabs(
-          tapIcon: Strings.BALANCE_SCALE_ICON,
+          tapIcon: Strings.IC_BALANCE_SCALE_ICON,
           tabSelected: state is JudgeTabSelected,
         );
       },

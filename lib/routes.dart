@@ -4,7 +4,7 @@ import 'package:charanju_flutter/screens/home_screens/home_screen.dart';
 import 'package:charanju_flutter/screens/my_profile_screens/my_profile_screen.dart';
 import 'package:charanju_flutter/screens/notifications_screens/chat_screens/chat_screen.dart';
 import 'package:charanju_flutter/screens/notifications_screens/profile_of_another_user_screen/profile_of_another_user_screen.dart';
-import 'package:charanju_flutter/screens/notifications_screens/messages_screen.dart';
+import 'package:charanju_flutter/screens/notifications_screens/messages_screen/messages_screen.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen.dart';
 import 'package:charanju_flutter/screens/notifications_screens/search_user_screen/search_user_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/creating_profile/registration_steps.dart';

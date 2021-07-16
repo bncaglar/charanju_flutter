@@ -49,7 +49,7 @@ class ProfilePictureAndData extends StatelessWidget {
       margin: EdgeInsets.only(right: 8.05.w, top: 2.18.h),
       child: CircleAvatar(
         backgroundColor: AppColors.backgroundPrimaryColor,
-        child: Image.asset(Strings.NETWORK_IMAGE),
+        child: Image.asset(Strings.IM_NETWORK_IMAGE),
       ),
     );
   }
@@ -93,7 +93,7 @@ class ProfilePictureAndData extends StatelessWidget {
         color: AppColors.primaryWightColor,
         fontSize: LocalHelper.getFontSize(12),
         fontWeight: FontWeight.w400,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
       maxLines: 2,
       minFontSize: 14,

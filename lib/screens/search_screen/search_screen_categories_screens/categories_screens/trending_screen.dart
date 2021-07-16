@@ -1,30 +1,30 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/modules/discover_challenges_module.dart';
-import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/background_split_image.dart';
+import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/background_split_image_row.dart';
 import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/custom_auto_size_text.dart';
 import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/number_of_challenge.dart';
-import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/sponsor_event_part.dart';
-import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/sponsor_events/sponsor_event_part.dart';
+import 'package:charanju_flutter/helper/dummy_data/search_screen_data.dart';
 import 'package:flutter/material.dart';
-import '../search_screen_data.dart';
 import 'package:sizer/sizer.dart';
 
-class TrendingPage extends StatefulWidget {
+class TrendingScreen extends StatefulWidget {
   @override
-  _TrendingPageState createState() => _TrendingPageState();
+  _TrendingScreenState createState() => _TrendingScreenState();
 }
 
-class _TrendingPageState extends State<TrendingPage> {
-  List<DiscoverChallengeModule> discoverChallenges =
-      List.of(SearchScreenData.screenData);
+class _TrendingScreenState extends State<TrendingScreen> {
+  final log = getLogger();
+
+  onTapTitle() {
+    log.i("onTapTitle Started");
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Builder(builder: (BuildContext _context) {
-      return buildTrendingPage(discoverChallenges);
-    });
+    return buildTrendingPage(SearchScreenData.discoverChallenges);
   }
 
   Widget buildTrendingPage(List<DiscoverChallengeModule> discoverChallenges) {
@@ -32,7 +32,8 @@ class _TrendingPageState extends State<TrendingPage> {
       child: ListView.builder(
         itemCount: discoverChallenges.length,
         itemBuilder: (context, index) {
-          final discoverChallenge = discoverChallenges[index];
+          final DiscoverChallengeModule discoverChallenge =
+              discoverChallenges[index];
           return discoverChallenge.category == S.of(context).trending
               ? buildDiscoverListTile(discoverChallenge)
               : Container();
@@ -47,7 +48,7 @@ class _TrendingPageState extends State<TrendingPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             discoverChallenge.isSponsorEvent
-                ? SponsorEventPage(discoverChallenge: discoverChallenge)
+                ? SponsorEventPart(discoverChallenge: discoverChallenge)
                 : Container(),
             discoverChallenge.isSponsorEvent
                 ? Container()
@@ -93,28 +94,31 @@ class _TrendingPageState extends State<TrendingPage> {
     );
   }
 
-  Row buildChallengeTitle(discoverChallenge) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Padding(
-          padding: EdgeInsets.only(
-            left: 3.05.w,
+  GestureDetector buildChallengeTitle(discoverChallenge) {
+    return GestureDetector(
+      onTap: onTapTitle,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              left: 3.05.w,
+            ),
+            child: buildChallengeHashTagName(discoverChallenge),
           ),
-          child: buildChallengeHashTagName(discoverChallenge),
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            right: 2.77.w,
-          ),
-          child: NumberOfChallenge(discoverChallenge: discoverChallenge),
-        )
-      ],
+          Padding(
+            padding: EdgeInsets.only(
+              right: 2.77.w,
+            ),
+            child: NumberOfChallenge(discoverChallenge: discoverChallenge),
+          )
+        ],
+      ),
     );
   }
 
   SearchScreenCustomAutoSizeText buildChallengeHashTagName(discoverChallenge) {
     return SearchScreenCustomAutoSizeText(
-        content: discoverChallenge.challengeName, fontFamily: Strings.MULISH);
+        content: discoverChallenge.challengeName, fontFamily: Strings.C_MULISH);
   }
 }

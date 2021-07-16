@@ -6,6 +6,7 @@ class DiscoverChallengeModule {
   final String? numberOfChallenge;
   final String? sponsorEventHeaderPhoto;
   final String? category;
+
   const DiscoverChallengeModule(
       {required this.challengeName,
       required this.isSponsorEvent,

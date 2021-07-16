@@ -8,8 +8,7 @@ class SearchScreenCustomAutoSizeText extends StatefulWidget {
   final String? content;
   final String? fontFamily;
 
-  SearchScreenCustomAutoSizeText(
-      {required this.content, this.fontFamily});
+  SearchScreenCustomAutoSizeText({required this.content, this.fontFamily});
 
   @override
   _SearchScreenCustomAutoSizeTextState createState() =>
@@ -26,7 +25,7 @@ class _SearchScreenCustomAutoSizeTextState
         fontSize: LocalHelper.getFontSize(15),
         color: AppColors.primaryGreyColor,
         fontWeight: FontWeight.w400,
-        fontFamily: widget.fontFamily ?? Strings.ARIAL,
+        fontFamily: widget.fontFamily ?? Strings.C_ARIAL,
       ),
     );
   }
