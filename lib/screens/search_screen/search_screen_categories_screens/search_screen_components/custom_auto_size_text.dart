@@ -7,9 +7,10 @@ import 'package:flutter/material.dart';
 class SearchScreenCustomAutoSizeText extends StatefulWidget {
   final String? content;
   final String? fontFamily;
+  final double? size;
 
   SearchScreenCustomAutoSizeText(
-      {required this.content, this.fontFamily});
+      {required this.content, this.fontFamily,this.size});
 
   @override
   _SearchScreenCustomAutoSizeTextState createState() =>
@@ -23,7 +24,7 @@ class _SearchScreenCustomAutoSizeTextState
     return AutoSizeText(
       widget.content!,
       style: TextStyle(
-        fontSize: LocalHelper.getFontSize(15),
+        fontSize: LocalHelper.getFontSize(widget.size ?? 15),
         color: AppColors.primaryGreyColor,
         fontWeight: FontWeight.w400,
         fontFamily: widget.fontFamily ?? Strings.ARIAL,

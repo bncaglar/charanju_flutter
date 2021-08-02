@@ -90,7 +90,7 @@
   "createStory": "Create Story",
   "addUsersToThis": "Add users to this chat",
   "challenge": "Challenge ",
-  "createTeamChallengeWith": "Create team challange with ",
+  "createTeamChallengeWith": "Create team challenge with ",
   "silenceChat": "Silence chat",
   "block": "Block",
   "report": "Report",
@@ -112,12 +112,14 @@
   "art" : "Art",
   "dance" : "Dance",
   "sing" : "Sing",
-  "outDoorChallenge" : "#outdoorchallange",
+  "outDoorChallenge" : "#outdoorchallenge",
   "newStyle" : "#newstyle",
   "dogPortrait" : "#dogportrait",
   "makeUp" : "#makeup",
   "walkOnRamp" : "#walkonramp",
   "streetFashion" : "#streetfashion",
   "sponsorEvents" : "Sponsor Events",
-  "colaChallenge" : "Cola Challenge"
+  "colaChallenge" : "Cola Challenge",
+  "followChallenge" : "Follow challenge",
+  "challengeDescription" : "Challenge description and rules (how to join)"
 }

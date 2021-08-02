@@ -6,6 +6,7 @@ class DiscoverChallengeModule {
   final String? numberOfChallenge;
   final String? sponsorEventHeaderPhoto;
   final String? category;
+  final String? challengeDescription;
   const DiscoverChallengeModule(
       {required this.challengeName,
       required this.isSponsorEvent,
@@ -13,5 +14,6 @@ class DiscoverChallengeModule {
       this.challengePhotoRight,
       this.numberOfChallenge,
       this.sponsorEventHeaderPhoto,
-      required this.category});
+      required this.category,
+      required this.challengeDescription});
 }

@@ -7,7 +7,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "da": [
@@ -18,7 +20,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "de": [
@@ -29,7 +33,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "es": [
@@ -40,7 +46,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "it": [
@@ -51,7 +59,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "ja": [
@@ -62,7 +72,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "ko": [
@@ -73,7 +85,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "pl": [
@@ -84,7 +98,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "pt": [
@@ -95,7 +111,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "sv": [
@@ -106,7 +124,9 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ],
 
   "zh": [
@@ -117,6 +137,8 @@
     "walkOnRamp",
     "streetFashion",
     "sponsorEvents",
-    "colaChallenge"
+    "colaChallenge",
+    "followChallenge",
+    "challengeDescription"
   ]
 }

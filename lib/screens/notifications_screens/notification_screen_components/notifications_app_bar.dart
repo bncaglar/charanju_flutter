@@ -1,4 +1,5 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/avatar.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
@@ -27,6 +28,7 @@ class NotificationsAppBar extends StatefulWidget {
   final VoidCallback? onChanged;
   final double? searchFieldHeight;
   final double? searchFieldWidth;
+  final bool? addFollowChallengeText;
 
   NotificationsAppBar(
       {Key? key,
@@ -45,7 +47,8 @@ class NotificationsAppBar extends StatefulWidget {
       this.onChanged,
       this.onEditingComplete,
       this.searchFieldHeight,
-      this.searchFieldWidth})
+      this.searchFieldWidth,
+      required this.addFollowChallengeText})
       : super(key: key);
 
   @override
@@ -90,7 +93,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        widget.addBackBtn ? buildLeading(): Container(),
+        widget.addBackBtn ? buildLeading() : Container(),
         widget.addSearchField ? searchNotificationsField() : Container(),
         SizedBox(
           width: 1.05.w,
@@ -104,11 +107,16 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     return NotificationDropDownMenu();
   }
 
-  IconBtnAsPngImage chatIconSection() {
-    return IconBtnAsPngImage(
-      onClickBtn: widget.onClickBtn!,
-      imageUrl: widget.iconURL!,
-      // boxFit: BoxFit.contain,
+  Row chatIconSection() {
+    return Row(
+      children: [
+        addFollowChallengeText(),
+        IconBtnAsPngImage(
+          onClickBtn: widget.onClickBtn!,
+          imageUrl: widget.iconURL!,
+          // boxFit: BoxFit.contain,
+        ),
+      ],
     );
   }
 
@@ -126,6 +134,24 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     return SizedBox(
       width: 2.77.w,
     );
+  }
+
+  Container addFollowChallengeText() {
+    return widget.addFollowChallengeText!
+        ? Container(
+            width: 28.27.w,
+            height: 2.8.h,
+            child: Text(
+              S.of(context).followChallenge,
+              style: TextStyle(
+                fontSize: LocalHelper.getFontSize(13),
+                color: AppColors.primaryWightColor,
+                fontWeight: FontWeight.w400,
+                fontFamily: Strings.ARIAL,
+              ),
+            ),
+          )
+        : Container();
   }
 
   Widget buildUserPhoto() {

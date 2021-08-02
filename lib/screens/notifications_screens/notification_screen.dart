@@ -172,6 +172,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         onClickBtn: onClickChatIcon,
         iconURL: Strings.COMMENT_ICON,
         addBackBtn: false,
+        addFollowChallengeText: false,
       ),
     );
   }

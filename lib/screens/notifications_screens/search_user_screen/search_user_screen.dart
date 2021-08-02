@@ -134,6 +134,7 @@ class _SearchUserScreenState extends State<SearchUserScreen> {
         addSearchField: true,
         addIconOnAppBar: true,
         addUserPhoto: false,
+        addFollowChallengeText: false,
         addUserName: false,
         addFilterMenu: false,
         onClickBtn: onClickUserPlus,

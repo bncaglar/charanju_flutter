@@ -55,6 +55,7 @@ class _ChatScreenState extends State<ChatScreen> {
         profilePicturePath: widget.urlAvatar,
         addUserName: true,
         addFilterMenu: false,
+        addFollowChallengeText: false,
         onClickBtn: onClickInfoIcon,
         iconURL: Strings.COMMENT_INFO_ICON,
       ),

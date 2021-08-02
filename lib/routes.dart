@@ -11,6 +11,8 @@ import 'package:charanju_flutter/screens/registration_screens/creating_profile/r
 import 'package:charanju_flutter/screens/registration_screens/forget_password/forget_password_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/sign_in_screen/signin_screen.dart';
 import 'package:charanju_flutter/screens/registration_screens/terms_of_use/terms_of_use_screen.dart';
+import 'package:charanju_flutter/screens/search_screen/challengeSplitImages.dart';
+import 'package:charanju_flutter/screens/search_screen/selected_challenge_hashtag.dart';
 import 'package:charanju_flutter/screens/settings_screen/settings_screen.dart';
 import 'package:charanju_flutter/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,7 +24,8 @@ final log = getLogger();
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     log.i(
-        "settings.name : ${settings.name}  | ScreenArguments: ${settings.arguments} ");
+        "settings.name : ${settings.name}  | ScreenArguments: ${settings
+            .arguments} ");
 
     Widget child;
     switch (settings.name) {
@@ -100,6 +103,20 @@ class Routes {
           child = SearchUserScreen();
           break;
         }
+      case SelectedChallengeHashTagPage.routeName:
+        {
+          child = _buildSelectedChallengeRoute(
+              settings.arguments as SelectedChallengeArguments);
+          break;
+        }
+
+      case ChallengeSplitImages.routeName:
+        {
+          child = _buildChallengeSplitImagesRoute(
+            settings.arguments as ChallengeSplitImagesArguments
+          );
+          break;
+        }
 
       default:
         child = Scaffold(
@@ -141,5 +158,30 @@ class Routes {
       username: username,
       urlAvatar: urlAvatar,
     );
+  }
+
+  static Widget _buildSelectedChallengeRoute(
+      SelectedChallengeArguments arguments) {
+    String challengeName = arguments.challengeName;
+    String challengeDescription = arguments.challengeDescription;
+    String challengePhotoRight = arguments.challengePhotoRight;
+    String challengePhotoLeft = arguments.challengePhotoLeft;
+    return SelectedChallengeHashTagPage(
+      challengeName: challengeName,
+      challengeDescription: challengeDescription,
+      challengePhotoRight: challengePhotoRight,
+      challengePhotoLeft: challengePhotoLeft,
+    );
+  }
+
+  static Widget _buildChallengeSplitImagesRoute(
+      ChallengeSplitImagesArguments arguments) {
+    String? challengeName = arguments.challengeName;
+    String? leftPhoto = arguments.leftPhoto;
+    String? rightPhoto = arguments.rightPhoto;
+    return ChallengeSplitImages(
+        challengeName: challengeName,
+        rightPhoto: rightPhoto,
+        leftPhoto: leftPhoto);
   }
 }

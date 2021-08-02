@@ -8,9 +8,14 @@ import '../search_screen_data.dart';
 class OneBackgroundChallengeSplitImage extends StatefulWidget {
   final String? challengePhotoLeft;
   final String? challengePhotoRight;
+  final double? photoHeight;
+  final double? photoWidth;
 
   OneBackgroundChallengeSplitImage(
-      {required this.challengePhotoRight, required this.challengePhotoLeft});
+      {required this.challengePhotoRight,
+      required this.challengePhotoLeft,
+      this.photoHeight,
+      this.photoWidth});
 
   @override
   _OneBackgroundChallengeSplitImageState createState() =>
@@ -27,7 +32,6 @@ class _OneBackgroundChallengeSplitImageState
     return backgroundImage();
   }
 
-
   Row backgroundImage() {
     return Row(
       children: [backgroundLeftImage(), straightLine(), backgroundRightImage()],
@@ -36,8 +40,8 @@ class _OneBackgroundChallengeSplitImageState
 
   Container backgroundLeftImage() {
     return Container(
-      height: 16.71.h,
-      width: 16.66.w,
+      height: widget.photoHeight ?? 16.71.h,
+      width: widget.photoWidth ?? 16.66.w,
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fill,
@@ -50,15 +54,15 @@ class _OneBackgroundChallengeSplitImageState
   Container straightLine() {
     return Container(
       width: 1,
-      height: 16.71.h,
+      height: widget.photoHeight ?? 16.71.h,
       color: AppColors.primaryWightColor,
     );
   }
 
   Container backgroundRightImage() {
     return Container(
-      height: 16.71.h,
-      width: 16.66.w,
+      height: widget.photoHeight ?? 16.71.h,
+      width: widget.photoWidth ?? 16.66.w,
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fill,

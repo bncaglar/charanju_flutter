@@ -23,35 +23,37 @@ class _SearchMainScreenState extends State<SearchMainScreen> {
       body: DefaultTabController(
         length: 6,
         initialIndex: 0,
-        child: Column(
-          children: [
-            TabBar(
-              isScrollable: true,
-              indicatorSize: TabBarIndicatorSize.label,
-              indicatorColor: AppColors.primaryWightColor,
-              tabs: [
-                Tab(text: S.of(context).trending),
-                Tab(text: S.of(context).sport),
-                Tab(text: S.of(context).fashion),
-                Tab(text: S.of(context).art),
-                Tab(text: S.of(context).dance),
-                Tab(text: S.of(context).sing),
-              ],
-            ),
-            Container(
-              height: 80.h,
-              child: TabBarView(
-                children: [
-                  TrendingPage(),
-                  SportPage(),
-                  FashionPage(),
-                  ArtPage(),
-                  DancePage(),
-                  SingPage()
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TabBar(
+                isScrollable: true,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicatorColor: AppColors.primaryWightColor,
+                tabs: [
+                  Tab(text: S.of(context).trending),
+                  Tab(text: S.of(context).sport),
+                  Tab(text: S.of(context).fashion),
+                  Tab(text: S.of(context).art),
+                  Tab(text: S.of(context).dance),
+                  Tab(text: S.of(context).sing),
                 ],
               ),
-            )
-          ],
+              Container(
+                height: 80.h,
+                child: TabBarView(
+                  children: [
+                    TrendingPage(),
+                    SportPage(),
+                    FashionPage(),
+                    ArtPage(),
+                    DancePage(),
+                    SingPage()
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -63,6 +63,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
     return PreferredSize(
       preferredSize: Size.fromHeight(7.5.h),
       child: NotificationsAppBar(
+        addFollowChallengeText: false,
         addSearchField: false,
         addBackBtn: true,
         addIconOnAppBar: true,

@@ -111,4 +111,5 @@ class Strings {
   static const DISCOVER_CHALLENGE_PHOTO_RIGHT1 = "assets/images/discover_challenge_photo_right1.png";
   static const DISCOVER_CHALLENGE_PHOTO_LEFT2 = "assets/images/discover_challenge_photo_left2.png";
   static const DISCOVER_CHALLENGE_PHOTO_RIGHT2 = "assets/images/discover_challenge_photo_right2.png";
+  static const ic_heart_png = "assets/icons/ic_heart.png";
 }

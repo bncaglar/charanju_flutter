@@ -53,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
         "block": MessageLookupByLibrary.simpleMessage("Block"),
         "challenge": MessageLookupByLibrary.simpleMessage("Challenge "),
+        "challengeDescription": MessageLookupByLibrary.simpleMessage(
+            "Challenge description and rules (how to join)"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from gallery"),
         "choosePassword": MessageLookupByLibrary.simpleMessage(
@@ -75,7 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create group chat"),
         "createStory": MessageLookupByLibrary.simpleMessage("Create Story"),
         "createTeamChallengeWith":
-            MessageLookupByLibrary.simpleMessage("Create team challange with "),
+            MessageLookupByLibrary.simpleMessage("Create team challenge with "),
         "createYourProfile":
             MessageLookupByLibrary.simpleMessage("Create your profile"),
         "dance": MessageLookupByLibrary.simpleMessage("Dance"),
@@ -86,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "fashion": MessageLookupByLibrary.simpleMessage("Fashion"),
+        "followChallenge":
+            MessageLookupByLibrary.simpleMessage("Follow challenge"),
         "followers": MessageLookupByLibrary.simpleMessage("Followers"),
         "followingFollowers":
             MessageLookupByLibrary.simpleMessage("Following and followers"),
@@ -127,7 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "on": MessageLookupByLibrary.simpleMessage("On"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
         "outDoorChallenge":
-            MessageLookupByLibrary.simpleMessage("#outdoorchallange"),
+            MessageLookupByLibrary.simpleMessage("#outdoorchallenge"),
         "paragraph1": MessageLookupByLibrary.simpleMessage(
             "•   Amet etiam quis consequat magna sed aliquet mattis dapibus tellus."),
         "paragraph2": MessageLookupByLibrary.simpleMessage(

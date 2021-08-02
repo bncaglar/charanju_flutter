@@ -950,10 +950,10 @@ class S {
     );
   }
 
-  /// `Create team challange with `
+  /// `Create team challenge with `
   String get createTeamChallengeWith {
     return Intl.message(
-      'Create team challange with ',
+      'Create team challenge with ',
       name: 'createTeamChallengeWith',
       desc: '',
       args: [],
@@ -1170,10 +1170,10 @@ class S {
     );
   }
 
-  /// `#outdoorchallange`
+  /// `#outdoorchallenge`
   String get outDoorChallenge {
     return Intl.message(
-      '#outdoorchallange',
+      '#outdoorchallenge',
       name: 'outDoorChallenge',
       desc: '',
       args: [],
@@ -1245,6 +1245,26 @@ class S {
     return Intl.message(
       'Cola Challenge',
       name: 'colaChallenge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Follow challenge`
+  String get followChallenge {
+    return Intl.message(
+      'Follow challenge',
+      name: 'followChallenge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Challenge description and rules (how to join)`
+  String get challengeDescription {
+    return Intl.message(
+      'Challenge description and rules (how to join)',
+      name: 'challengeDescription',
       desc: '',
       args: [],
     );
