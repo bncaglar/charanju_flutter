@@ -134,7 +134,7 @@ class _ChallengeSplitImagesState extends State<ChallengeSplitImages> {
   }
 
   PreferredSize buildSelectedChallengeAppBar() {
-    return PreferredSize(
+    return PreferredSize(ggi
       preferredSize: Size.fromHeight(7.5.h),
       child: NotificationsAppBar(
         addSearchField: false,
