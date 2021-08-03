@@ -1,8 +1,8 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
+import 'package:charanju_flutter/helper/dummy_data/notification_data.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/helper/modules/notification_module.dart';
 import 'package:charanju_flutter/screens/notifications_screens/chat_screens/group_chat_box.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_data.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/avatar.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/time_field.dart';
 import 'package:charanju_flutter/screens/notifications_screens/search_user_screen/search_user_screen.dart';
@@ -12,7 +12,7 @@ import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
 import 'chat_screens/chat_screen.dart';
-import 'notification_screen_components/notifications_app_bar.dart';
+import 'notification_app_bar/notifications_app_bar.dart';
 
 class MessagesScreen extends StatefulWidget {
   static const routeName = '/NotificationMessagesScreen';
@@ -71,7 +71,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
         addUserName: false,
         addFilterMenu: false,
         onClickBtn: onClickCommentEditIcon,
-        iconURL: Strings.COMMENT_EDIT_ICON,
+        iconURL: Strings.IC_COMMENT_EDIT_ICON,
       ),
     );
   }
@@ -115,7 +115,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
         fontSize: LocalHelper.getFontSize(15),
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w700,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
     );
   }
@@ -127,7 +127,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
         fontSize: LocalHelper.getFontSize(14),
         color: AppColors.textPrimaryColor,
         fontWeight: FontWeight.w400,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
     );
   }

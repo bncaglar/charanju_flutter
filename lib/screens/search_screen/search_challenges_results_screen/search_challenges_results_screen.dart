@@ -2,25 +2,23 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/helper/modules/search_results_module.dart';
-import 'package:charanju_flutter/screens/search_screen/search_challenges_results/search_challenges_result_data.dart';
+import 'package:charanju_flutter/helper/dummy_data/search_challenges_result_data.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class SearchChallengesResultBuilder extends StatefulWidget {
+class SearchChallengesResultScreenBuilder extends StatefulWidget {
   @override
-  _SearchChallengesResultBuilderState createState() =>
-      _SearchChallengesResultBuilderState();
+  _SearchChallengesResultScreenBuilderState createState() =>
+      _SearchChallengesResultScreenBuilderState();
 }
 
-class _SearchChallengesResultBuilderState
-    extends State<SearchChallengesResultBuilder> {
-  List<SearchResultsModule> results = List.of(SearchResultData.results);
-
+class _SearchChallengesResultScreenBuilderState
+    extends State<SearchChallengesResultScreenBuilder> {
   @override
   Widget build(BuildContext context) {
     return Builder(builder: (BuildContext _context) {
-      return buildResults(results);
+      return buildResults(SearchResultData.resultsList);
     });
   }
 
@@ -60,7 +58,7 @@ class _SearchChallengesResultBuilderState
         fontSize: LocalHelper.getFontSize(15),
         color: AppColors.primaryGreyColor,
         fontWeight: FontWeight.w400,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
       maxLines: 8,
       textAlign: TextAlign.left,

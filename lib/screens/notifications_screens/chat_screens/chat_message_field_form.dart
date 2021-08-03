@@ -48,14 +48,14 @@ class ChatMessageFieldForm extends StatelessWidget {
       child: ChatMessageField(
         controller: chatMessageController,
         onClickBtn: onClickArrowUp,
-        iconPath: Strings.ARROW_CIRCLE_UP_ICON,
+        iconPath: Strings.IC_ARROW_CIRCLE_UP_ICON,
       ),
     );
   }
 
   IconBtnAsPngImage buildIcon() {
     return IconBtnAsPngImage(
-      imageUrl: Strings.IMAGE_PLUS_ICON,
+      imageUrl: Strings.IC_IMAGE_PLUS_ICON,
       onClickBtn: onClickImagePlus,
       boxFit: BoxFit.cover,
     );

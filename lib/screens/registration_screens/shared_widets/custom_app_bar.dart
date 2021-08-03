@@ -148,7 +148,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
           fontSize: LocalHelper.getFontSize(15),
           color: AppColors.primaryWightColor,
           fontWeight: FontWeight.w400,
-          fontFamily: Strings.ARIAL,
+          fontFamily: Strings.C_ARIAL,
         ),
         minFontSize: 12,
         maxLines: 2,

@@ -1,22 +1,21 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
+import 'package:charanju_flutter/helper/dummy_data/notification_data.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
-import 'package:charanju_flutter/logic/cubit/notification_drop_down_cubit/notification_drop_down_cubit.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_data.dart';
 import 'package:charanju_flutter/helper/modules/notification_module.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/avatar.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/time_field.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/notifications_app_bar.dart';
+import 'package:charanju_flutter/logger/simple_log_printer.dart';
+import 'package:charanju_flutter/logic/cubit/notification_drop_down_cubit/notification_drop_down_cubit.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:logger/logger.dart';
-import 'package:sizer/sizer.dart';
-
 import 'chat_screens/chat_screen.dart';
-import 'messages_screen.dart';
+import 'messages_screen/messages_screen.dart';
+import 'notification_app_bar/notifications_app_bar.dart';
+import 'notification_screen_components/avatar.dart';
+import 'notification_screen_components/time_field.dart';
 
 class NotificationScreen extends StatefulWidget {
   static const routeName = '/NotificationScreen';
@@ -27,25 +26,19 @@ class NotificationScreen extends StatefulWidget {
 
 class _NotificationScreenState extends State<NotificationScreen> {
   List<NotificationModule> items = List.of(NotificationData.notifications);
-  final log = Logger();
+  final log = getLogger();
 
   onNotificationClicked(NotificationModule item) {
     log.i("onNotificationClicked Started Item is:$item");
   }
-
+  onMessageNotificationClicked(item){
+    Navigator.pushNamed(context, ChatScreen.routeName,
+        arguments: ChatScreenArguments(
+            urlAvatar: item.urlAvatar, username: item.username));
+  }
   onClickChatIcon() {
     log.i("onClickChatIcon started");
     Navigator.pushNamed(context, MessagesScreen.routeName);
-  }
-
-  onMessageNotificationClicked(item) {
-    log.i("onMessageNotificationClicked started");
-    Navigator.pushNamed(
-      context,
-      ChatScreen.routeName,
-      arguments: ChatScreenArguments(
-          urlAvatar: item.urlAvatar, username: item.username),
-    );
   }
 
   @override
@@ -170,7 +163,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         addUserName: false,
         addFilterMenu: true,
         onClickBtn: onClickChatIcon,
-        iconURL: Strings.COMMENT_ICON,
+        iconURL: Strings.IC_COMMENT_ICON,
         addBackBtn: false,
         addFollowChallengeText: false,
       ),

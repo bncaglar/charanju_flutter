@@ -37,4 +37,6 @@ class ChatData {
         messages:
             "Do eiusmod tempor incididunt ut labore et dolore magaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "),
   ];
+
+  static List<ChatModule> items = List.of(ChatData.chats);
 }

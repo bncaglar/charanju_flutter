@@ -27,7 +27,7 @@ class _SearchScreenCustomAutoSizeTextState
         fontSize: LocalHelper.getFontSize(widget.size ?? 15),
         color: AppColors.primaryGreyColor,
         fontWeight: FontWeight.w400,
-        fontFamily: widget.fontFamily ?? Strings.ARIAL,
+        fontFamily: widget.fontFamily ?? Strings.C_ARIAL,
       ),
     );
   }

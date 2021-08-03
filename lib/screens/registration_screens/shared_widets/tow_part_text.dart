@@ -23,7 +23,7 @@ class TowPartText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: heroTag ?? Strings.DO_NOT_HAVE_ACCOUNT_TAG,
+      tag: heroTag ?? Strings.T_DO_NOT_HAVE_ACCOUNT_TAG,
       child: Container(
         width: 100.w,
         padding: padding,
@@ -39,7 +39,7 @@ class TowPartText extends StatelessWidget {
         style: TextStyle(
           color: AppColors.textSkipColor,
           fontSize: LocalHelper.getFontSize(12),
-          fontFamily: Strings.ARIAL,
+          fontFamily: Strings.C_ARIAL,
           fontStyle: FontStyle.normal,
           fontWeight: FontWeight.normal,
         ),
@@ -47,7 +47,7 @@ class TowPartText extends StatelessWidget {
           TextSpan(
             text: normalText,
             style: TextStyle(
-              fontFamily: Strings.ARIAL,
+              fontFamily: Strings.C_ARIAL,
               fontSize: LocalHelper.getFontSize(12),
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.normal,

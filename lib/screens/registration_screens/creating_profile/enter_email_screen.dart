@@ -73,7 +73,7 @@ class _EnterEmailScreenState extends State<EnterEmailScreen> {
       child: Form(
         key: _emailKey,
         child: Hero(
-          tag: Strings.EMAIL_FIELD_TAG,
+          tag: Strings.T_EMAIL_FIELD_TAG,
           child: EmailField(
             controller: emailController,
             serverEmailErrorText:

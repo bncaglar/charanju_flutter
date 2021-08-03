@@ -1,14 +1,14 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
+import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/avatar.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
-import 'package:charanju_flutter/widgets/form/search_notification_field.dart';
+import 'package:charanju_flutter/widgets/form/search_challenges_field.dart';
 import 'package:charanju_flutter/widgets/icon_btn_as_image.dart';
-import 'package:charanju_flutter/widgets/notification_drop_down_menu.dart';
+import 'package:charanju_flutter/widgets/notification_drop_down_menu/notification_drop_down_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
 class NotificationsAppBar extends StatefulWidget {
@@ -58,7 +58,7 @@ class NotificationsAppBar extends StatefulWidget {
 class _NotificationsAppBarState extends State<NotificationsAppBar> {
   TextEditingController searchController = TextEditingController();
 
-  final log = Logger();
+  final log = getLogger();
 
   onClickBackBtn() {
     log.i("onClickBackBtn started");
@@ -104,7 +104,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
   }
 
   Widget dropDownMenuField() {
-    return NotificationDropDownMenu();
+    return NotificationFilterDropDownMenu();
   }
 
   Row chatIconSection() {
@@ -147,7 +147,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
                 fontSize: LocalHelper.getFontSize(13),
                 color: AppColors.primaryWightColor,
                 fontWeight: FontWeight.w400,
-                fontFamily: Strings.ARIAL,
+                fontFamily: Strings.C_ARIAL,
               ),
             ),
           )
@@ -169,7 +169,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
         fontSize: LocalHelper.getFontSize(15),
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w700,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
     );
   }
@@ -200,7 +200,7 @@ class _NotificationsAppBarState extends State<NotificationsAppBar> {
     return Container(
       width: widget.searchFieldWidth ?? 72.w,
       height: widget.searchFieldHeight ?? 5.62.h,
-      child: SearchNotificationField(
+      child: SearchChallengesField(
         onChanged: widget.onChanged,
         onEditingComplete: widget.onEditingComplete,
         addSearchFieldTitle: widget.addSearchFieldTitle,

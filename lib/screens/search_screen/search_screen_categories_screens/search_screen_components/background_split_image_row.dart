@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 import 'background_split_image.dart';
 
 class BackgroundSplitImageRow extends StatefulWidget {
@@ -33,21 +32,12 @@ class _BackgroundSplitImageRowState extends State<BackgroundSplitImageRow> {
             photoWidth: widget.photoWidth,
             challengePhotoLeft: widget.leftPhotoPath!,
             challengePhotoRight: widget.rightPhotoPath!),
-        SizedBox(
-          width: 2.22.w,
-        ),
         OneBackgroundChallengeSplitImage(
             challengePhotoLeft: widget.leftPhotoPath!,
             challengePhotoRight: widget.rightPhotoPath!),
-        SizedBox(
-          width: 2.22.w,
-        ),
         OneBackgroundChallengeSplitImage(
             challengePhotoLeft: widget.leftPhotoPath!,
             challengePhotoRight: widget.rightPhotoPath!),
-        SizedBox(
-          width: 2.22.w,
-        ),
         OneBackgroundChallengeSplitImage(
             challengePhotoLeft: widget.leftPhotoPath!,
             challengePhotoRight: widget.rightPhotoPath!),

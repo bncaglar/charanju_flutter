@@ -77,7 +77,7 @@ class NavigationButton extends StatelessWidget {
         navigationButtonText,
         style: TextStyle(
           color: textColor ?? AppColors.primaryWightColor,
-          fontFamily: Strings.ARIAL,
+          fontFamily: Strings.C_ARIAL,
           fontSize: fontSize == null
               ? LocalHelper.getFontSize(15)
               : LocalHelper.getFontSize(fontSize),

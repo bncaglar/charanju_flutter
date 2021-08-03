@@ -1,12 +1,14 @@
+import 'package:charanju_flutter/helper/modules/discover_challenges_module.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'custom_auto_size_text.dart';
 
-// ignore: must_be_immutable
 class NumberOfChallenge extends StatefulWidget {
-  var discoverChallenge;
+  final DiscoverChallengeModule discoverChallenge;
+
   NumberOfChallenge({required this.discoverChallenge});
+
   @override
   _NumberOfChallengeState createState() => _NumberOfChallengeState();
 }

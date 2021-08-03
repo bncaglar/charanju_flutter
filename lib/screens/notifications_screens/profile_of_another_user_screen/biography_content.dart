@@ -29,7 +29,7 @@ class BiographyContent extends StatelessWidget {
             fontSize: LocalHelper.getFontSize(12),
             color: AppColors.primaryWightColor,
             fontWeight: FontWeight.w400,
-            fontFamily: Strings.ARIAL,
+            fontFamily: Strings.C_ARIAL,
           ),
           textAlign: TextAlign.left,
         ),

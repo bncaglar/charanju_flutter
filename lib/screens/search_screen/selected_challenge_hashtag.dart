@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/notifications_app_bar.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_app_bar/notifications_app_bar.dart';
 import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/background_split_image.dart';
 import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/custom_auto_size_text.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
@@ -110,7 +110,7 @@ class _SelectedChallengeHashTagPageState
           fontSize: LocalHelper.getFontSize(13),
           color: AppColors.primaryWightColor,
           fontWeight: FontWeight.w400,
-          fontFamily: Strings.ARIAL,
+          fontFamily: Strings.C_ARIAL,
         ),
         maxLines: 8,
         textAlign: TextAlign.left,

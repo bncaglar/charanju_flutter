@@ -45,7 +45,7 @@ class _NavigationBottomSheetState extends State<NavigationBottomSheet> {
 
   BottomSheetRow buildJoinChallengeRow() {
     return BottomSheetRow(
-      iconUrl: Strings.HASH_TAG_PNG,
+      iconUrl: Strings.IC_HASH_TAG_PNG,
       onClickRow: onClickJoinChallenge,
       rowText: S.of(context).joinChallenge,
     );
@@ -53,7 +53,7 @@ class _NavigationBottomSheetState extends State<NavigationBottomSheet> {
 
   BottomSheetRow buildCreateStoryRow() {
     return BottomSheetRow(
-      iconUrl: Strings.CREATE_CHALLENGE_PNG,
+      iconUrl: Strings.IC_CREATE_CHALLENGE_PNG,
       onClickRow: onClickCreateStory,
       rowText: S.of(context).createChallenge,
       padding: EdgeInsets.only(
@@ -65,7 +65,7 @@ class _NavigationBottomSheetState extends State<NavigationBottomSheet> {
 
   BottomSheetRow buildGoLiveRow() {
     return BottomSheetRow(
-      iconUrl: Strings.GO_LIVE,
+      iconUrl: Strings.IC_GO_LIVE,
       onClickRow: onClickGoLive,
       rowText: S.of(context).goLive,
       padding: EdgeInsets.only(
@@ -77,7 +77,7 @@ class _NavigationBottomSheetState extends State<NavigationBottomSheet> {
 
   BottomSheetRow buildCreateChallengeRow() {
     return BottomSheetRow(
-      iconUrl: Strings.CREATE_STORY_PNG,
+      iconUrl: Strings.IC_CREATE_STORY_PNG,
       onClickRow: onClickCreateChallenge,
       rowText: S.of(context).createStory,
       padding: EdgeInsets.only(

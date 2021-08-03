@@ -9,4 +9,7 @@ class SearchResultData {
     SearchResultsModule("search suggestions"),
     SearchResultsModule("search suggestions"),
   ];
+
+  static List<SearchResultsModule> resultsList =
+      List.of(SearchResultData.results);
 }

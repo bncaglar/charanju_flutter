@@ -4,12 +4,12 @@ import 'package:charanju_flutter/helper/modules/discover_challenges_module.dart'
 import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/background_split_image_row.dart';
 import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/custom_auto_size_text.dart';
 import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/number_of_challenge.dart';
-import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/sponsor_event_part.dart';
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
 import '../../challengeSplitImages.dart';
 import '../../selected_challenge_hashtag.dart';
-import '../search_screen_data.dart';
+import 'package:charanju_flutter/logger/simple_log_printer.dart';
+import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_screen_components/sponsor_events/sponsor_event_part.dart';
+import 'package:charanju_flutter/helper/dummy_data/search_screen_data.dart';
 import 'package:sizer/sizer.dart';
 
 class TrendingPage extends StatefulWidget {
@@ -19,8 +19,8 @@ class TrendingPage extends StatefulWidget {
 
 class _TrendingPageState extends State<TrendingPage> {
   List<DiscoverChallengeModule> discoverChallenges =
-      List.of(SearchScreenData.screenData);
-  final log = Logger();
+  List.of(SearchScreenData.screenData);
+  final log = getLogger();
 
   onClickHashTag(discoverChallenge) {
     log.i("onClickHashTag started with " + discoverChallenge.challengeName);
@@ -54,11 +54,13 @@ class _TrendingPageState extends State<TrendingPage> {
         discoverChallenge.challengeName);
   }
 
+  onTapTitle() {
+    log.i("onTapTitle Started");
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Builder(builder: (BuildContext _context) {
-      return buildTrendingPage(discoverChallenges);
-    });
+    return buildTrendingPage(SearchScreenData.discoverChallenges);
   }
 
   Widget buildTrendingPage(List<DiscoverChallengeModule> discoverChallenges) {
@@ -66,7 +68,8 @@ class _TrendingPageState extends State<TrendingPage> {
       child: ListView.builder(
         itemCount: discoverChallenges.length,
         itemBuilder: (context, index) {
-          final discoverChallenge = discoverChallenges[index];
+          final DiscoverChallengeModule discoverChallenge =
+              discoverChallenges[index];
           return discoverChallenge.category == S.of(context).trending
               ? buildDiscoverListTile(discoverChallenge)
               : Container();
@@ -86,7 +89,10 @@ class _TrendingPageState extends State<TrendingPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             discoverChallenge.isSponsorEvent
-                ? SponsorEventPage(discoverChallenge: discoverChallenge)
+                ? SponsorEventPart(discoverChallenge: discoverChallenge)
+                : Container(),
+            discoverChallenge.isSponsorEvent
+                ? Container()
                 : buildChallengeHashTagRow(discoverChallenge),
           ],
         ),
@@ -129,11 +135,17 @@ class _TrendingPageState extends State<TrendingPage> {
     );
   }
 
-  InkWell buildChallengeTitle(discoverChallenge) {
+  InkWell buildCDhallengeTitle(discoverChallenge) {
     return InkWell(
       onTap: () {
         onClickHashTag(discoverChallenge);
-      },
+        },
+      );
+    }
+
+  GestureDetector buildChallengeTitle(discoverChallenge) {
+    return GestureDetector(
+      onTap: onTapTitle,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -156,6 +168,6 @@ class _TrendingPageState extends State<TrendingPage> {
 
   SearchScreenCustomAutoSizeText buildChallengeHashTagName(discoverChallenge) {
     return SearchScreenCustomAutoSizeText(
-        content: discoverChallenge.challengeName, fontFamily: Strings.MULISH);
+        content: discoverChallenge.challengeName, fontFamily: Strings.C_MULISH);
   }
 }

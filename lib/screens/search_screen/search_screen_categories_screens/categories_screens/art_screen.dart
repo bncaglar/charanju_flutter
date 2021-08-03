@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class ArtPage extends StatefulWidget {
   @override
   _ArtPageState createState() => _ArtPageState();

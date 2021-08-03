@@ -72,7 +72,7 @@ class _EnterUserNameScreenState extends State<EnterUserNameScreen> {
       child: Form(
         key: _userNameKey,
         child: Hero(
-          tag: Strings.EMAIL_FIELD_TAG,
+          tag: Strings.T_EMAIL_FIELD_TAG,
           child: UserNameField(
             controller: userNameController,
             serverUserNameErrorText:

@@ -1,9 +1,8 @@
-import 'package:charanju_flutter/helper/modules/discover_challenges_module.dart';
+import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
-import '../search_screen_data.dart';
 
 class OneBackgroundChallengeSplitImage extends StatefulWidget {
   final String? challengePhotoLeft;
@@ -24,13 +23,21 @@ class OneBackgroundChallengeSplitImage extends StatefulWidget {
 
 class _OneBackgroundChallengeSplitImageState
     extends State<OneBackgroundChallengeSplitImage> {
-  List<DiscoverChallengeModule> discoverChallenges =
-      List.of(SearchScreenData.screenData);
+  final log = getLogger();
+
+  onTapImage() {
+    log.i("onTapImage Started");
+  }
 
   @override
   Widget build(BuildContext context) {
-    return backgroundImage();
+    return Container(
+        padding: EdgeInsets.only(
+          right: 2.22.w,
+        ),
+        child: backgroundImage());
   }
+
 
   Row backgroundImage() {
     return Row(

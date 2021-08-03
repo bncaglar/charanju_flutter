@@ -1,14 +1,15 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/generated/l10n.dart';
-import 'package:charanju_flutter/logic/cubit/search_discover_challenges_cubit/discover_challenges_screens_cubit.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/notifications_app_bar.dart';
-import 'package:charanju_flutter/screens/search_screen/search_challenges_results/search_challenges_results.dart';
+import 'package:charanju_flutter/logic/cubit/search_discover_challenges_cubit/discover_challenges_cubit.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_app_bar/notifications_app_bar.dart';
 import 'package:charanju_flutter/screens/search_screen/search_screen_categories_screens/search_main_screen.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
+
+import 'search_challenges_results_screen/search_challenges_results_screen.dart';
 
 class MockSearchScreen extends StatefulWidget {
   const MockSearchScreen({Key? key}) : super(key: key);
@@ -23,8 +24,8 @@ class _MockSearchScreenState extends State<MockSearchScreen> {
   onChanged() {
     log.i("onChanged started");
     context
-        .read<DiscoverChallengesScreensCubit>()
-        .changeStep(ShowSearchResultPage());
+        .read<DiscoverChallengesCubit>()
+        .interactEWithSearchField(ShowSearchResultPage());
   }
 
   onClickQrCode() {
@@ -34,8 +35,8 @@ class _MockSearchScreenState extends State<MockSearchScreen> {
   onClickClose() {
     log.i("onClickClose started");
     context
-        .read<DiscoverChallengesScreensCubit>()
-        .changeStep(DiscoverChallengesScreensInitial());
+        .read<DiscoverChallengesCubit>()
+        .interactEWithSearchField(DiscoverChallengesInitial());
   }
 
   onEditingComplete() {
@@ -58,22 +59,22 @@ class _MockSearchScreenState extends State<MockSearchScreen> {
   }
 
   BlocBuilder searchScreenBuildBody() {
-    return BlocBuilder<DiscoverChallengesScreensCubit,
-        DiscoverChallengesScreensState>(builder: (context, state) {
-      if (state is DiscoverChallengesScreensInitial) {
+    return BlocBuilder<DiscoverChallengesCubit,
+        DiscoverChallengesState>(builder: (context, state) {
+      if (state is DiscoverChallengesInitial) {
         return SearchMainScreen();
       }
       if (state is ShowSearchResultPage) {
-        return SearchChallengesResultBuilder();
+        return SearchChallengesResultScreenBuilder();
       }
       return Container();
     });
   }
 
   BlocBuilder searchScreenBuildAppBar() {
-    return BlocBuilder<DiscoverChallengesScreensCubit,
-        DiscoverChallengesScreensState>(builder: (context, state) {
-      if (state is DiscoverChallengesScreensInitial) {
+    return BlocBuilder<DiscoverChallengesCubit,
+        DiscoverChallengesState>(builder: (context, state) {
+      if (state is DiscoverChallengesInitial) {
         return buildSearchChallengesAppBar();
       }
       if (state is ShowSearchResultPage) {

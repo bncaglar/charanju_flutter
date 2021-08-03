@@ -20,21 +20,20 @@ class CustomTextFormField extends StatefulWidget {
   final InputDecoration? decoration;
   final VoidCallback? onChanged;
 
-  CustomTextFormField({
-    this.validator,
-    this.autoValidateMode = AutovalidateMode.disabled,
-    required this.controller,
-    required this.labelText,
-    this.obscureText = false,
-    this.fromRegistration = true,
-    this.keyboardType,
-    this.suffixIcon,
-    this.onEditingComplete,
-    this.style,
-    this.decoration,
-    this.prefixIcon,
-    this.onChanged
-  });
+  CustomTextFormField(
+      {this.validator,
+      this.autoValidateMode = AutovalidateMode.disabled,
+      required this.controller,
+      required this.labelText,
+      this.obscureText = false,
+      this.fromRegistration = true,
+      this.keyboardType,
+      this.suffixIcon,
+      this.onEditingComplete,
+      this.style,
+      this.decoration,
+      this.prefixIcon,
+      this.onChanged});
 
   @override
   _CustomTextFormFieldState createState() => _CustomTextFormFieldState();
@@ -60,7 +59,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   ? LocalHelper.getFontSize(16)
                   : LocalHelper.getFontSize(15),
               fontStyle: FontStyle.normal,
-              fontFamily: Strings.ABSOLUTE,
+              fontFamily: Strings.C_ABSOLUTE,
               color: AppColors.textPrimaryColor,
             ),
         decoration: widget.decoration ??
@@ -90,13 +89,13 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       hintStyle: TextStyle(
         fontSize: LocalHelper.getFontSize(16),
         fontStyle: FontStyle.normal,
-        fontFamily: Strings.ABSOLUTE,
+        fontFamily: Strings.C_ABSOLUTE,
         color: AppColors.textPrimaryColor,
       ),
       labelStyle: TextStyle(
         fontSize: LocalHelper.getFontSize(16),
         fontStyle: FontStyle.normal,
-        fontFamily: Strings.ABSOLUTE,
+        fontFamily: Strings.C_ABSOLUTE,
         color: AppColors.textPrimaryColor,
       ),
       focusedBorder: UnderlineInputBorder(
@@ -141,13 +140,13 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       hintStyle: TextStyle(
         fontSize: LocalHelper.getFontSize(15),
         fontStyle: FontStyle.normal,
-        fontFamily: Strings.ABSOLUTE,
+        fontFamily: Strings.C_ABSOLUTE,
         color: AppColors.textPrimaryColor,
       ),
       labelStyle: TextStyle(
         fontSize: LocalHelper.getFontSize(15),
         fontStyle: FontStyle.normal,
-        fontFamily: Strings.ABSOLUTE,
+        fontFamily: Strings.C_ABSOLUTE,
         color: AppColors.textPrimaryColor,
       ),
       focusedBorder: InputBorder.none,

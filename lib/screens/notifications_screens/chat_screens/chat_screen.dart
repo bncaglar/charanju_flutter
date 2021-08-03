@@ -1,14 +1,14 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/screens/notifications_screens/chat_screens/chat_body.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_app_bar/notifications_app_bar.dart';
 import 'package:charanju_flutter/screens/notifications_screens/profile_of_another_user_screen/profile_of_another_user_screen.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/notifications_app_bar.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
+import 'package:logger/logger.dart';
 
 class ChatScreen extends StatefulWidget {
-  static const routeName = '/ConversationPageScreen';
+  static const routeName = '/ChatScreen';
   final String? urlAvatar;
   final String? username;
 
@@ -57,7 +57,7 @@ class _ChatScreenState extends State<ChatScreen> {
         addFilterMenu: false,
         addFollowChallengeText: false,
         onClickBtn: onClickInfoIcon,
-        iconURL: Strings.COMMENT_INFO_ICON,
+        iconURL: Strings.IC_COMMENT_INFO_ICON,
       ),
     );
   }

@@ -44,7 +44,7 @@ class _SignInFormState extends State<SignInForm> {
 
   Hero buildEmailField() {
     return Hero(
-      tag: Strings.EMAIL_FIELD_TAG,
+      tag: Strings.T_EMAIL_FIELD_TAG,
       child: EmailField(
         controller: emailController,
         serverEmailErrorText:
@@ -55,7 +55,7 @@ class _SignInFormState extends State<SignInForm> {
 
   Hero buildPasswordField() {
     return Hero(
-      tag: Strings.PASSWORD_FIELD_TAG,
+      tag: Strings.T_PASSWORD_FIELD_TAG,
       child: PasswordField(
         controller: passwordController,
         labelText: S.of(context).password,

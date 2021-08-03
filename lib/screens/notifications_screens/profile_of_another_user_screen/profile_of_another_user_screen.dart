@@ -1,11 +1,11 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/notifications_app_bar.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_app_bar/notifications_app_bar.dart';
 import 'package:charanju_flutter/screens/notifications_screens/profile_of_another_user_screen/another_user_info_with_photo.dart';
 import 'package:charanju_flutter/screens/notifications_screens/profile_of_another_user_screen/another_user_profile_settings.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:flutter/material.dart';
 
 class ProfileOfAnotherUserScreen extends StatefulWidget {
   static const routeName = '/ProfileOfAnotherUser';
@@ -57,11 +57,10 @@ class _ProfileOfAnotherUserScreenState
         username: widget.username,
         addIconOnAppBar: false,
         addUserPhoto: false,
-        profilePicturePath: Strings.NOTIFICATION_AVATAR_1,
+        profilePicturePath: Strings.IM_NOTIFICATION_AVATAR_1,
         addUserName: true,
         addFilterMenu: false,
-      ),
-    );
+      ),);
   }
 }
 

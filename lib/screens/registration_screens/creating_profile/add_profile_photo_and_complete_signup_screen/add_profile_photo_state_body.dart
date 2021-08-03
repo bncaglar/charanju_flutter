@@ -73,7 +73,7 @@ class _AddProfilePhotoStepState extends State<AddProfilePhotoStep> {
       padding: EdgeInsets.only(top: 4.21.h, left: 5.54.w, right: 5.54.w),
       child: Center(
         child: TowPartText(
-          heroTag: Strings.TERMS_OF_USE_TAG,
+          heroTag: Strings.T_TERMS_OF_USE_TAG,
           onClickText: goToTerms,
           clickableText: S.of(context).addCompleteSignUpTermsTextPart2,
           normalText: S.of(context).addCompleteSignUpTermsTextPart1,
@@ -109,7 +109,7 @@ class _AddProfilePhotoStepState extends State<AddProfilePhotoStep> {
       height: 17.49.h,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(Strings.ADD_PROFILE_PHOTO_PNG),
+          image: AssetImage(Strings.IC_ADD_PROFILE_PHOTO_PNG),
         ),
       ),
     );
@@ -122,7 +122,7 @@ class _AddProfilePhotoStepState extends State<AddProfilePhotoStep> {
       decoration: BoxDecoration(
         image: DecorationImage(
           //todo get the image from the API and change the widget to NetworkImage
-          image: AssetImage(Strings.NETWORK_IMAGE),
+          image: AssetImage(Strings.IM_NETWORK_IMAGE),
         ),
       ),
     );

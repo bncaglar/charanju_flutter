@@ -9,13 +9,13 @@ class OrText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: Strings.OR_TAG,
+      tag: Strings.T_OR_TAG,
       child: Container(
         padding: EdgeInsets.only(top: 2.488.h),
         child: Text(
           S.of(context).or,
           style: TextStyle(
-            fontFamily: Strings.ARIAL,
+            fontFamily: Strings.C_ARIAL,
             fontSize: LocalHelper.getFontSize(12),
             fontStyle: FontStyle.normal,
             color: AppColors.textPrimaryColor,

@@ -1,17 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:charanju_flutter/core/constants/strings.dart';
-import 'package:charanju_flutter/generated/l10n.dart';
+import 'package:charanju_flutter/helper/dummy_data/notification_data.dart';
 import 'package:charanju_flutter/helper/local_data/local_helper.dart';
 import 'package:charanju_flutter/helper/modules/notification_module.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_app_bar/notification_app_bar_builder.dart';
 import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/avatar.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/notifications_app_bar.dart';
+import 'package:charanju_flutter/screens/notifications_screens/search_user_screen/search_user_body.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
-import 'package:charanju_flutter/widgets/icon_btn_as_image.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
-
-import '../notification_data.dart';
 
 class SearchUserScreen extends StatefulWidget {
   static const routeName = '/SearchUserScreen';
@@ -27,13 +25,8 @@ class _SearchUserScreenState extends State<SearchUserScreen> {
   onClickUserPlus() {
     log.i("onClickUserPlus started");
   }
-
-  onClickGroupIcon() {
-    log.i("onClickGroupIcon started");
-  }
-
-  onClickUser(item) {
-    log.i("onClickUser started with " + item.username);
+  onClickUser(){
+    log.i("onClickUser started");
   }
 
   @override
@@ -43,47 +36,7 @@ class _SearchUserScreenState extends State<SearchUserScreen> {
         appBar: buildSearchUserAppBar(),
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundPrimaryColor,
-        body: buildSearchUserBody(),
-      ),
-    );
-  }
-
-  Column buildSearchUserBody() {
-    return Column(
-      children: [
-        SizedBox(height: 3.125.h),
-        createGroupChatRow(),
-        SizedBox(height: 1.40.h),
-        buildUserList()
-      ],
-    );
-  }
-
-  Row createGroupChatRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        SizedBox(width: 6.94.w),
-        groupChatIcon(),
-        SizedBox(width: 2.77.w),
-        groupChatText()
-      ],
-    );
-  }
-
-  IconBtnAsPngImage groupChatIcon() {
-    return IconBtnAsPngImage(
-        imageUrl: Strings.USER_ALT_PNG, onClickBtn: onClickGroupIcon);
-  }
-
-  AutoSizeText groupChatText() {
-    return AutoSizeText(
-      S.of(context).createGroupChat,
-      style: TextStyle(
-        fontSize: LocalHelper.getFontSize(15),
-        color: AppColors.primaryWightColor,
-        fontWeight: FontWeight.w700,
-        fontFamily: Strings.ARIAL,
+        body: SearchUserBody(),
       ),
     );
   }
@@ -111,7 +64,7 @@ class _SearchUserScreenState extends State<SearchUserScreen> {
         ),
         title: usernameTitle(item),
         onTap: () {
-          onClickUser(item);
+          onClickUser();
         },
       );
 
@@ -122,25 +75,23 @@ class _SearchUserScreenState extends State<SearchUserScreen> {
         fontSize: LocalHelper.getFontSize(15),
         color: AppColors.primaryWightColor,
         fontWeight: FontWeight.w700,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
     );
   }
 
-  PreferredSize buildSearchUserAppBar() {
-    return PreferredSize(
-      preferredSize: Size.fromHeight(7.5.h),
-      child: NotificationsAppBar(
-        addSearchField: true,
-        addIconOnAppBar: true,
-        addUserPhoto: false,
-        addFollowChallengeText: false,
-        addUserName: false,
-        addFilterMenu: false,
-        onClickBtn: onClickUserPlus,
-        iconURL: Strings.USER_PLUS_PNG,
-        addBackBtn: true,
-      ),
+
+  NotificationAppBarBuilder buildSearchUserAppBar() {
+    return NotificationAppBarBuilder(
+      addFollowChallengeText: false,
+      addSearchField: true,
+      addIconOnAppBar: true,
+      addUserPhoto: false,
+      addUserName: false,
+      addFilterMenu: false,
+      onClickBtn: onClickUserPlus,
+      iconURL: Strings.IC_USER_PLUS_PNG,
+      addBackBtn: true,
     );
   }
 }

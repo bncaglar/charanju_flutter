@@ -41,7 +41,7 @@ class SettingsCategory extends StatelessWidget {
       style: TextStyle(
         color: AppColors.transparentGrayColor,
         fontSize: LocalHelper.getFontSize(12),
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
         fontWeight: FontWeight.w700,
       ),
       maxLines: 2,

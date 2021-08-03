@@ -1,7 +1,7 @@
 import 'package:charanju_flutter/core/constants/strings.dart';
 import 'package:charanju_flutter/logger/simple_log_printer.dart';
 import 'package:charanju_flutter/screens/home_screens/home_screen_components/one_backgroung_split_image.dart';
-import 'package:charanju_flutter/screens/notifications_screens/notification_screen_components/notifications_app_bar.dart';
+import 'package:charanju_flutter/screens/notifications_screens/notification_app_bar/notifications_app_bar.dart';
 import 'package:charanju_flutter/utilities/colors.dart';
 import 'package:charanju_flutter/widgets/icon_btn_as_image.dart';
 import 'package:charanju_flutter/widgets/text_btn.dart';
@@ -81,21 +81,21 @@ class _ChallengeSplitImagesState extends State<ChallengeSplitImages> {
 
   IconBtnAsPngImage buildShareIcon() {
     return IconBtnAsPngImage(
-      imageUrl: Strings.SHARE_ICON_PNG,
+      imageUrl: Strings.IC_SHARE_ICON_PNG,
       onClickBtn: onClickBtn,
     );
   }
 
   TextBtn buildTitleHashTagText() {
     return TextBtn(
-      text: Strings.HASH_SAMPLE + widget.challengeName!,
+      text: Strings.P_HASH_SAMPLE + widget.challengeName!,
       onClickText: onClickChallengeName,
     );
   }
 
   TextBtn buildPointsText() {
     return TextBtn(
-      text: "180" + Strings.P,
+      text: "180" + Strings.C_LETTER_P,
     );
   }
 
@@ -134,7 +134,7 @@ class _ChallengeSplitImagesState extends State<ChallengeSplitImages> {
   }
 
   PreferredSize buildSelectedChallengeAppBar() {
-    return PreferredSize(ggi
+    return PreferredSize(
       preferredSize: Size.fromHeight(7.5.h),
       child: NotificationsAppBar(
         addSearchField: false,

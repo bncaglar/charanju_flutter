@@ -35,7 +35,7 @@ class TheCheckBox extends StatelessWidget {
                 width: 2,
               ),
             ),
-            child: state ? Image.asset(Strings.CHECK_ICON_PNG) : null,
+            child: state ? Image.asset(Strings.IC_CHECK_ICON_PNG) : null,
           ),
         );
       },

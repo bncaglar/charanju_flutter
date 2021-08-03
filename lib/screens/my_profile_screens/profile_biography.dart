@@ -52,7 +52,7 @@ class ProfileBiography extends StatelessWidget {
         color: AppColors.primaryWightColor,
         fontSize: LocalHelper.getFontSize(12),
         fontWeight: FontWeight.w400,
-        fontFamily: Strings.ARIAL,
+        fontFamily: Strings.C_ARIAL,
       ),
       maxLines: 1,
       minFontSize: 14,

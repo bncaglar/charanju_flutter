@@ -38,11 +38,11 @@ class _CreatorUserDataState extends State<CreatorUserData> {
         children: [
           ///todo get profile photo from API
           CreatorAvatar(
-            image: Strings.PROFILE_PHOTO_2_PNG,
+            image: Strings.IM_PROFILE_PHOTO_2_PNG,
             padding: EdgeInsets.only(right: 3.05.w),
           ),
           TextBtn(
-            text: "80" + Strings.BETS + "\n" + Strings.DUMMY_USER_NAME,
+            text: "80" + Strings.C_BETS + "\n" + Strings.C_DUMMY_USER_NAME,
             textSize: 12,
             textAlign: TextAlign.end,
           ),
@@ -63,13 +63,13 @@ class _CreatorUserDataState extends State<CreatorUserData> {
         children: [
           ///todo get profile photo from API
           CreatorAvatar(
-            image: Strings.PROFILE_PHOTO_1_PNG,
+            image: Strings.IM_PROFILE_PHOTO_1_PNG,
             padding: EdgeInsets.only(
               left: 3.05.w,
             ),
           ),
           TextBtn(
-            text: "100" + Strings.BETS + "\n" + Strings.DUMMY_USER_NAME,
+            text: "100" + Strings.C_BETS + "\n" + Strings.C_DUMMY_USER_NAME,
             textSize: 12,
             textAlign: TextAlign.start,
           ),

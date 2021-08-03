@@ -33,7 +33,7 @@ class _SocialMediaRowState extends State<SocialMediaRow> {
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: Strings.SOCIAL_MEDIA_TAG,
+      tag: Strings.T_SOCIAL_MEDIA_TAG,
       child: Container(
         width: 100.w,
         padding: EdgeInsets.only(top: 2.48.h, right: 26.475.w, left: 26.475.w),
@@ -52,28 +52,28 @@ class _SocialMediaRowState extends State<SocialMediaRow> {
 
   SocialMediaLogo buildAppleLogo() {
     return SocialMediaLogo(
-      image: Strings.APPLE_ICON_PNG,
+      image: Strings.IC_APPLE_ICON_PNG,
       socialMediaOnClick: appleOnClick,
     );
   }
 
   SocialMediaLogo buildTwitterLogo() {
     return SocialMediaLogo(
-      image: Strings.TWITTER_ICON_PNG,
+      image: Strings.IC_TWITTER_ICON_PNG,
       socialMediaOnClick: twitterOnClick,
     );
   }
 
   SocialMediaLogo buildGoogleLogo() {
     return SocialMediaLogo(
-      image: Strings.GOOGLE_ICON_PNG,
+      image: Strings.IC_GOOGLE_ICON_PNG,
       socialMediaOnClick: googleOnClick,
     );
   }
 
   SocialMediaLogo buildFacebookLogo() {
     return SocialMediaLogo(
-      image: Strings.FACEBOOK_ICON_PNG,
+      image: Strings.IC_FACEBOOK_ICON_PNG,
       socialMediaOnClick: facebookOnClick,
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class FashionPage extends StatefulWidget {
   @override
   _FashionPageState createState() => _FashionPageState();

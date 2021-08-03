@@ -20,7 +20,7 @@ class EmailField extends StatefulWidget {
 
 class _EmailFieldState extends State<EmailField> {
   String? emailValidator(String? value) {
-    String pattern = Strings.EMAIL_PATTERN;
+    String pattern = Strings.P_EMAIL_PATTERN;
     RegExp regExp = new RegExp(pattern);
 
     if (!regExp.hasMatch(value!.trim())) {
