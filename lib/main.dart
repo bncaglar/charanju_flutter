@@ -26,10 +26,7 @@ void main() async {
   await appConfigurationSetup();
 
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => MyApp(),
-    ),
+      MyApp()
   );
 }
 

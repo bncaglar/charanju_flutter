@@ -59,35 +59,4 @@ class _SearchMainScreenState extends State<SearchMainScreen> {
     );
   }
 
-  Container buildBody() {
-    return Container(
-      height: 80.h,
-      child: TabBarView(
-        children: [
-          TrendingPage(),
-          SportPage(),
-          FashionPage(),
-          ArtPage(),
-          DancePage(),
-          SingPage()
-        ],
-      ),
-    );
-  }
-
-  TabBar buildTabBar(BuildContext context) {
-    return TabBar(
-      isScrollable: true,
-      indicatorSize: TabBarIndicatorSize.label,
-      indicatorColor: AppColors.primaryWightColor,
-      tabs: [
-        Tab(text: S.of(context).trending),
-        Tab(text: S.of(context).sport),
-        Tab(text: S.of(context).fashion),
-        Tab(text: S.of(context).art),
-        Tab(text: S.of(context).dance),
-        Tab(text: S.of(context).sing),
-      ],
-    );
-  }
 }
